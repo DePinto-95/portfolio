@@ -387,11 +387,13 @@ function generateCages(solution) {
     cageOf[sr][sc] = idx;
 
     while (cells.length < targetSize) {
+      const usedDigits = new Set(cells.map(([r, c]) => solution[r][c]));
       const candidates = [];
       for (const [r, c] of cells)
         for (const [dr, dc] of dirs) {
           const nr = r + dr, nc = c + dc;
-          if (nr >= 0 && nr < 9 && nc >= 0 && nc < 9 && cageOf[nr][nc] === -1)
+          if (nr >= 0 && nr < 9 && nc >= 0 && nc < 9 && cageOf[nr][nc] === -1
+              && !usedDigits.has(solution[nr][nc]))
             candidates.push([nr, nc]);
         }
       if (!candidates.length) break;
@@ -413,7 +415,8 @@ function generateCages(solution) {
           const nr = r + dr, nc = c + dc;
           if (nr < 0 || nr >= 9 || nc < 0 || nc >= 9) continue;
           const nIdx = cageOf[nr][nc];
-          if (nIdx !== idx && cages[nIdx].cells.length < 5) {
+          const neighborDigits = new Set(cages[nIdx].cells.map(([cr, cc]) => solution[cr][cc]));
+          if (nIdx !== idx && cages[nIdx].cells.length < 5 && !neighborDigits.has(solution[r][c])) {
             cages[nIdx].cells.push([r, c]);
             cages[nIdx].sum += solution[r][c];
             cageOf[r][c] = nIdx;
