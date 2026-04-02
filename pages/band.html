@@ -164,6 +164,18 @@
       border-color: var(--color-accent);
     }
 
+    /* EP / release group header inside the song list */
+    .song-group-label {
+      padding: 0.55rem var(--space-md);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-ink-light);
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+    }
+
     /* Embedded player iframe */
     #song-player {
       width: 100%;
@@ -308,52 +320,83 @@
 
       <!--
         HOW TO ADD MORE SONGS:
-        1. Duplicate one of the .song-row divs below.
-        2. Update the track number, song title, and duration.
-        3. Replace the data-embed value with the Spotify or SoundCloud embed URL.
-
-        To get a Spotify embed URL:
-          - Open Spotify in browser, go to the track.
-          - Click the three dots (…) → Share → Embed track.
-          - Copy the src URL from the iframe code (looks like:
-            https://open.spotify.com/embed/track/TRACK_ID?utm_source=generator)
-
-        To get a SoundCloud embed URL:
-          - Open the track on SoundCloud.
-          - Click Share → Embed.
-          - Copy the src URL from the iframe code.
+        1. Duplicate a .song-row div.
+        2. Update the aria-label, song-number, song-title, and data-embed URL.
+        To add a new EP group: duplicate a .song-group-label div and update its text.
       -->
       <div class="fade-in">
         <div class="song-list">
 
-          <!-- Song 1 — REPLACE data-embed with Spotify/SoundCloud embed URL -->
-          <!-- REPLACE: data-embed="https://open.spotify.com/embed/track/YOUR_TRACK_ID?utm_source=generator" -->
-          <div class="song-row" data-embed="#" role="button" tabindex="0" aria-label="Play Song Title One">
+          <!-- ── Raise Your Voice EP ── -->
+          <div class="song-group-label">Raise Your Voice EP</div>
+
+          <!-- NOTE: Blueprint Skin and Reality of Thought currently share the same embed URL.
+               Replace the data-embed on one of them once you have the correct Spotify link. -->
+          <div class="song-row" data-embed="https://open.spotify.com/embed/track/3klhumhuKJV1rEPDQQL426?utm_source=generator" role="button" tabindex="0" aria-label="Play Blueprint Skin">
             <span class="song-number">1</span>
-            <span class="song-title">Song Title One</span>
-            <span class="song-duration">3:24</span>
+            <span class="song-title">Blueprint Skin</span>
+            <span class="song-duration"></span>
             <button class="song-play-btn" aria-label="Play">
               <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
             </button>
           </div>
 
-          <!-- Song 2 — REPLACE data-embed with Spotify/SoundCloud embed URL -->
-          <!-- REPLACE: data-embed="https://open.spotify.com/embed/track/YOUR_TRACK_ID?utm_source=generator" -->
-          <div class="song-row" data-embed="#" role="button" tabindex="0" aria-label="Play Song Title Two">
+          <!-- REPLACE data-embed with the correct URL for Reality of Thought when available -->
+          <div class="song-row" data-embed="https://open.spotify.com/embed/track/3klhumhuKJV1rEPDQQL426?utm_source=generator" role="button" tabindex="0" aria-label="Play Reality of Thought">
             <span class="song-number">2</span>
-            <span class="song-title">Song Title Two</span>
-            <span class="song-duration">4:11</span>
+            <span class="song-title">Reality of Thought</span>
+            <span class="song-duration"></span>
             <button class="song-play-btn" aria-label="Play">
               <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
             </button>
           </div>
 
-          <!-- Song 3 — REPLACE data-embed with Spotify/SoundCloud embed URL -->
-          <!-- REPLACE: data-embed="https://open.spotify.com/embed/track/YOUR_TRACK_ID?utm_source=generator" -->
-          <div class="song-row" data-embed="#" role="button" tabindex="0" aria-label="Play Song Title Three">
+          <div class="song-row" data-embed="https://open.spotify.com/embed/track/00iU8mcEyuLjnR8fCWtlnE?utm_source=generator" role="button" tabindex="0" aria-label="Play Raise Your Voice">
             <span class="song-number">3</span>
-            <span class="song-title">Song Title Three</span>
-            <span class="song-duration">3:55</span>
+            <span class="song-title">Raise Your Voice</span>
+            <span class="song-duration"></span>
+            <button class="song-play-btn" aria-label="Play">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+
+          <!-- ── Sirens Within EP ── -->
+          <div class="song-group-label">Sirens Within EP</div>
+
+          <div class="song-row" data-embed="https://open.spotify.com/embed/track/1MJ91Hp8im3ycBjEjqOUry?utm_source=generator" role="button" tabindex="0" aria-label="Play Home">
+            <span class="song-number">1</span>
+            <span class="song-title">Home</span>
+            <span class="song-duration"></span>
+            <button class="song-play-btn" aria-label="Play">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+
+          <div class="song-row" data-embed="https://open.spotify.com/embed/track/254VRIw9ChV5fCh6GE1dW4?utm_source=generator" role="button" tabindex="0" aria-label="Play Distance">
+            <span class="song-number">2</span>
+            <span class="song-title">Distance</span>
+            <span class="song-duration"></span>
+            <button class="song-play-btn" aria-label="Play">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+
+          <div class="song-row" data-embed="https://open.spotify.com/embed/track/0TyHmJgPEzdGpX3F55tmHU?utm_source=generator" role="button" tabindex="0" aria-label="Play Edge of Reason">
+            <span class="song-number">3</span>
+            <span class="song-title">Edge of Reason</span>
+            <span class="song-duration"></span>
+            <button class="song-play-btn" aria-label="Play">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+
+          <!-- ── Single ── -->
+          <div class="song-group-label">Single</div>
+
+          <div class="song-row" data-embed="https://open.spotify.com/embed/track/4uy1849xLDUFuHkT3wg4if?utm_source=generator" role="button" tabindex="0" aria-label="Play A Dream In Cartagena">
+            <span class="song-number">1</span>
+            <span class="song-title">A Dream In Cartagena</span>
+            <span class="song-duration"></span>
             <button class="song-play-btn" aria-label="Play">
               <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
             </button>
