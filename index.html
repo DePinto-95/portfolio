@@ -12,6 +12,78 @@
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ── Song player (music section) ── */
+    .song-row {
+      display: grid;
+      grid-template-columns: 2.5rem 1fr 2.5rem;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: 0.85rem var(--space-md);
+      cursor: pointer;
+      transition: background var(--transition);
+      border-bottom: 1px solid var(--color-border);
+      user-select: none;
+    }
+
+    .song-row:last-of-type {
+      border-bottom: none;
+    }
+
+    .song-row:hover {
+      background: var(--color-surface);
+    }
+
+    .song-row.is-active {
+      background: rgba(194,113,79,0.07);
+    }
+
+    .song-number {
+      font-size: 0.85rem;
+      color: var(--color-ink-light);
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .song-title {
+      font-weight: 600;
+      color: var(--color-ink);
+      font-size: 0.95rem;
+    }
+
+    .song-row.is-active .song-title {
+      color: var(--color-accent);
+    }
+
+    .song-play-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-full);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-ink-muted);
+      transition: background var(--transition), color var(--transition);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .song-row:hover .song-play-btn,
+    .song-row.is-active .song-play-btn {
+      background: var(--color-accent);
+      color: #fff;
+      border-color: var(--color-accent);
+    }
+
+    #song-player {
+      width: 100%;
+      border: none;
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -278,13 +350,45 @@
        ════════════════════════════════════════════════════════ -->
   <section class="section section--dark" id="music">
     <div class="section-inner">
-      <div class="card card--dark fade-in" style="padding: var(--space-lg); max-width: 600px;">
+      <div class="fade-in" style="max-width: 680px; margin: 0 auto;">
+
+        <!-- Band header -->
         <span class="section-label" style="margin-bottom: var(--space-sm); display: block;">Music</span>
         <h2 style="font-family: var(--font-display); color: #FAF8F5; margin-bottom: 0.5rem;">Irene's Circus</h2>
         <p style="color: rgba(250,248,245,0.65); margin-bottom: 0.35rem;">Indie / Alternative &nbsp;·&nbsp; Gothenburg</p>
-        <p style="color: rgba(250,248,245,0.55); font-size: 0.9rem; margin-bottom: var(--space-md);">
-          Bass &nbsp;·&nbsp; Member
-        </p>
+        <p style="color: rgba(250,248,245,0.55); font-size: 0.9rem; margin-bottom: var(--space-lg);">Bass &nbsp;·&nbsp; Member</p>
+
+        <!-- Song list -->
+        <div style="background: #fff; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border); margin-bottom: var(--space-md);">
+          <div class="song-row" data-embed="https://open.spotify.com/embed/track/00iU8mcEyuLjnR8fCWtlnE?utm_source=generator" role="button" tabindex="0" aria-label="Play Raise Your Voice">
+            <span class="song-number">1</span>
+            <span class="song-title">Raise Your Voice</span>
+            <button class="song-play-btn" aria-label="Play">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <div class="song-row" data-embed="https://open.spotify.com/embed/track/54uVg4J7S4Gsbq368ZT6PS?utm_source=generator" role="button" tabindex="0" aria-label="Play Reality of Thought">
+            <span class="song-number">2</span>
+            <span class="song-title">Reality of Thought</span>
+            <button class="song-play-btn" aria-label="Play">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <div class="song-row" data-embed="https://open.spotify.com/embed/track/254VRIw9ChV5fCh6GE1dW4?utm_source=generator" role="button" tabindex="0" aria-label="Play Distance">
+            <span class="song-number">3</span>
+            <span class="song-title">Distance</span>
+            <button class="song-play-btn" aria-label="Play">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <iframe
+            id="song-player"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            height="152"
+            title="Song player">
+          </iframe>
+        </div>
+
         <a href="pages/band.html" class="btn btn-ghost" target="_blank" rel="noopener">Visit band page &rarr;</a>
       </div>
     </div>
@@ -396,5 +500,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/band.js"></script>
 </body>
 </html>
