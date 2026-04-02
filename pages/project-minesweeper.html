@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minesweeper Solver — Sotiri De Pinto</title>
+  <meta name="description" content="Browser-based Minesweeper solver powered by the Z3 SMT solver. BSc Thesis at VU Amsterdam, 2024." />
+
+  <!-- Google Fonts: Lora (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    /* ── Project-page specific styles ── */
+    .project-header {
+      background: var(--color-surface);
+      padding: calc(var(--space-2xl) + var(--space-md)) var(--space-md) var(--space-xl);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .project-header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .project-header-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      margin-bottom: var(--space-md);
+    }
+
+    .project-header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: var(--space-sm);
+    }
+
+    .project-header .description {
+      font-size: 1.05rem;
+      color: var(--color-ink-muted);
+      max-width: 60ch;
+      margin-bottom: var(--space-lg);
+    }
+
+    .project-header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    /* Two-column body */
+    .project-body {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: var(--space-xl) var(--space-md);
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    /* Narrative */
+    .project-narrative h3 {
+      margin-top: var(--space-lg);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-narrative h3:first-child {
+      margin-top: 0;
+    }
+
+    .project-narrative p {
+      max-width: none;
+      line-height: 1.75;
+    }
+
+    /* Sidebar */
+    .project-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .sidebar-card {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-md);
+    }
+
+    .sidebar-card h4 {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-ink-light);
+      margin-bottom: var(--space-sm);
+    }
+
+    .sidebar-links {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    /* Mobile: sidebar above narrative */
+    @media (max-width: 768px) {
+      .project-body {
+        grid-template-columns: 1fr;
+        padding: var(--space-lg) var(--space-sm);
+      }
+
+      .project-body > .project-narrative {
+        order: 2;
+      }
+
+      .project-body > .project-sidebar {
+        order: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════
+       NAV
+       ════════════════════════════════════════════════════════ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">SD</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#music">Music</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════════
+       PROJECT HEADER
+       ════════════════════════════════════════════════════════ -->
+  <header class="project-header">
+    <div class="project-header-inner">
+
+      <a href="../index.html#projects" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Back to projects
+      </a>
+
+      <div class="project-header-badges">
+        <span class="badge">BSc Thesis · 2024</span>
+        <span class="badge" style="background: rgba(28,28,28,0.07); color: var(--color-ink-muted); border-color: rgba(28,28,28,0.15);">VU Amsterdam</span>
+      </div>
+
+      <h1 class="fade-in">Minesweeper Solver</h1>
+
+      <p class="description fade-in">
+        A browser-based Minesweeper solver that uses the Z3 SMT solver to reason about mine placement.
+        Every deduction is made through formal constraint solving — no guessing, just logic.
+      </p>
+
+      <div class="project-header-actions fade-in">
+        <!-- REPLACE: href="https://github.com/DePinto-95/YOUR_REPO_NAME" -->
+        <a href="#" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub repo
+        </a>
+
+        <!-- REPLACE: href="URL_TO_YOUR_THESIS_PDF" — upload the PDF to assets/ or link to a cloud URL -->
+        <a href="#" class="btn btn-outline" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          Read thesis
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════════════════════
+       PROJECT BODY — two-column layout
+       ════════════════════════════════════════════════════════ -->
+  <div class="project-body">
+
+    <!-- ── LEFT: Narrative ── -->
+    <article class="project-narrative fade-in">
+
+      <h3>What it is</h3>
+      <p>
+        Minesweeper Solver is a browser-based tool that plays Minesweeper using formal constraint
+        reasoning. Rather than applying heuristics or guessing, it encodes the game board as a
+        system of logical constraints and hands them off to the <strong>Z3 SMT solver</strong>,
+        a theorem prover developed at Microsoft Research. Z3 then determines, with mathematical
+        certainty, which cells are safe to reveal and which must contain mines.
+      </p>
+      <p>
+        The solver is designed to make its reasoning <em>visible</em>: each step shows which
+        constraints are active, what Z3 concluded, and why. The goal was to build a bridge between
+        an academic tool (Z3) and an interactive, intuitive interface — so that the formal logic
+        happening under the hood becomes legible to anyone watching.
+      </p>
+
+      <h3>The challenge</h3>
+      <p>
+        The core difficulty was encoding Minesweeper's board state faithfully as SMT constraints.
+        Each revealed cell contributes a numerical clue: the exact number of mines among its
+        neighbours. Translating that into a satisfiable formula — especially as the board evolves
+        move by move — requires careful handling of variable scoping, incremental solving, and
+        conflict resolution when the solver encounters an over-constrained region.
+      </p>
+      <p>
+        A secondary challenge was connecting the Python-based Z3 backend to a live browser interface.
+        The solver runs step-by-step, pausing to visualise each deduction before proceeding to the
+        next move. Getting that synchronisation right — between the solving loop and the DOM updates —
+        required careful coordination of async state on the JavaScript side.
+      </p>
+
+      <h3>What I learned</h3>
+      <p>
+        This project taught me what it really means to apply formal methods outside of a textbook.
+        Z3 is a production-grade tool, and using it properly requires understanding how SMT solving
+        works internally — not just its API. I came away with a much stronger intuition for where
+        formal reasoning is genuinely useful versus where it's overkill.
+      </p>
+      <p>
+        I also learned how much the <em>presentation</em> of a technical system matters. A solver
+        that just outputs answers is a black box. Making the reasoning visible — step by step, in
+        a medium anyone can open in a browser — was the harder design problem, and ultimately the
+        more interesting one.
+      </p>
+
+    </article>
+
+    <!-- ── RIGHT: Sidebar ── -->
+    <aside class="project-sidebar fade-in" style="transition-delay: 0.1s;">
+
+      <!-- Stack -->
+      <div class="sidebar-card">
+        <h4>Stack</h4>
+        <div class="tags">
+          <span class="tag tag--accent">Python</span>
+          <span class="tag tag--accent">Z3 SMT Solver</span>
+          <span class="tag tag--accent">JavaScript</span>
+          <span class="tag tag--accent">HTML / CSS</span>
+          <span class="tag tag--accent">Formal Methods</span>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="sidebar-card">
+        <h4>Links</h4>
+        <div class="sidebar-links">
+          <!-- REPLACE: href="https://github.com/DePinto-95/YOUR_REPO_NAME" -->
+          <a href="#" class="btn btn-sm btn-outline" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub repo
+          </a>
+          <!-- REPLACE: href="URL_TO_YOUR_THESIS_PDF" -->
+          <a href="#" class="btn btn-sm btn-outline" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Thesis PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Info table -->
+      <div class="sidebar-card">
+        <h4>Info</h4>
+        <table class="info-table">
+          <tr>
+            <td>Year</td>
+            <td>2024</td>
+          </tr>
+          <tr>
+            <td>Institution</td>
+            <td>VU Amsterdam</td>
+          </tr>
+          <tr>
+            <td>Type</td>
+            <td>BSc Thesis</td>
+          </tr>
+          <tr>
+            <td>Status</td>
+            <td style="color: #4CAF50; font-weight: 700;">Completed</td>
+          </tr>
+        </table>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <p>&copy; 2025 Sotiri De Pinto</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

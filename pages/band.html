@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Irene's Circus — Sotiri De Pinto</title>
+  <meta name="description" content="Irene's Circus — indie/alternative band based in Gothenburg. Bass: Sotiri De Pinto." />
+
+  <!-- Google Fonts: Lora (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    /* ── Band-page specific styles ── */
+    .band-hero {
+      background: var(--color-dark);
+      padding: calc(var(--space-2xl) + var(--space-lg)) var(--space-md) var(--space-2xl);
+      text-align: center;
+    }
+
+    .band-hero h1 {
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      color: #FAF8F5;
+      letter-spacing: -0.01em;
+    }
+
+    .band-hero .subtitle {
+      color: rgba(250,248,245,0.6);
+      font-size: 1.05rem;
+      margin: 0.75rem auto var(--space-lg);
+      max-width: 40ch;
+    }
+
+    .social-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-xs);
+    }
+
+    .social-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 600;
+      background: rgba(255,255,255,0.08);
+      color: rgba(250,248,245,0.85);
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    .social-pill:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    /* Photos grid */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-sm);
+    }
+
+    .photo-slot {
+      aspect-ratio: 1;
+      background: var(--color-surface-alt);
+      border: 2px dashed var(--color-border);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-ink-light);
+      font-size: 0.85rem;
+      text-align: center;
+      padding: var(--space-sm);
+      gap: 0.5rem;
+      overflow: hidden;
+    }
+
+    .photo-slot svg {
+      opacity: 0.4;
+    }
+
+    /* Song list */
+    .song-list {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .song-row {
+      display: grid;
+      grid-template-columns: 2.5rem 1fr auto 2.5rem;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: 0.85rem var(--space-md);
+      cursor: pointer;
+      transition: background var(--transition);
+      border-bottom: 1px solid var(--color-border);
+      user-select: none;
+    }
+
+    .song-row:last-child {
+      border-bottom: none;
+    }
+
+    .song-row:hover {
+      background: var(--color-surface);
+    }
+
+    .song-row.is-active {
+      background: rgba(194,113,79,0.07);
+    }
+
+    .song-number {
+      font-size: 0.85rem;
+      color: var(--color-ink-light);
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .song-title {
+      font-weight: 600;
+      color: var(--color-ink);
+      font-size: 0.95rem;
+    }
+
+    .song-row.is-active .song-title {
+      color: var(--color-accent);
+    }
+
+    .song-duration {
+      font-size: 0.85rem;
+      color: var(--color-ink-light);
+    }
+
+    .song-play-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-full);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-ink-muted);
+      transition: background var(--transition), color var(--transition);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .song-row:hover .song-play-btn,
+    .song-row.is-active .song-play-btn {
+      background: var(--color-accent);
+      color: #fff;
+      border-color: var(--color-accent);
+    }
+
+    /* Embedded player iframe */
+    #song-player {
+      width: 100%;
+      border: none;
+      border-radius: var(--radius-md);
+      margin-top: var(--space-md);
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════
+       NAV
+       ════════════════════════════════════════════════════════ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">SD</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#music">Music</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════════
+       BAND HERO
+       ════════════════════════════════════════════════════════ -->
+  <header class="band-hero">
+    <div style="max-width: 700px; margin: 0 auto;">
+      <a href="../index.html" class="back-link" style="color: rgba(250,248,245,0.5); margin-bottom: var(--space-md); display: inline-flex; justify-content: center;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Back to portfolio
+      </a>
+
+      <p class="section-label" style="margin-bottom: var(--space-sm);">Music</p>
+      <h1>Irene's Circus</h1>
+      <p class="subtitle">Indie / Alternative &nbsp;·&nbsp; Gothenburg &nbsp;·&nbsp; Bass</p>
+
+      <!-- Social links — REPLACE each href with the real URL for that platform -->
+      <div class="social-pills">
+
+        <!-- REPLACE: href="https://open.spotify.com/artist/YOUR_ARTIST_ID" -->
+        <a href="#" class="social-pill" target="_blank" rel="noopener">
+          <!-- Spotify icon -->
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          Spotify
+        </a>
+
+        <!-- REPLACE: href="https://instagram.com/YOUR_BAND_HANDLE" -->
+        <a href="#" class="social-pill" target="_blank" rel="noopener">
+          <!-- Instagram icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+
+        <!-- REPLACE: href="https://soundcloud.com/YOUR_SOUNDCLOUD_USERNAME" -->
+        <a href="#" class="social-pill" target="_blank" rel="noopener">
+          <!-- SoundCloud icon -->
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M11.56 8.87V17h8.76c1.47 0 2.68-1.18 2.68-2.63 0-1.45-1.21-2.64-2.68-2.64-.28 0-.54.04-.79.1C19.01 9.49 17.31 8 15.23 8c-.75 0-1.45.2-2.05.54-.34.18-.54.39-.54.63H11.56zm-1.12 0H10c-.56 0-1.02.45-1.02 1.01v6.11c0 .56.46 1.01 1.02 1.01.57 0 1.02-.45 1.02-1.01V9.88c0-.56-.45-1.01-1.02-1.01zm-2.1.75c-.5 0-.9.4-.9.89v6.48c0 .49.4.89.9.89s.9-.4.9-.89v-6.48c0-.49-.4-.89-.9-.89zm-2.09.75c-.43 0-.78.35-.78.77v5.85c0 .43.35.77.78.77.43 0 .78-.34.78-.77v-5.85c0-.42-.35-.77-.78-.77zm-2.02.52c-.37 0-.67.3-.67.66v4.97c0 .37.3.66.67.66s.67-.29.67-.66v-4.97c0-.36-.3-.66-.67-.66zm-1.95.26c-.31 0-.56.25-.56.55v4.07c0 .3.25.55.56.55.31 0 .56-.25.56-.55v-4.07c0-.3-.25-.55-.56-.55z"/></svg>
+          SoundCloud
+        </a>
+
+        <!-- REPLACE: href="https://youtube.com/@YOUR_CHANNEL_HANDLE" -->
+        <a href="#" class="social-pill" target="_blank" rel="noopener">
+          <!-- YouTube icon -->
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="#1a1714" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          YouTube
+        </a>
+
+        <!-- REPLACE: href="https://YOUR_BAND_NAME.bandcamp.com" -->
+        <a href="#" class="social-pill" target="_blank" rel="noopener">
+          <!-- Bandcamp icon -->
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M0 18.75l7.437-13.5H24l-7.438 13.5z"/></svg>
+          Bandcamp
+        </a>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════════════════════
+       PHOTOS
+       ════════════════════════════════════════════════════════ -->
+  <section class="section" id="photos">
+    <div class="section-inner">
+      <span class="section-label fade-in">Gallery</span>
+      <h2 class="section-title fade-in">Photos</h2>
+
+      <!--
+        HOW TO ADD BAND PHOTOS:
+        Replace each .photo-slot div with an <img> tag, like this:
+
+        <div style="aspect-ratio:1; border-radius: var(--radius-md); overflow: hidden;">
+          <img src="../assets/band-photo-1.jpg" alt="Irene's Circus live at [venue]"
+               style="width:100%; height:100%; object-fit:cover;" />
+        </div>
+
+        Recommended: use square or landscape images, stored in the assets/ folder.
+      -->
+      <div class="photo-grid fade-in-group">
+
+        <!-- Photo slot 1 — replace with real image (see comment above) -->
+        <div class="photo-slot">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Photo coming soon</span>
+        </div>
+
+        <!-- Photo slot 2 — replace with real image -->
+        <div class="photo-slot">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Photo coming soon</span>
+        </div>
+
+        <!-- Photo slot 3 — replace with real image -->
+        <div class="photo-slot">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Photo coming soon</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       SONGS / PLAYER
+       ════════════════════════════════════════════════════════ -->
+  <section class="section section--surface" id="songs">
+    <div class="section-inner">
+      <span class="section-label fade-in">Listen</span>
+      <h2 class="section-title fade-in">Songs</h2>
+      <p class="section-subtitle fade-in">Click a track to play it inline.</p>
+
+      <!--
+        HOW TO ADD MORE SONGS:
+        1. Duplicate one of the .song-row divs below.
+        2. Update the track number, song title, and duration.
+        3. Replace the data-embed value with the Spotify or SoundCloud embed URL.
+
+        To get a Spotify embed URL:
+          - Open Spotify in browser, go to the track.
+          - Click the three dots (…) → Share → Embed track.
+          - Copy the src URL from the iframe code (looks like:
+            https://open.spotify.com/embed/track/TRACK_ID?utm_source=generator)
+
+        To get a SoundCloud embed URL:
+          - Open the track on SoundCloud.
+          - Click Share → Embed.
+          - Copy the src URL from the iframe code.
+      -->
+      <div class="fade-in">
+        <div class="song-list">
+
+          <!-- Song 1 — REPLACE data-embed with Spotify/SoundCloud embed URL -->
+          <!-- REPLACE: data-embed="https://open.spotify.com/embed/track/YOUR_TRACK_ID?utm_source=generator" -->
+          <div class="song-row" data-embed="#" role="button" tabindex="0" aria-label="Play Song Title One">
+            <span class="song-number">1</span>
+            <span class="song-title">Song Title One</span>
+            <span class="song-duration">3:24</span>
+            <button class="song-play-btn" aria-label="Play">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+
+          <!-- Song 2 — REPLACE data-embed with Spotify/SoundCloud embed URL -->
+          <!-- REPLACE: data-embed="https://open.spotify.com/embed/track/YOUR_TRACK_ID?utm_source=generator" -->
+          <div class="song-row" data-embed="#" role="button" tabindex="0" aria-label="Play Song Title Two">
+            <span class="song-number">2</span>
+            <span class="song-title">Song Title Two</span>
+            <span class="song-duration">4:11</span>
+            <button class="song-play-btn" aria-label="Play">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+
+          <!-- Song 3 — REPLACE data-embed with Spotify/SoundCloud embed URL -->
+          <!-- REPLACE: data-embed="https://open.spotify.com/embed/track/YOUR_TRACK_ID?utm_source=generator" -->
+          <div class="song-row" data-embed="#" role="button" tabindex="0" aria-label="Play Song Title Three">
+            <span class="song-number">3</span>
+            <span class="song-title">Song Title Three</span>
+            <span class="song-duration">3:55</span>
+            <button class="song-play-btn" aria-label="Play">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Embedded player — controlled by band.js. Do not remove the id. -->
+        <iframe
+          id="song-player"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          height="152"
+          loading="lazy"
+          title="Song player">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <p>&copy; 2025 Sotiri De Pinto</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/band.js"></script>
+</body>
+</html>

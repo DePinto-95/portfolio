@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sotiri De Pinto — Software Developer</title>
+  <meta name="description" content="Personal portfolio of Sotiri De Pinto, MSc Computer Science student at Chalmers University of Technology." />
+
+  <!-- Google Fonts: Lora (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════
+       NAV
+       ════════════════════════════════════════════════════════ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">SD</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#music">Music</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════════
+       HERO
+       ════════════════════════════════════════════════════════ -->
+  <section class="section" id="hero" style="padding-top: calc(var(--space-2xl) + var(--space-lg)); padding-bottom: var(--space-2xl);">
+    <div class="section-inner">
+      <div style="display: flex; align-items: center; gap: var(--space-lg); flex-wrap: wrap;">
+
+        <!-- Avatar — replace with a real photo by swapping the initials div below
+             for: <img src="assets/photo.jpg" alt="Sotiri De Pinto" />
+             inside the .avatar element. Recommended size: 400×400px, square crop. -->
+        <div class="avatar" style="width: 110px; height: 110px; font-size: 2.2rem;">SD</div>
+
+        <div style="flex: 1; min-width: 260px;">
+          <span class="section-label fade-in">Welcome</span>
+          <h1 class="fade-in" style="transition-delay: 0.05s;">Sotiri De Pinto</h1>
+          <p style="font-size: 1.15rem; color: var(--color-accent); font-weight: 600; margin: 0.5rem 0 var(--space-sm); font-family: var(--font-display);" class="fade-in">
+            Software Developer &amp; MSc Student
+          </p>
+          <p class="fade-in" style="font-size: 1rem; margin-bottom: var(--space-md);">
+            MSc Computer Science candidate at Chalmers University of Technology, graduating June 2026.
+            I build tools at the intersection of formal methods and software engineering —
+            and I play bass on the side.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm);" class="fade-in">
+            <a href="#projects" class="btn btn-primary">See my work</a>
+            <a href="#contact" class="btn btn-outline">Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       ABOUT
+       ════════════════════════════════════════════════════════ -->
+  <section class="section section--surface" id="about">
+    <div class="section-inner">
+      <span class="section-label fade-in">About me</span>
+      <h2 class="section-title fade-in">A bit about who I am</h2>
+      <p class="section-subtitle fade-in">Greek, based in Gothenburg. Interested in program analysis, compilers, and the occasional bass riff.</p>
+
+      <!-- About cards — edit the content inside each card freely -->
+      <div class="card-grid fade-in-group">
+
+        <!-- Education card -->
+        <div class="card">
+          <div class="card-icon">🎓</div>
+          <h3>Education</h3>
+          <p style="margin-top: 0.5rem;">
+            <strong>MSc Computer Science</strong><br />
+            Chalmers University of Technology, Gothenburg<br />
+            <em>Graduating June 2026</em>
+          </p>
+          <hr class="divider" style="margin: var(--space-sm) 0;" />
+          <p>
+            <strong>BSc Computer Science</strong><br />
+            Vrije Universiteit Amsterdam
+          </p>
+        </div>
+
+        <!-- Research card -->
+        <div class="card">
+          <div class="card-icon">🔬</div>
+          <h3>Research Focus</h3>
+          <p style="margin-top: 0.5rem;">
+            My MSc thesis is <strong>PermissionPruner</strong> — a static analysis tool for Android APK debloating.
+            It removes unnecessary permissions from apps without breaking functionality,
+            using program analysis on compiled bytecode.
+          </p>
+        </div>
+
+        <!-- Music card -->
+        <div class="card">
+          <div class="card-icon">🎸</div>
+          <h3>Music</h3>
+          <p style="margin-top: 0.5rem;">
+            I play <strong>bass</strong> in <strong>Irene's Circus</strong>, an indie/alternative band based in Gothenburg.
+            I also play guitar independently for personal enjoyment.
+          </p>
+          <div style="margin-top: var(--space-sm);">
+            <a href="pages/band.html" class="btn btn-sm btn-outline">Visit band page</a>
+          </div>
+        </div>
+
+        <!-- Football card -->
+        <div class="card">
+          <div class="card-icon">⚽</div>
+          <h3>Football</h3>
+          <p style="margin-top: 0.5rem;">
+            Playing since age 6. Reached academy level until 18 and still active at amateur level today.
+            Football has shaped how I approach teamwork and persistence.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       PROJECTS
+       ════════════════════════════════════════════════════════ -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <span class="section-label fade-in">Work</span>
+      <h2 class="section-title fade-in">Projects</h2>
+      <p class="section-subtitle fade-in">Things I've built and researched.</p>
+
+      <!--
+        HOW TO ADD A NEW PROJECT CARD:
+        1. Copy one of the .card blocks below.
+        2. Update the card-icon, h3, description p, tags, and the link href.
+        3. Remove the "card--coming-soon" class if it's a real project.
+        4. Add the card inside the .card-grid div.
+      -->
+      <div class="card-grid card-grid--2 fade-in-group">
+
+        <!-- ── Minesweeper Solver (real project) ── -->
+        <div class="card">
+          <div class="card-icon">💣</div>
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;">
+            <div>
+              <span class="badge" style="margin-bottom: 0.5rem; display: inline-block;">BSc Thesis · 2024</span>
+              <h3 style="margin-top: 0.25rem;">Minesweeper Solver</h3>
+            </div>
+          </div>
+          <p style="margin-top: 0.5rem;">
+            A browser-based Minesweeper solver powered by the Z3 SMT solver.
+            Makes formal constraint reasoning visible step by step.
+          </p>
+          <div class="tags" style="margin: var(--space-sm) 0;">
+            <span class="tag">Python</span>
+            <span class="tag">Z3 SMT</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Formal Methods</span>
+          </div>
+          <a href="pages/project-minesweeper.html" class="btn btn-sm btn-primary" style="margin-top: 0.5rem;">View project</a>
+        </div>
+
+        <!-- ── PermissionPruner (coming soon) ── -->
+        <div class="card card--coming-soon">
+          <div class="card-icon">🔒</div>
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;">
+            <div>
+              <span class="badge" style="margin-bottom: 0.5rem; display: inline-block; opacity: 0.7;">MSc Thesis · In Progress</span>
+              <h3 style="margin-top: 0.25rem;">PermissionPruner</h3>
+            </div>
+            <span class="tag" style="white-space: nowrap; flex-shrink: 0;">Coming soon</span>
+          </div>
+          <p style="margin-top: 0.5rem;">
+            Android APK debloating via static analysis. Removes over-privileged permissions
+            without breaking app functionality, using bytecode analysis with dexlib2.
+          </p>
+          <div class="tags" style="margin-top: var(--space-sm);">
+            <span class="tag">Java</span>
+            <span class="tag">dexlib2</span>
+            <span class="tag">Static Analysis</span>
+            <span class="tag">Android</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       MUSIC / BAND TEASER
+       ════════════════════════════════════════════════════════ -->
+  <section class="section section--dark" id="music">
+    <div class="section-inner">
+      <div class="card card--dark fade-in" style="padding: var(--space-lg); max-width: 600px;">
+        <span class="section-label" style="margin-bottom: var(--space-sm); display: block;">Music</span>
+        <h2 style="font-family: var(--font-display); color: #FAF8F5; margin-bottom: 0.5rem;">Irene's Circus</h2>
+        <p style="color: rgba(250,248,245,0.65); margin-bottom: 0.35rem;">Indie / Alternative &nbsp;·&nbsp; Gothenburg</p>
+        <p style="color: rgba(250,248,245,0.55); font-size: 0.9rem; margin-bottom: var(--space-md);">
+          Bass &nbsp;·&nbsp; Member
+        </p>
+        <a href="pages/band.html" class="btn btn-ghost">Visit band page &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       SKILLS
+       ════════════════════════════════════════════════════════ -->
+  <section class="section section--surface" id="skills">
+    <div class="section-inner">
+      <span class="section-label fade-in">Expertise</span>
+      <h2 class="section-title fade-in">Skills</h2>
+      <p class="section-subtitle fade-in">Languages, tools, and concepts I work with.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-lg);" class="fade-in-group">
+
+        <div class="skill-cluster">
+          <div class="skill-cluster-label">Languages</div>
+          <div class="tags">
+            <span class="tag tag--accent">Java</span>
+            <span class="tag tag--accent">Python</span>
+            <span class="tag tag--accent">C / C++</span>
+            <span class="tag tag--accent">JavaScript</span>
+            <span class="tag tag--accent">Scala</span>
+            <span class="tag tag--accent">HTML / CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-cluster">
+          <div class="skill-cluster-label">Concepts</div>
+          <div class="tags">
+            <span class="tag">Program Analysis</span>
+            <span class="tag">Algorithms</span>
+            <span class="tag">Formal Methods</span>
+            <span class="tag">Cryptography</span>
+            <span class="tag">Compilers</span>
+            <span class="tag">Machine Learning</span>
+          </div>
+        </div>
+
+        <div class="skill-cluster">
+          <div class="skill-cluster-label">Tools</div>
+          <div class="tags">
+            <span class="tag">Git</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Z3 Solver</span>
+            <span class="tag">dexlib2</span>
+            <span class="tag">Linux</span>
+          </div>
+        </div>
+
+        <div class="skill-cluster">
+          <div class="skill-cluster-label">Other</div>
+          <div class="tags">
+            <span class="tag">Technical Writing</span>
+            <span class="tag">Teaching / TA</span>
+            <span class="tag">IT Management</span>
+            <span class="tag">Coaching</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       CONTACT
+       ════════════════════════════════════════════════════════ -->
+  <section class="section section--dark" id="contact">
+    <div class="section-inner">
+      <span class="section-label fade-in">Get in touch</span>
+      <h2 class="fade-in" style="color: #FAF8F5; margin-bottom: 0.5rem;">Let's talk</h2>
+      <p class="fade-in" style="color: rgba(250,248,245,0.65); max-width: 45ch; margin-bottom: 0;">
+        Open to software developer roles from June 2026 onwards.
+        Feel free to reach out via email or find me on LinkedIn and GitHub.
+      </p>
+      <div class="contact-actions fade-in">
+
+        <!-- REPLACE: Change the href value to your actual email address
+             Format: href="mailto:your.email@example.com" -->
+        <a href="mailto:your.email@example.com" class="btn btn-primary">
+          <!-- Mail icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          Email me
+        </a>
+
+        <!-- REPLACE: Change the href to your LinkedIn profile URL
+             Format: href="https://linkedin.com/in/your-username" -->
+        <a href="https://linkedin.com/in/your-linkedin-username" class="btn btn-ghost" target="_blank" rel="noopener">
+          <!-- LinkedIn icon -->
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+
+        <!-- REPLACE: Change the href to your GitHub profile URL
+             Format: href="https://github.com/DePinto-95" -->
+        <a href="https://github.com/DePinto-95" class="btn btn-ghost" target="_blank" rel="noopener">
+          <!-- GitHub icon -->
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <p>&copy; 2025 Sotiri De Pinto</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
