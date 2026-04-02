@@ -161,23 +161,28 @@
         <span class="badge" style="background: rgba(28,28,28,0.07); color: var(--color-ink-muted); border-color: rgba(28,28,28,0.15);">VU Amsterdam</span>
       </div>
 
-      <h1 class="fade-in">Minesweeper Solver</h1>
+      <h1 class="fade-in">An Interactive Minesweeper Solver Using an SMT Solver</h1>
 
       <p class="description fade-in">
-        A browser-based Minesweeper solver that uses the Z3 SMT solver to reason about mine placement.
-        Every deduction is made through formal constraint solving — no guessing, just logic.
+        A terminal-based Minesweeper solver written in Scala that uses the Z3 SMT solver to
+        reason about mine placement with mathematical certainty. Every deduction is derived from
+        formal constraint solving — no guessing, no heuristics.
+        The solver is ported to JavaScript and playable in the browser below.
       </p>
 
       <div class="project-header-actions fade-in">
+        <a href="minesweeper-game.html" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+          Play with solver
+        </a>
         <!-- REPLACE: href="https://github.com/DePinto-95/YOUR_REPO_NAME" -->
-        <a href="#" class="btn btn-primary" target="_blank" rel="noopener">
+        <a href="#" class="btn btn-outline" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
           GitHub repo
         </a>
-
         <!-- REPLACE: href="URL_TO_YOUR_THESIS_PDF" — upload the PDF to assets/ or link to a cloud URL -->
         <a href="#" class="btn btn-outline" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
           Read thesis
         </a>
       </div>
@@ -194,46 +199,46 @@
 
       <h3>What it is</h3>
       <p>
-        Minesweeper Solver is a browser-based tool that plays Minesweeper using formal constraint
-        reasoning. Rather than applying heuristics or guessing, it encodes the game board as a
-        system of logical constraints and hands them off to the <strong>Z3 SMT solver</strong>,
-        a theorem prover developed at Microsoft Research. Z3 then determines, with mathematical
-        certainty, which cells are safe to reveal and which must contain mines.
+        This BSc thesis implements an interactive, terminal-based Minesweeper solver in <strong>Scala</strong>
+        that uses the <strong>Z3 SMT solver</strong> (Microsoft Research) to reason about mine
+        placement with mathematical certainty. Rather than guessing or applying heuristics,
+        it encodes the board state as a system of integer constraints and runs Z3 via Linux system
+        calls to determine which cells are definitively safe and which are definitively mines.
       </p>
       <p>
-        The solver is designed to make its reasoning <em>visible</em>: each step shows which
-        constraints are active, what Z3 concluded, and why. The goal was to build a bridge between
-        an academic tool (Z3) and an interactive, intuitive interface — so that the formal logic
-        happening under the hood becomes legible to anyone watching.
+        The program maintains three maps in parallel: the <em>shown map</em> (what the player sees),
+        the <em>full map</em> (the ground-truth board), and the <em>bomb map</em> (Z3 variables:
+        0 = safe, 1 = mine, −1 = unknown). After each move the solver runs, outputs confirmed safe
+        cells and mine locations, and the player chooses where to click next.
       </p>
 
-      <h3>The challenge</h3>
+      <h3>How the solver works</h3>
       <p>
-        The core difficulty was encoding Minesweeper's board state faithfully as SMT constraints.
-        Each revealed cell contributes a numerical clue: the exact number of mines among its
-        neighbours. Translating that into a satisfiable formula — especially as the board evolves
-        move by move — requires careful handling of variable scoping, incremental solving, and
-        conflict resolution when the solver encounters an over-constrained region.
+        For each opened cell with number <em>n</em>, a constraint is generated:
+        the sum of its unrevealed, unflagged neighbour variables equals <em>n</em>.
+        Z3 finds one satisfying assignment, then — for each frontier cell with value <em>v</em>
+        in that assignment — re-runs with an extra constraint forcing the cell to <em>1−v</em>.
+        If Z3 returns <em>unsat</em>, the original value is certain.
+        If it finds another solution, the cell remains ambiguous (−1 in the bomb map).
       </p>
       <p>
-        A secondary challenge was connecting the Python-based Z3 backend to a live browser interface.
-        The solver runs step-by-step, pausing to visualise each deduction before proceeding to the
-        next move. Getting that synchronisation right — between the solving loop and the DOM updates —
-        required careful coordination of async state on the JavaScript side.
+        This verify-by-negation loop is the core contribution: it gives provably correct deductions
+        at every step, not just a single satisfying assignment. The solver also handles the
+        unsatisfiable case — when no certain move exists — and tells the player they must guess.
       </p>
 
       <h3>What I learned</h3>
       <p>
-        This project taught me what it really means to apply formal methods outside of a textbook.
-        Z3 is a production-grade tool, and using it properly requires understanding how SMT solving
-        works internally — not just its API. I came away with a much stronger intuition for where
-        formal reasoning is genuinely useful versus where it's overkill.
+        Building this forced a deep understanding of how SMT solvers work internally, not just
+        how to call their API. Encoding Minesweeper's rules as integer constraints required careful
+        reasoning about variable scoping, constraint completeness, and incremental solving as the
+        board evolved move by move.
       </p>
       <p>
-        I also learned how much the <em>presentation</em> of a technical system matters. A solver
-        that just outputs answers is a black box. Making the reasoning visible — step by step, in
-        a medium anyone can open in a browser — was the harder design problem, and ultimately the
-        more interesting one.
+        The project also showed me the limits of formal reasoning in games with imperfect information:
+        even a perfect SMT-based solver eventually hits configurations where no certain move exists,
+        and the player must accept probabilistic risk. That boundary between logic and probability
+        turned out to be one of the most interesting parts of the thesis.
       </p>
 
     </article>
@@ -245,11 +250,12 @@
       <div class="sidebar-card">
         <h4>Stack</h4>
         <div class="tags">
-          <span class="tag tag--accent">Python</span>
+          <span class="tag tag--accent">Scala</span>
           <span class="tag tag--accent">Z3 SMT Solver</span>
-          <span class="tag tag--accent">JavaScript</span>
-          <span class="tag tag--accent">HTML / CSS</span>
+          <span class="tag tag--accent">ScalaZ3</span>
+          <span class="tag tag--accent">Linux / Ubuntu</span>
           <span class="tag tag--accent">Formal Methods</span>
+          <span class="tag tag--accent">JavaScript (browser port)</span>
         </div>
       </div>
 

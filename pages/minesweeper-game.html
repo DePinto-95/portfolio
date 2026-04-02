@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minesweeper</title>
+  <title>Minesweeper — Sotiri De Pinto</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -16,6 +16,7 @@
       min-height: 100vh;
       font-family: 'Segoe UI', sans-serif;
       color: #eee;
+      padding: 20px;
     }
 
     h1 {
@@ -59,7 +60,7 @@
       border: 2px solid #0f3460;
       border-radius: 10px;
       padding: 10px 24px;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
       font-size: 1.1rem;
       min-width: 280px;
       justify-content: space-between;
@@ -76,6 +77,55 @@
     }
     #reset-btn:hover { transform: scale(1.3); }
 
+    /* ── Solver button ──────────────────────────────────── */
+    #solver-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #solver-btn {
+      padding: 7px 18px;
+      border: 2px solid #4a9eff;
+      background: #16213e;
+      color: #4a9eff;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s;
+      letter-spacing: 0.05em;
+    }
+
+    #solver-btn:hover { background: rgba(74,158,255,0.1); }
+    #solver-btn.active { background: #4a9eff; color: #fff; }
+
+    #solver-status {
+      font-size: 0.78rem;
+      color: #556;
+      min-height: 1.2em;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    #solver-status.has-result { color: #aaa; }
+
+    /* ── Solver legend ──────────────────────────────────── */
+    #solver-legend {
+      display: none;
+      gap: 16px;
+      margin-bottom: 8px;
+      font-size: 0.78rem;
+    }
+    #solver-legend.visible { display: flex; }
+    .legend-item { display: flex; align-items: center; gap: 6px; }
+    .legend-dot { width: 12px; height: 12px; border-radius: 2px; flex-shrink: 0; }
+    .legend-dot.safe { background: #00e676; }
+    .legend-dot.mine { background: #ff1744; }
+
+    /* ── Board ──────────────────────────────────────────── */
     #board-wrap {
       border: 3px solid #0f3460;
       border-radius: 8px;
@@ -102,26 +152,17 @@
       user-select: none;
       border: 1px solid #1a2a5e;
       transition: background 0.1s;
+      position: relative;
     }
 
-    .cell.covered {
-      background: #1e3a6e;
-      border: 1px solid #2a4a8e;
-    }
-
-    .cell.covered:hover {
-      background: #2a4a8e;
-    }
-
-    .cell.flagged { background: #1e3a6e; }
-    .cell.flagged::after { content: '🚩'; font-size: 1rem; }
-
+    .cell.covered { background: #1e3a6e; border: 1px solid #2a4a8e; }
+    .cell.covered:hover { background: #2a4a8e; }
+    .cell.flagged  { background: #1e3a6e; }
+    .cell.flagged::after  { content: '🚩'; font-size: 1rem; }
     .cell.question { background: #1e3a6e; }
     .cell.question::after { content: '❓'; font-size: 1rem; }
-
     .cell.revealed { cursor: default; }
-
-    .cell.mine-hit { background: #e94560 !important; }
+    .cell.mine-hit      { background: #e94560 !important; }
     .cell.mine-revealed { background: #12102a; }
 
     .n1 { color: #4fc3f7; }
@@ -133,6 +174,36 @@
     .n7 { color: #f06292; }
     .n8 { color: #cfd8dc; }
 
+    /* ── Solver cell highlights ─────────────────────────── */
+    .cell.solver-safe {
+      background: #0a2a18 !important;
+      box-shadow: inset 0 0 0 2px #00e676;
+    }
+    .cell.solver-safe::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 230, 118, 0.15);
+      pointer-events: none;
+    }
+    .cell.solver-mine {
+      background: #220a0a !important;
+      box-shadow: inset 0 0 0 2px #ff1744;
+    }
+    .cell.solver-mine::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 23, 68, 0.18);
+      pointer-events: none;
+    }
+
+    @keyframes solverPulse {
+      0%   { opacity: 0.3; } 60%  { opacity: 1; } 100% { opacity: 1; }
+    }
+    .cell.solver-new { animation: solverPulse 0.4s ease-out; }
+
+    /* ── Footer area ────────────────────────────────────── */
     #message {
       margin-top: 14px;
       font-size: 1.3rem;
@@ -148,11 +219,24 @@
       color: #667;
       text-align: center;
     }
-
     #best-times span { color: #aaa; }
+
+    /* ── Back link ──────────────────────────────────────── */
+    #back-link {
+      position: fixed;
+      top: 14px;
+      left: 16px;
+      font-size: 0.8rem;
+      color: #446;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    #back-link:hover { color: #aaa; }
   </style>
 </head>
 <body>
+
+<a href="../index.html#projects" id="back-link">← Portfolio</a>
 
 <h1>Minesweeper</h1>
 
@@ -168,259 +252,582 @@
   <div>⏱ <span id="timer">0</span>s</div>
 </div>
 
+<!-- Solver toggle -->
+<div id="solver-row">
+  <button id="solver-btn" title="BSc thesis SMT solver — identifies safe cells and mines with certainty">
+    🔍 Enable Solver
+  </button>
+</div>
+<div id="solver-status"></div>
+
+<div id="solver-legend">
+  <div class="legend-item">
+    <div class="legend-dot safe"></div>
+    <span style="color:#9af;">Definitely safe</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-dot mine"></div>
+    <span style="color:#f99;">Definitely a mine</span>
+  </div>
+</div>
+
 <div id="board-wrap"><div id="board"></div></div>
 
 <div id="message"></div>
-<div id="best-times">Best — Beginner: <span id="best-b">—</span> | Intermediate: <span id="best-i">—</span> | Expert: <span id="best-e">—</span></div>
+<div id="best-times">
+  Best — Beginner: <span id="best-b">—</span> |
+  Intermediate: <span id="best-i">—</span> |
+  Expert: <span id="best-e">—</span>
+</div>
 
 <script>
-  const DIFFS = {
-    Beginner: { rows: 9, cols: 9, mines: 10, key: 'best-b' },
-    Intermediate: { rows: 16, cols: 16, mines: 40, key: 'best-i' },
-    Expert: { rows: 16, cols: 30, mines: 99, key: 'best-e' }
-  };
+/* ============================================================
+   GAME STATE
+   ============================================================ */
+const DIFFS = {
+  Beginner:     { rows: 9,  cols: 9,  mines: 10, key: 'best-b' },
+  Intermediate: { rows: 16, cols: 16, mines: 40, key: 'best-i' },
+  Expert:       { rows: 16, cols: 30, mines: 99, key: 'best-e' },
+};
 
-  let rows, cols, mineCount, board, revealed, flagged, question,
-      gameOver, won, firstClick, timerInterval, elapsed, currentDiff;
+let rows, cols, mineCount, board, revealed, flagged, question,
+    gameOver, won, firstClick, timerInterval, elapsed, currentDiff;
 
-  const boardEl    = document.getElementById('board');
-  const mineEl     = document.getElementById('mine-count');
-  const timerEl    = document.getElementById('timer');
-  const resetBtn   = document.getElementById('reset-btn');
-  const messageEl  = document.getElementById('message');
+const boardEl   = document.getElementById('board');
+const mineEl    = document.getElementById('mine-count');
+const timerEl   = document.getElementById('timer');
+const resetBtn  = document.getElementById('reset-btn');
+const messageEl = document.getElementById('message');
 
-  // Load best times
-  function getBest(key) {
-    const v = localStorage.getItem(key);
-    return v ? parseInt(v) : null;
+/* ── Best times ─────────────────────────────────────────── */
+function getBest(key) {
+  const v = localStorage.getItem(key);
+  return v ? parseInt(v) : null;
+}
+function setBest(key, val) {
+  const cur = getBest(key);
+  if (cur === null || val < cur) { localStorage.setItem(key, val); return true; }
+  return false;
+}
+function refreshBestDisplay() {
+  Object.values(DIFFS).forEach(d => {
+    const el = document.getElementById(d.key);
+    el.textContent = getBest(d.key) !== null ? getBest(d.key) + 's' : '—';
+  });
+}
+
+/* ── Init ───────────────────────────────────────────────── */
+function initGame(r, c, m, diff) {
+  rows = r; cols = c; mineCount = m; currentDiff = diff;
+  board    = Array.from({ length: rows }, () => Array(cols).fill(0));
+  revealed = Array.from({ length: rows }, () => Array(cols).fill(false));
+  flagged  = Array.from({ length: rows }, () => Array(cols).fill(false));
+  question = Array.from({ length: rows }, () => Array(cols).fill(false));
+  gameOver = false; won = false; firstClick = true; elapsed = 0;
+  clearInterval(timerInterval);
+  timerEl.textContent   = '0';
+  mineEl.textContent    = mineCount;
+  messageEl.textContent = '';
+  resetBtn.textContent  = '🙂';
+  clearSolverHighlights();
+  setSolverStatus('');
+  renderBoard();
+}
+
+/* ── Mine placement (first-click safe zone) ─────────────── */
+function placeMines(safeR, safeC) {
+  let placed = 0;
+  while (placed < mineCount) {
+    const r = Math.floor(Math.random() * rows);
+    const c = Math.floor(Math.random() * cols);
+    if (board[r][c] === -1) continue;
+    if (Math.abs(r - safeR) <= 1 && Math.abs(c - safeC) <= 1) continue;
+    board[r][c] = -1;
+    placed++;
   }
-  function setBest(key, val) {
-    const cur = getBest(key);
-    if (cur === null || val < cur) {
-      localStorage.setItem(key, val);
-      return true;
-    }
-    return false;
-  }
-  function refreshBestDisplay() {
-    Object.values(DIFFS).forEach(d => {
-      const el = document.getElementById(d.key);
-      const v = getBest(d.key);
-      el.textContent = v !== null ? v + 's' : '—';
-    });
-  }
-
-  function initGame(r, c, m, diff) {
-    rows = r; cols = c; mineCount = m; currentDiff = diff;
-    board = Array.from({length: rows}, () => Array(cols).fill(0));
-    revealed = Array.from({length: rows}, () => Array(cols).fill(false));
-    flagged  = Array.from({length: rows}, () => Array(cols).fill(false));
-    question = Array.from({length: rows}, () => Array(cols).fill(false));
-    gameOver = false; won = false; firstClick = true; elapsed = 0;
-    clearInterval(timerInterval);
-    timerEl.textContent = '0';
-    mineEl.textContent = mineCount;
-    messageEl.textContent = '';
-    resetBtn.textContent = '🙂';
-    renderBoard();
-  }
-
-  function placeMines(safeR, safeC) {
-    let placed = 0;
-    while (placed < mineCount) {
-      const r = Math.floor(Math.random() * rows);
-      const c = Math.floor(Math.random() * cols);
-      if (board[r][c] === -1) continue;
-      if (Math.abs(r - safeR) <= 1 && Math.abs(c - safeC) <= 1) continue;
-      board[r][c] = -1;
-      placed++;
-    }
-    for (let r = 0; r < rows; r++) {
-      for (let c = 0; c < cols; c++) {
-        if (board[r][c] === -1) continue;
+  for (let r = 0; r < rows; r++)
+    for (let c = 0; c < cols; c++)
+      if (board[r][c] !== -1)
         board[r][c] = neighbors(r, c).filter(([nr, nc]) => board[nr][nc] === -1).length;
-      }
+}
+
+/* ── Neighbors (same as thesis findNeighbours) ──────────── */
+function neighbors(r, c) {
+  const res = [];
+  for (let dr = -1; dr <= 1; dr++)
+    for (let dc = -1; dc <= 1; dc++) {
+      if (!dr && !dc) continue;
+      const nr = r + dr, nc = c + dc;
+      if (nr >= 0 && nr < rows && nc >= 0 && nc < cols)
+        res.push([nr, nc]);
     }
-  }
+  return res;
+}
 
-  function neighbors(r, c) {
-    const res = [];
-    for (let dr = -1; dr <= 1; dr++)
-      for (let dc = -1; dc <= 1; dc++) {
-        if (!dr && !dc) continue;
-        const nr = r + dr, nc = c + dc;
-        if (nr >= 0 && nr < rows && nc >= 0 && nc < cols)
-          res.push([nr, nc]);
-      }
-    return res;
-  }
+/* ── Render board ───────────────────────────────────────── */
+function renderBoard() {
+  boardEl.style.gridTemplateColumns = `repeat(${cols}, 32px)`;
+  boardEl.innerHTML = '';
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const cell = document.createElement('div');
+      cell.className = 'cell';
+      cell.dataset.r = r;
+      cell.dataset.c = c;
 
-  function renderBoard() {
-    boardEl.style.gridTemplateColumns = `repeat(${cols}, 32px)`;
-    boardEl.innerHTML = '';
-    for (let r = 0; r < rows; r++) {
-      for (let c = 0; c < cols; c++) {
-        const cell = document.createElement('div');
-        cell.className = 'cell';
-        cell.dataset.r = r;
-        cell.dataset.c = c;
-
-        if (revealed[r][c]) {
-          cell.classList.add('revealed');
-          if (board[r][c] === -1) {
-            cell.classList.add('mine-revealed');
-            cell.textContent = '💣';
-          } else if (board[r][c] > 0) {
-            cell.textContent = board[r][c];
-            cell.classList.add('n' + board[r][c]);
-          }
-        } else if (flagged[r][c]) {
-          cell.classList.add('covered', 'flagged');
-        } else if (question[r][c]) {
-          cell.classList.add('covered', 'question');
-        } else {
-          cell.classList.add('covered');
+      if (revealed[r][c]) {
+        cell.classList.add('revealed');
+        if (board[r][c] === -1) {
+          cell.classList.add('mine-revealed');
+          cell.textContent = '💣';
+        } else if (board[r][c] > 0) {
+          cell.textContent = board[r][c];
+          cell.classList.add('n' + board[r][c]);
         }
-
-        cell.addEventListener('click', onLeftClick);
-        cell.addEventListener('contextmenu', onRightClick);
-        cell.addEventListener('dblclick', onDoubleClick);
-        boardEl.appendChild(cell);
+      } else if (flagged[r][c]) {
+        cell.classList.add('covered', 'flagged');
+      } else if (question[r][c]) {
+        cell.classList.add('covered', 'question');
+      } else {
+        cell.classList.add('covered');
       }
+
+      cell.addEventListener('click',       onLeftClick);
+      cell.addEventListener('contextmenu', onRightClick);
+      cell.addEventListener('dblclick',    onDoubleClick);
+      boardEl.appendChild(cell);
     }
   }
+  // Reapply solver highlights after every re-render
+  if (solverEnabled && !firstClick) applySolverHighlights(false);
+}
 
-  function getRC(e) {
-    return [parseInt(e.currentTarget.dataset.r), parseInt(e.currentTarget.dataset.c)];
+/* ── Input handlers ─────────────────────────────────────── */
+function getRC(e) {
+  return [parseInt(e.currentTarget.dataset.r), parseInt(e.currentTarget.dataset.c)];
+}
+
+function onLeftClick(e) {
+  if (gameOver) return;
+  const [r, c] = getRC(e);
+  if (flagged[r][c] || question[r][c] || revealed[r][c]) return;
+
+  if (firstClick) {
+    firstClick = false;
+    placeMines(r, c);
+    timerInterval = setInterval(() => { elapsed++; timerEl.textContent = elapsed; }, 1000);
   }
 
-  function onLeftClick(e) {
-    if (gameOver) return;
-    const [r, c] = getRC(e);
-    if (flagged[r][c] || question[r][c] || revealed[r][c]) return;
+  reveal(r, c);
+  renderBoard();
+  checkWin();
+  if (solverEnabled && !gameOver) runAndApplySolver();
+}
 
-    if (firstClick) {
-      firstClick = false;
-      placeMines(r, c);
-      timerInterval = setInterval(() => {
-        elapsed++;
-        timerEl.textContent = elapsed;
-      }, 1000);
-    }
+function onRightClick(e) {
+  e.preventDefault();
+  if (gameOver) return;
+  const [r, c] = getRC(e);
+  if (revealed[r][c]) return;
 
-    reveal(r, c);
+  if      (!flagged[r][c] && !question[r][c]) { flagged[r][c]  = true;  }
+  else if ( flagged[r][c])                    { flagged[r][c]  = false; question[r][c] = true; }
+  else                                        { question[r][c] = false; }
+
+  mineEl.textContent = mineCount - flagged.flat().filter(Boolean).length;
+  renderBoard();
+  if (solverEnabled && !firstClick && !gameOver) runAndApplySolver();
+}
+
+function onDoubleClick(e) {
+  if (gameOver) return;
+  const [r, c] = getRC(e);
+  if (!revealed[r][c] || board[r][c] <= 0) return;
+  const nbrs = neighbors(r, c);
+  if (nbrs.filter(([nr, nc]) => flagged[nr][nc]).length === board[r][c]) {
+    nbrs.forEach(([nr, nc]) => { if (!flagged[nr][nc] && !revealed[nr][nc]) reveal(nr, nc); });
     renderBoard();
     checkWin();
+    if (solverEnabled && !gameOver) runAndApplySolver();
+  }
+}
+
+/* ── Reveal (recursive flood-fill for zeroes) ───────────── */
+function reveal(r, c) {
+  if (revealed[r][c] || flagged[r][c]) return;
+  revealed[r][c] = true;
+
+  if (board[r][c] === -1) {
+    gameOver = true;
+    clearInterval(timerInterval);
+    resetBtn.textContent  = '😵';
+    messageEl.textContent = 'BOOM! Game Over.';
+    for (let rr = 0; rr < rows; rr++)
+      for (let cc = 0; cc < cols; cc++)
+        if (board[rr][cc] === -1 && !flagged[rr][cc]) revealed[rr][cc] = true;
+    setTimeout(() => {
+      boardEl.querySelectorAll('.cell')[r * cols + c].classList.add('mine-hit');
+    }, 0);
+    clearSolverHighlights();
+    setSolverStatus('');
+    return;
   }
 
-  function onRightClick(e) {
-    e.preventDefault();
-    if (gameOver) return;
-    const [r, c] = getRC(e);
-    if (revealed[r][c]) return;
+  if (board[r][c] === 0)
+    neighbors(r, c).forEach(([nr, nc]) => reveal(nr, nc));
+}
 
-    if (!flagged[r][c] && !question[r][c]) {
-      flagged[r][c] = true;
-    } else if (flagged[r][c]) {
-      flagged[r][c] = false;
-      question[r][c] = true;
-    } else {
-      question[r][c] = false;
-    }
-
-    const flags = flagged.flat().filter(Boolean).length;
-    mineEl.textContent = mineCount - flags;
+/* ── Win check ──────────────────────────────────────────── */
+function checkWin() {
+  if (gameOver) return;
+  if (revealed.flat().filter(Boolean).length === rows * cols - mineCount) {
+    won = true; gameOver = true;
+    clearInterval(timerInterval);
+    resetBtn.textContent = '😎';
+    const isRecord = setBest(currentDiff.key, elapsed);
+    messageEl.textContent = isRecord
+      ? `YOU WIN! New best: ${elapsed}s 🏆`
+      : `YOU WIN! Time: ${elapsed}s`;
+    refreshBestDisplay();
+    for (let r = 0; r < rows; r++)
+      for (let c = 0; c < cols; c++)
+        if (board[r][c] === -1) flagged[r][c] = true;
+    mineEl.textContent = 0;
     renderBoard();
+    clearSolverHighlights();
+    setSolverStatus('');
   }
+}
 
-  function onDoubleClick(e) {
-    if (gameOver) return;
-    const [r, c] = getRC(e);
-    if (!revealed[r][c] || board[r][c] <= 0) return;
-    const nbrs = neighbors(r, c);
-    const flagCount = nbrs.filter(([nr, nc]) => flagged[nr][nc]).length;
-    if (flagCount === board[r][c]) {
-      nbrs.forEach(([nr, nc]) => {
-        if (!flagged[nr][nc] && !revealed[nr][nc]) reveal(nr, nc);
-      });
-      renderBoard();
-      checkWin();
+/* ============================================================
+   SMT SOLVER — JavaScript port of BSc thesis (Scala / Z3)
+
+   Original: Scala program calling Z3 via Linux system calls.
+   Port: pure JavaScript constraint solver with the same logic.
+
+   Algorithm (faithful to the thesis):
+   ─────────────────────────────────────────────────────────────
+   The thesis maintains three maps:
+     shown_map   — what the user sees (revealed numbers / bombs)
+     full_map    — the ground-truth board
+     bomb_map    — solver variables: 0=safe, 1=mine, -1=unknown
+
+   Here, board[] / revealed[] / flagged[] replace those maps.
+
+   Step 1 (generateClauses equivalent):
+     Build varsToCheck = opened cells ∪ their unrevealed neighbors.
+     Build constraints: for each opened cell, the sum of its
+     unrevealed unflagged neighbor variables = cell_value − flagged_count.
+
+   Step 2 (constraint propagation — implicit in Z3 in the thesis):
+     If adjusted_sum = 0          → all unknown neighbors are safe.
+     If adjusted_sum = cell_count → all unknown neighbors are mines.
+     Repeat until stable.
+
+   Step 3 (runSolver verify-by-negation loop):
+     Find one satisfying assignment (backtracking, replaces Z3).
+     For each frontier cell with value v in the solution, try forcing
+     it to (1−v) and re-check satisfiability. If unsat → cell is
+     certainly v. This is the exact loop in the thesis's runSolver().
+   ============================================================ */
+
+let solverEnabled    = false;
+let lastSolverResult = { safeCells: [], mines: [] };
+
+const solverBtn    = document.getElementById('solver-btn');
+const solverStatus = document.getElementById('solver-status');
+const solverLegend = document.getElementById('solver-legend');
+
+solverBtn.addEventListener('click', toggleSolver);
+
+function toggleSolver() {
+  solverEnabled = !solverEnabled;
+  solverBtn.textContent = solverEnabled ? '🔍 Solver: ON' : '🔍 Enable Solver';
+  solverBtn.classList.toggle('active', solverEnabled);
+  solverLegend.classList.toggle('visible', solverEnabled);
+
+  if (solverEnabled && !firstClick && !gameOver) {
+    runAndApplySolver();
+  } else if (!solverEnabled) {
+    clearSolverHighlights();
+    setSolverStatus('');
+  }
+}
+
+function setSolverStatus(msg, hasResult) {
+  solverStatus.textContent = msg;
+  solverStatus.className   = hasResult ? 'has-result' : '';
+}
+
+/* ── Trigger solver after each move ─────────────────────── */
+function runAndApplySolver() {
+  if (!solverEnabled || firstClick || gameOver) return;
+  setSolverStatus('Solver running…', false);
+
+  // Defer so the browser paints "running…" before the CPU-heavy work
+  setTimeout(() => {
+    const result = computeSolver();
+    lastSolverResult = result;
+    applySolverHighlights(true);
+
+    const s = result.safeCells.length;
+    const m = result.mines.length;
+
+    if (s === 0 && m === 0) {
+      setSolverStatus(
+        result.limited
+          ? 'Solver: frontier too large — showing constraint propagation results only.'
+          : 'Solver: no certain deductions from current board state.',
+        false
+      );
+    } else {
+      const parts = [];
+      if (s > 0) parts.push(`${s} safe cell${s !== 1 ? 's' : ''}`);
+      if (m > 0) parts.push(`${m} mine${m !== 1 ? 's' : ''}`);
+      setSolverStatus(`Solver identified: ${parts.join(', ')}.`, true);
+    }
+  }, 10);
+}
+
+/* ── Apply / clear visual highlights ────────────────────── */
+function applySolverHighlights(animate) {
+  clearSolverHighlights();
+  const cells = boardEl.querySelectorAll('.cell');
+
+  lastSolverResult.safeCells.forEach(([r, c]) => {
+    const el = cells[r * cols + c];
+    if (el && !revealed[r][c] && !flagged[r][c]) {
+      el.classList.add('solver-safe');
+      if (animate) el.classList.add('solver-new');
+    }
+  });
+
+  lastSolverResult.mines.forEach(([r, c]) => {
+    const el = cells[r * cols + c];
+    if (el && !revealed[r][c] && !flagged[r][c]) {
+      el.classList.add('solver-mine');
+      if (animate) el.classList.add('solver-new');
+    }
+  });
+}
+
+function clearSolverHighlights() {
+  boardEl.querySelectorAll('.solver-safe, .solver-mine').forEach(el =>
+    el.classList.remove('solver-safe', 'solver-mine', 'solver-new')
+  );
+}
+
+/* ── Core solver computation ─────────────────────────────── */
+function computeSolver() {
+  const key     = (r, c) => r * cols + c;
+  const fromKey = k      => [Math.floor(k / cols), k % cols];
+
+  // ── Build varsToCheck and constraints (thesis: generateClauses) ──
+  const frontierSet    = new Set();
+  const rawConstraints = []; // { cells: [key,...], sum: remainingMines }
+
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      if (!revealed[r][c] || board[r][c] < 0) continue;
+
+      const ns        = neighbors(r, c);
+      const unrev     = ns.filter(([nr, nc]) => !revealed[nr][nc] && !flagged[nr][nc]);
+      const flagCount = ns.filter(([nr, nc]) =>  flagged[nr][nc]).length;
+      const remaining = board[r][c] - flagCount;
+
+      if (unrev.length === 0 || remaining < 0) continue;
+
+      unrev.forEach(([nr, nc]) => frontierSet.add(key(nr, nc)));
+      rawConstraints.push({ cells: unrev.map(([nr, nc]) => key(nr, nc)), sum: remaining });
     }
   }
 
-  function reveal(r, c) {
-    if (revealed[r][c] || flagged[r][c]) return;
-    revealed[r][c] = true;
+  if (frontierSet.size === 0) return { safeCells: [], mines: [] };
 
-    if (board[r][c] === -1) {
-      // Hit a mine
-      gameOver = true;
-      clearInterval(timerInterval);
-      resetBtn.textContent = '😵';
-      messageEl.textContent = 'BOOM! Game Over.';
-      // Reveal all mines
-      for (let rr = 0; rr < rows; rr++)
-        for (let cc = 0; cc < cols; cc++)
-          if (board[rr][cc] === -1 && !flagged[rr][cc]) revealed[rr][cc] = true;
-      // Mark the clicked mine
-      setTimeout(() => {
-        const cells = boardEl.querySelectorAll('.cell');
-        const idx = r * cols + c;
-        cells[idx].classList.add('mine-hit');
-      }, 0);
-      return;
-    }
+  // ── Constraint propagation (thesis: simple clauses before Z3) ────
+  // Mirrors the constraints i–v in the thesis before the Z3 check-sat.
+  const definiteSafe = new Set();
+  const definiteMine = new Set();
 
-    if (board[r][c] === 0) {
-      neighbors(r, c).forEach(([nr, nc]) => reveal(nr, nc));
+  let changed = true;
+  while (changed) {
+    changed = false;
+    for (const { cells, sum } of rawConstraints) {
+      const unknown  = cells.filter(k => !definiteSafe.has(k) && !definiteMine.has(k));
+      const knownMines = cells.filter(k => definiteMine.has(k)).length;
+      const adj      = sum - knownMines;
+
+      if (adj < 0 || adj > unknown.length) continue;
+
+      if (adj === 0) {
+        unknown.forEach(k => { if (!definiteSafe.has(k)) { definiteSafe.add(k); changed = true; } });
+      } else if (adj === unknown.length) {
+        unknown.forEach(k => { if (!definiteMine.has(k)) { definiteMine.add(k); changed = true; } });
+      }
     }
   }
 
-  function checkWin() {
-    if (gameOver) return;
-    const totalCells = rows * cols;
-    const revealedCount = revealed.flat().filter(Boolean).length;
-    if (revealedCount === totalCells - mineCount) {
-      won = true; gameOver = true;
-      clearInterval(timerInterval);
-      resetBtn.textContent = '😎';
-      const isRecord = setBest(currentDiff.key, elapsed);
-      messageEl.textContent = isRecord ? `YOU WIN! New best: ${elapsed}s 🏆` : `YOU WIN! Time: ${elapsed}s`;
-      refreshBestDisplay();
-      // Auto-flag remaining mines
-      for (let r = 0; r < rows; r++)
-        for (let c = 0; c < cols; c++)
-          if (board[r][c] === -1) flagged[r][c] = true;
-      mineEl.textContent = 0;
-      renderBoard();
-    }
+  // ── Backtracking SAT (replaces Z3 check-sat in the thesis) ───────
+  const unknownCells = [...frontierSet].filter(k => !definiteSafe.has(k) && !definiteMine.has(k));
+
+  if (unknownCells.length === 0) {
+    return { safeCells: [...definiteSafe].map(fromKey), mines: [...definiteMine].map(fromKey) };
   }
 
-  // Difficulty buttons
-  document.querySelectorAll('.diff-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.diff-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const r = parseInt(btn.dataset.rows);
-      const c = parseInt(btn.dataset.cols);
-      const m = parseInt(btn.dataset.mines);
-      const diffName = btn.textContent;
-      initGame(r, c, m, DIFFS[diffName]);
+  // Limit backtracking for large frontiers (avoids UI hang on Expert boards)
+  if (unknownCells.length > 22) {
+    return {
+      safeCells: [...definiteSafe].map(fromKey),
+      mines:     [...definiteMine].map(fromKey),
+      limited:   true,
+    };
+  }
+
+  // Build adjusted constraints (removes known cells, adjusts sums)
+  // This mirrors the thesis's generateClauses() call before each Z3 run.
+  function makeAdjustedConstraints(forcedKey, forcedVal) {
+    return rawConstraints.map(({ cells, sum }) => {
+      const mines  = cells.filter(k => definiteMine.has(k)).length;
+      let   adj    = sum - mines;
+      let   unkn   = cells.filter(k => !definiteSafe.has(k) && !definiteMine.has(k));
+
+      // Apply the forced cell (equivalent to the extra assert in the thesis)
+      if (forcedKey !== null && unkn.includes(forcedKey)) {
+        adj  -= (forcedVal === 1 ? 1 : 0);
+        unkn  = unkn.filter(k => k !== forcedKey);
+      }
+      return { cells: unkn, sum: adj };
     });
-  });
+  }
 
-  resetBtn.addEventListener('click', () => {
-    const activeBtn = document.querySelector('.diff-btn.active');
-    const r = parseInt(activeBtn.dataset.rows);
-    const c = parseInt(activeBtn.dataset.cols);
-    const m = parseInt(activeBtn.dataset.mines);
-    const diffName = activeBtn.textContent;
-    initGame(r, c, m, DIFFS[diffName]);
-  });
+  // Backtracking check: does a satisfying assignment exist?
+  // Returns true (sat) or false (unsat) — mirrors Z3's check-sat output.
+  function checkSat(forcedKey, forcedVal) {
+    const cs     = makeAdjustedConstraints(forcedKey, forcedVal);
+    const active = forcedKey !== null
+      ? unknownCells.filter(k => k !== forcedKey)
+      : unknownCells;
+    const asgn = new Map();
 
-  // Start with beginner
-  refreshBestDisplay();
-  initGame(9, 9, 10, DIFFS['Beginner']);
+    function partialOk() {
+      for (const { cells, sum } of cs) {
+        let assigned = 0, free = 0;
+        for (const k of cells) {
+          const v = asgn.get(k);
+          if      (v === 1)         assigned++;
+          else if (v === undefined) free++;
+        }
+        if (assigned > sum || assigned + free < sum) return false;
+      }
+      return true;
+    }
+
+    function fullOk() {
+      return cs.every(({ cells, sum }) =>
+        cells.reduce((s, k) => s + (asgn.get(k) ?? 0), 0) === sum
+      );
+    }
+
+    function bt(idx) {
+      if (!partialOk()) return false;
+      if (idx === active.length) return fullOk();
+      const k = active[idx];
+      for (const v of [0, 1]) {
+        asgn.set(k, v);
+        if (bt(idx + 1)) return true;
+      }
+      asgn.delete(k);
+      return false;
+    }
+
+    return bt(0);
+  }
+
+  // Find the initial solution (thesis: first Z3 get-model)
+  const cs0  = makeAdjustedConstraints(null, null);
+  const asgn0 = new Map();
+
+  function btInitial(idx) {
+    for (const { cells, sum } of cs0) {
+      let assigned = 0, free = 0;
+      for (const k of cells) {
+        const v = asgn0.get(k);
+        if      (v === 1)         assigned++;
+        else if (v === undefined) free++;
+      }
+      if (assigned > sum || assigned + free < sum) return false;
+    }
+    if (idx === unknownCells.length) {
+      return cs0.every(({ cells, sum }) =>
+        cells.reduce((s, k) => s + (asgn0.get(k) ?? 0), 0) === sum
+      );
+    }
+    const k = unknownCells[idx];
+    for (const v of [0, 1]) {
+      asgn0.set(k, v);
+      if (btInitial(idx + 1)) return true;
+    }
+    asgn0.delete(k);
+    return false;
+  }
+
+  if (!btInitial(0)) {
+    // No solution found (shouldn't happen on a valid board)
+    return { safeCells: [...definiteSafe].map(fromKey), mines: [...definiteMine].map(fromKey) };
+  }
+
+  // Verify each cell (thesis: runSolver verify-by-negation loop)
+  // For each cell with value v in the initial solution:
+  //   add extra assert B_i,j = (1−v) and check-sat.
+  //   If unsat → cell is certainly v.
+  for (const k of unknownCells) {
+    if (definiteSafe.has(k) || definiteMine.has(k)) continue;
+
+    const v       = asgn0.get(k) ?? 0;
+    const stillSat = checkSat(k, 1 - v); // try opposite
+
+    if (!stillSat) {
+      // Opposite is unsatisfiable → v is the only possibility
+      if (v === 0) definiteSafe.add(k);
+      else         definiteMine.add(k);
+    }
+    // else: uncertain — leave unclassified (bomb_map = -1 in the thesis)
+  }
+
+  return {
+    safeCells: [...definiteSafe].map(fromKey),
+    mines:     [...definiteMine].map(fromKey),
+  };
+}
+
+/* ============================================================
+   CONTROLS
+   ============================================================ */
+document.querySelectorAll('.diff-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.diff-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    initGame(
+      parseInt(btn.dataset.rows),
+      parseInt(btn.dataset.cols),
+      parseInt(btn.dataset.mines),
+      DIFFS[btn.textContent]
+    );
+  });
+});
+
+resetBtn.addEventListener('click', () => {
+  const activeBtn = document.querySelector('.diff-btn.active');
+  initGame(
+    parseInt(activeBtn.dataset.rows),
+    parseInt(activeBtn.dataset.cols),
+    parseInt(activeBtn.dataset.mines),
+    DIFFS[activeBtn.textContent]
+  );
+});
+
+refreshBestDisplay();
+initGame(9, 9, 10, DIFFS['Beginner']);
 </script>
 </body>
 </html>
