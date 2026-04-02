@@ -43,9 +43,9 @@
       playBtn.innerHTML = pauseIcon();
       playBtn.setAttribute('aria-label', 'Pause');
     }
-    // Load the embed URL into the iframe
+    // Load the embed URL into the iframe with autoplay
     if (embedUrl && embedUrl !== '#') {
-      player.src = embedUrl;
+      player.src = embedUrl + '&autoplay=1';
       player.style.display = 'block';
     }
   }
