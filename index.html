@@ -101,9 +101,10 @@
           <div class="card-icon">🔬</div>
           <h3>Research Focus</h3>
           <p style="margin-top: 0.5rem;">
-            My MSc thesis is <strong>PermissionPruner</strong> — a static analysis tool for Android APK debloating.
-            It removes unnecessary permissions from apps without breaking functionality,
-            using program analysis on compiled bytecode.
+            My MSc thesis proposes a <strong>hybrid Android app debloating pipeline</strong> —
+            a two-phase system that combines static permission analysis with runtime usage monitoring
+            to produce leaner, less permission-invasive APKs.
+            Built using Soot, FlowDroid, and TF-IDF hierarchical clustering.
           </p>
         </div>
 
@@ -180,18 +181,20 @@
           <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;">
             <div>
               <span class="badge" style="margin-bottom: 0.5rem; display: inline-block; opacity: 0.7;">MSc Thesis · In Progress</span>
-              <h3 style="margin-top: 0.25rem;">PermissionPruner</h3>
+              <h3 style="margin-top: 0.25rem;">Hybrid Android App Debloating</h3>
             </div>
             <span class="tag" style="white-space: nowrap; flex-shrink: 0;">Coming soon</span>
           </div>
           <p style="margin-top: 0.5rem;">
-            Android APK debloating via static analysis. Removes over-privileged permissions
-            without breaking app functionality, using bytecode analysis with dexlib2.
+            A two-phase debloating pipeline: Phase 1 removes over-declared permissions via static
+            Smali analysis and stubs unreachable call paths; Phase 2 applies TF-IDF clustering over
+            a FlowDroid call graph to stub unused code based on real usage logs.
           </p>
           <div class="tags" style="margin-top: var(--space-sm);">
             <span class="tag">Java</span>
-            <span class="tag">dexlib2</span>
-            <span class="tag">Static Analysis</span>
+            <span class="tag">Python</span>
+            <span class="tag">Soot / FlowDroid</span>
+            <span class="tag">Smali / APKTool</span>
             <span class="tag">Android</span>
           </div>
         </div>
@@ -258,7 +261,8 @@
             <span class="tag">Git</span>
             <span class="tag">SQL</span>
             <span class="tag">Z3 Solver</span>
-            <span class="tag">dexlib2</span>
+            <span class="tag">Soot / FlowDroid</span>
+            <span class="tag">Smali / APKTool</span>
             <span class="tag">Linux</span>
           </div>
         </div>
