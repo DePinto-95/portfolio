@@ -123,10 +123,10 @@
             <em>Chalmers University of Technology · In progress</em>
           </p>
           <p>
-            Android apps often ship with far more code and permissions than they actually need,
+            Android apps often ship with far more code and permissions than they actually need —
             making them larger, slower, and less private. My thesis builds a tool that automatically
-            strips out the unused parts: first removing the bloated code of unusedpermissions,
-            and then use monitor-based debloating to remove code that real users never exercise.
+            strips out the unused parts: first removing permissions the app declares but never uses,
+            then removing code paths that real users never exercise.
           </p>
         </div>
 
@@ -148,7 +148,7 @@
           <div class="card-icon">⚽</div>
           <h3>Football</h3>
           <p style="margin-top: 0.5rem;">
-            Playing footballsince I was 6 years old in academy level until 18 and now I'm active at amateur level.
+            Playing football since I was 6 years old, at academy level until 18, and still active at amateur level today.
             Football has shaped how I approach teamwork and persistence.
           </p>
         </div>
@@ -256,9 +256,9 @@
             <span class="tag" style="white-space: nowrap; flex-shrink: 0;">Coming soon</span>
           </div>
           <p style="margin-top: 0.5rem;">
-            A two-phase debloating pipeline: Phase 1 removes over-declared permissions via static
-            Smali analysis and stubs unreachable call paths; Phase 2 applies TF-IDF clustering over
-            a FlowDroid call graph to stub unused code based on real usage logs.
+            Android apps are often bloated — packed with permissions they never use and code users
+            never touch. This tool automatically slims them down in two passes: stripping unused
+            permissions first, then removing dead code based on real usage data.
           </p>
           <div class="tags" style="margin-top: var(--space-sm);">
             <span class="tag">Java</span>
