@@ -480,6 +480,8 @@ p {
 .fade-in-group.is-visible > *:nth-child(2) { transition-delay: 0.15s; opacity: 1; transform: none; }
 .fade-in-group.is-visible > *:nth-child(3) { transition-delay: 0.25s; opacity: 1; transform: none; }
 .fade-in-group.is-visible > *:nth-child(4) { transition-delay: 0.35s; opacity: 1; transform: none; }
+.fade-in-group.is-visible > *:nth-child(5) { transition-delay: 0.45s; opacity: 1; transform: none; }
+.fade-in-group.is-visible > *:nth-child(6) { transition-delay: 0.55s; opacity: 1; transform: none; }
 
 /* ============================================================
    FOOTER
