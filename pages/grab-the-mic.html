@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grab The Mic 🎤</title>
+  <style>
+    :root {
+      --bg:       #0d0d1a;
+      --bg2:      #15152a;
+      --bg3:      #1e1e38;
+      --border:   #2e2e50;
+      --accent:   #c026d3;
+      --accent2:  #7c3aed;
+      --gold:     #f59e0b;
+      --green:    #10b981;
+      --red:      #ef4444;
+      --text:     #f0f0ff;
+      --text2:    #a0a0cc;
+      --muted:    #55557a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      min-height: 100vh;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      color: var(--text);
+    }
+
+    /* ── Back link ── */
+    .back-link {
+      position: fixed;
+      top: 14px;
+      left: 16px;
+      color: var(--text2);
+      text-decoration: none;
+      font-size: 0.85rem;
+      z-index: 100;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .back-link:hover { opacity: 1; }
+
+    /* ── Generic screen wrapper ── */
+    .screen {
+      display: none;
+      min-height: 100vh;
+      padding: 60px 16px 48px;
+    }
+    .screen.active { display: block; }
+
+    /* ════════════════════════════════
+       SETUP SCREEN
+       ════════════════════════════════ */
+    #screen-setup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    #screen-setup.active { display: flex; }
+
+    .setup-hero {
+      text-align: center;
+    }
+    .setup-hero .mic-emoji {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 0 20px var(--accent));
+      animation: pulse-icon 2.5s ease-in-out infinite;
+    }
+    @keyframes pulse-icon {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+    .setup-hero h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-transform: uppercase;
+    }
+    .setup-hero p {
+      color: var(--text2);
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    /* Step container */
+    .setup-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      width: 100%;
+      max-width: 560px;
+    }
+    .setup-card h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+
+    /* Step indicator */
+    .step-dots {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
+    .step-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--border);
+      transition: background 0.3s;
+    }
+    .step-dot.done { background: var(--accent2); }
+    .step-dot.active { background: var(--accent); }
+
+    /* Choice buttons */
+    .choice-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .choice-btn {
+      flex: 1;
+      min-width: 100px;
+      padding: 12px 18px;
+      border: 2px solid var(--border);
+      background: var(--bg3);
+      color: var(--text2);
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .choice-btn:hover {
+      border-color: var(--accent2);
+      color: var(--text);
+    }
+    .choice-btn.selected {
+      border-color: var(--accent);
+      background: rgba(192,38,211,0.15);
+      color: var(--text);
+    }
+
+    /* Team count */
+    .team-count-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .count-btn {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: var(--bg3);
+      color: var(--text);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
+    }
+    .count-btn:hover { border-color: var(--accent); color: var(--accent); }
+    #team-count-display {
+      font-size: 1.4rem;
+      font-weight: 700;
+      min-width: 40px;
+      text-align: center;
+    }
+
+    /* Team name inputs */
+    #team-name-inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .team-name-input {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      width: 100%;
+      transition: border-color 0.2s;
+    }
+    .team-name-input:focus {
+      outline: none;
+      border-color: var(--accent2);
+    }
+
+    /* Win condition */
+    .win-label {
+      font-size: 0.85rem;
+      color: var(--text2);
+      margin-bottom: 10px;
+    }
+
+    /* Nav buttons */
+    .setup-nav {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .btn-setup {
+      flex: 1;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-setup.primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+    }
+    .btn-setup.primary:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-setup.secondary {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      color: var(--text2);
+    }
+    .btn-setup.secondary:hover { color: var(--text); border-color: var(--accent2); }
+
+    /* ════════════════════════════════
+       GAME SCREEN
+       ════════════════════════════════ */
+    #screen-game {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+    }
+    #screen-game.active { display: flex; }
+
+    /* Game header */
+    .game-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .game-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 1px;
+    }
+    .game-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .badge-pill {
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .badge-diff { background: rgba(124,58,237,0.25); color: #a78bfa; border: 1px solid #4c1d95; }
+    .badge-lang { background: rgba(192,38,211,0.2); color: #e879f9; border: 1px solid #701a75; }
+    .badge-win  { background: rgba(245,158,11,0.2); color: var(--gold); border: 1px solid #92400e; }
+
+    /* Word reveal area */
+    .word-area {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 24px;
+      text-align: center;
+    }
+    #current-word {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 900;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-shadow: 0 0 30px rgba(245,158,11,0.4);
+      min-height: 1.2em;
+      transition: all 0.3s;
+    }
+    #current-word.hidden-word {
+      color: var(--muted);
+      letter-spacing: 20px;
+      font-size: 2rem;
+    }
+
+    /* Timer */
+    .timer-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    #timer-display {
+      font-size: 2rem;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      min-width: 60px;
+      text-align: center;
+      transition: color 0.3s;
+    }
+    #timer-display.urgent {
+      color: var(--red);
+      animation: blink-timer 0.6s ease-in-out infinite;
+    }
+    @keyframes blink-timer {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .timer-bar-wrap {
+      flex: 1;
+      max-width: 280px;
+      height: 6px;
+      background: var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    #timer-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--green), var(--gold));
+      border-radius: 999px;
+      transition: width 1s linear, background 0.5s;
+    }
+    #timer-bar.urgent { background: var(--red); }
+
+    .word-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .btn-game {
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-game.reveal {
+      background: linear-gradient(135deg, var(--gold), #d97706);
+      color: #000;
+      font-size: 1.1rem;
+      padding: 14px 36px;
+    }
+    .btn-game.reveal:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(245,158,11,0.4); }
+    .btn-game.reveal:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    .btn-game.stop-timer {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      color: var(--text2);
+    }
+    .btn-game.stop-timer:hover { border-color: var(--red); color: var(--red); }
+    .btn-game.end-game {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+      padding: 8px 18px;
+    }
+    .btn-game.end-game:hover { border-color: var(--red); color: var(--red); }
+
+    /* Game layout: word+teams | scoreboard */
+    .game-body {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 20px;
+      align-items: start;
+    }
+    @media (max-width: 700px) {
+      .game-body { grid-template-columns: 1fr; }
+    }
+
+    /* Team point buttons */
+    .teams-panel {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .teams-panel-title {
+      padding: 12px 16px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text2);
+      border-bottom: 1px solid var(--border);
+    }
+    .team-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      gap: 12px;
+    }
+    .team-row:last-child { border-bottom: none; }
+    .team-info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-width: 0;
+    }
+    .team-name-label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .team-score-label {
+      font-size: 0.8rem;
+      color: var(--text2);
+    }
+    .point-btn {
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: none;
+      background: linear-gradient(135deg, var(--green), #059669);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .point-btn:hover { transform: scale(1.05); box-shadow: 0 2px 12px rgba(16,185,129,0.4); }
+
+    /* Scoreboard sidebar */
+    .scoreboard {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      position: sticky;
+      top: 20px;
+    }
+    .scoreboard-title {
+      padding: 12px 16px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text2);
+      border-bottom: 1px solid var(--border);
+    }
+    .score-entry {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s;
+    }
+    .score-entry:last-child { border-bottom: none; }
+    .score-entry.top { background: rgba(245,158,11,0.08); }
+    .score-rank {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--muted);
+      min-width: 20px;
+      text-align: center;
+    }
+    .score-entry.top .score-rank { color: var(--gold); }
+    .score-name {
+      flex: 1;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .score-pts {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--gold);
+    }
+    .score-entry.top .score-pts {
+      text-shadow: 0 0 10px rgba(245,158,11,0.5);
+    }
+
+    /* Round counter */
+    .round-counter {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 8px;
+    }
+
+    /* ════════════════════════════════
+       WIN OVERLAY
+       ════════════════════════════════ */
+    #win-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+    }
+    #win-overlay.active { display: flex; }
+    .win-box {
+      background: var(--bg2);
+      border: 2px solid var(--gold);
+      border-radius: 24px;
+      padding: 48px 40px;
+      text-align: center;
+      max-width: 480px;
+      width: 90%;
+      animation: pop-in 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
+    }
+    @keyframes pop-in {
+      from { transform: scale(0.6); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+    .win-trophy { font-size: 4rem; margin-bottom: 12px; display: block; }
+    .win-box h2 {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .win-box .win-team {
+      font-size: 2.2rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--accent), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 4px;
+    }
+    .win-box .win-score {
+      color: var(--text2);
+      margin-bottom: 28px;
+      font-size: 0.95rem;
+    }
+    .win-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    /* ════════════════════════════════
+       GAME OVER SCREEN
+       ════════════════════════════════ */
+    #screen-gameover {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      text-align: center;
+    }
+    #screen-gameover.active { display: flex; }
+    .gameover-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .gameover-winner {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--accent), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .final-scoreboard {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 400px;
+    }
+    .final-sb-title {
+      padding: 12px 16px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text2);
+      border-bottom: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<a href="../index.html#projects" class="back-link">← Portfolio</a>
+
+<!-- ══════════════════════════════════
+     SETUP SCREEN
+     ══════════════════════════════════ -->
+<div id="screen-setup" class="screen active">
+  <div class="setup-hero">
+    <span class="mic-emoji">🎤</span>
+    <h1>Grab The Mic</h1>
+    <p>The karaoke game for people who can't sing!</p>
+  </div>
+
+  <!-- Step dots -->
+  <div class="step-dots">
+    <div class="step-dot active" id="dot-0"></div>
+    <div class="step-dot" id="dot-1"></div>
+    <div class="step-dot" id="dot-2"></div>
+  </div>
+
+  <!-- Step 1: Difficulty -->
+  <div class="setup-card" id="step-1">
+    <h2>Step 1 — Difficulty</h2>
+    <div class="choice-group">
+      <button class="choice-btn selected" data-diff="easy">🟢 Easy</button>
+      <button class="choice-btn" data-diff="normal">🟡 Normal</button>
+      <button class="choice-btn" data-diff="hard">🔴 Hard</button>
+    </div>
+    <div class="setup-nav">
+      <button class="btn-setup primary" id="next-1">Next →</button>
+    </div>
+  </div>
+
+  <!-- Step 2: Language -->
+  <div class="setup-card" id="step-2" style="display:none;">
+    <h2>Step 2 — Language</h2>
+    <div class="choice-group">
+      <button class="choice-btn selected" data-lang="en">🇬🇧 English</button>
+      <button class="choice-btn" data-lang="gr">🇬🇷 Greek</button>
+      <button class="choice-btn" data-lang="mix">🌍 Mix</button>
+    </div>
+    <div class="setup-nav">
+      <button class="btn-setup secondary" id="back-2">← Back</button>
+      <button class="btn-setup primary" id="next-2">Next →</button>
+    </div>
+  </div>
+
+  <!-- Step 3: Teams + Win condition -->
+  <div class="setup-card" id="step-3" style="display:none;">
+    <h2>Step 3 — Teams & Win Condition</h2>
+
+    <div class="team-count-row">
+      <button class="count-btn" id="teams-minus">−</button>
+      <span id="team-count-display">4</span>
+      <button class="count-btn" id="teams-plus">+</button>
+      <span style="color:var(--text2);font-size:0.9rem;">teams</span>
+    </div>
+
+    <div id="team-name-inputs"></div>
+
+    <p class="win-label">Win condition — first team to reach:</p>
+    <div class="choice-group" id="win-choice-group">
+      <button class="choice-btn" data-win="20">20 pts</button>
+      <button class="choice-btn selected" data-win="50">50 pts</button>
+      <button class="choice-btn" data-win="100">100 pts</button>
+      <button class="choice-btn" data-win="0">♾ Unlimited</button>
+    </div>
+
+    <div class="setup-nav">
+      <button class="btn-setup secondary" id="back-3">← Back</button>
+      <button class="btn-setup primary" id="start-game">🎤 Start Game!</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     GAME SCREEN
+     ══════════════════════════════════ -->
+<div id="screen-game" class="screen">
+  <div class="game-header">
+    <span class="game-title">🎤 GRAB THE MIC</span>
+    <div class="game-badges">
+      <span class="badge-pill badge-diff" id="badge-diff"></span>
+      <span class="badge-pill badge-lang" id="badge-lang"></span>
+      <span class="badge-pill badge-win"  id="badge-win"></span>
+    </div>
+  </div>
+
+  <div class="game-body">
+    <!-- Left: word reveal + teams -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+
+      <!-- Word area -->
+      <div class="word-area">
+        <div id="current-word" class="hidden-word">· · ·</div>
+        <div class="timer-row">
+          <div id="timer-display">1:00</div>
+          <div class="timer-bar-wrap">
+            <div id="timer-bar"></div>
+          </div>
+        </div>
+        <div class="word-actions">
+          <button class="btn-game reveal" id="btn-reveal">🎲 Reveal Word</button>
+          <button class="btn-game stop-timer" id="btn-stop-timer" style="display:none;">⏹ Stop Timer</button>
+        </div>
+        <div class="round-counter" id="round-counter">Words revealed: 0</div>
+      </div>
+
+      <!-- Teams point panel -->
+      <div class="teams-panel">
+        <div class="teams-panel-title">Award a point</div>
+        <div id="teams-list"></div>
+      </div>
+
+      <!-- End game -->
+      <div style="text-align:center;">
+        <button class="btn-game end-game" id="btn-end-game">End Game</button>
+      </div>
+    </div>
+
+    <!-- Right: scoreboard -->
+    <div class="scoreboard">
+      <div class="scoreboard-title">🏆 Scoreboard</div>
+      <div id="scoreboard-list"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     GAME OVER SCREEN
+     ══════════════════════════════════ -->
+<div id="screen-gameover" class="screen">
+  <div>
+    <div class="gameover-title">Game Over — Winner</div>
+    <div class="gameover-winner" id="gameover-winner"></div>
+  </div>
+  <div class="final-scoreboard">
+    <div class="final-sb-title">Final Scoreboard</div>
+    <div id="final-scoreboard-list"></div>
+  </div>
+  <button class="btn-setup primary" style="max-width:240px;width:100%;" id="btn-play-again">🔄 Play Again</button>
+</div>
+
+<!-- ══════════════════════════════════
+     WIN OVERLAY
+     ══════════════════════════════════ -->
+<div id="win-overlay">
+  <div class="win-box">
+    <span class="win-trophy">🏆</span>
+    <h2>We have a winner!</h2>
+    <div class="win-team" id="win-team-name"></div>
+    <div class="win-score" id="win-team-score"></div>
+    <div class="win-actions">
+      <button class="btn-setup primary" id="btn-win-end" style="max-width:180px;">See Final Results</button>
+      <button class="btn-setup secondary" id="btn-win-continue" style="max-width:180px;">Keep Playing</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════
+   WORD POOLS
+   ════════════════════════════════════════════════ */
+const WORDS = {
+  en: {
+    easy: [
+      'love','night','rain','home','heart','dance','fire','dream','road','sun',
+      'moon','star','run','fall','fly','time','eyes','smile','hand','feel',
+      'lost','blue','hold','stay','wake','move','real','strong','young','break',
+      'light','deep','cold','free','sing','cry','gone','far','warm','safe',
+      'trust','face','life','world','mind','soul','wish','sleep','wait','wild',
+      'gold','ring','voice','touch','fear','save','change','rise','burn','shine',
+      'fall','call','tell','know','show','walk','talk','look','find','give'
+    ],
+    normal: [
+      'shadow','whisper','broken','forever','silence','thunder','breathe','wonder','always','tonight',
+      'escape','hunger','memories','courage','faithful','surrender','midnight','beauty','deserve','regret',
+      'soldier','hollow','patient','angel','reason','ocean','poison','mirror','chance','second',
+      'follow','pieces','harder','better','faster','stranger','darker','fading','bleeding','healing',
+      'chasing','missing','fighting','standing','falling','turning','burning','leaving','winning','losing',
+      'staying','speaking','laughing','dreaming','screaming','wishing','hoping','praying','reaching','climbing',
+      'falling','rising','hiding','finding','breaking','making','taking','giving','living','breathing'
+    ],
+    hard: [
+      'kaleidoscope','euphoria','renaissance','melancholy','catastrophe','apocalypse','labyrinth','serendipity','paradox','phenomenon',
+      'revolutionary','extraordinary','unconditional','supernatural','invincible','psychological','masterpiece','equilibrium','devastation','resurrection',
+      'magnificent','illuminate','oscillation','hallelujah','thunderstruck','bittersweet','synchronize','crystallize','overwhelm','catastrophic',
+      'earthquake','deteriorate','evermore','nightmare','hurricane','diamond','titanium','radioactive','centuries','believer',
+      'warriors','imagine','yesterday','beautiful','wonderful','dangerous','everything','everybody','somewhere','anything',
+      'inevitable','unforgettable','incomparable','irreplaceable','undeniable','phenomenal','extraordinary','breathtaking','overwhelming','unbreakable'
+    ]
+  },
+  gr: {
+    easy: [
+      'αγάπη','νύχτα','βροχή','καρδιά','ήλιος','θάλασσα','φίλος','χαρά','λύπη','ουρανός',
+      'φεγγάρι','αστέρι','δρόμος','χέρι','μάτια','ζωή','χρόνος','μουσική','τραγούδι','ψυχή',
+      'φτερά','πόλη','σπίτι','χορός','φωτιά','κόσμος','σκοτάδι','φως','ελπίδα','όνειρο',
+      'νερό','αέρας','γη','πόνος','χαμόγελο','φύση','πρωί','βράδυ','άνοιξη','καλοκαίρι',
+      'φιλί','αγκαλιά','σιωπή','λόγια','φωνή','σύννεφα','κύμα','ξεχνώ','θυμάμαι','χάνω',
+      'βρίσκω','περπατώ','τρέχω','κλαίω','γελώ','τραγουδώ','αγαπώ','ονειρεύομαι','μένω','φεύγω'
+    ],
+    normal: [
+      'μυστήριο','ουτοπία','μοναξιά','αλήθεια','ελευθερία','δύναμη','θάρρος','αδυναμία','απογοήτευση','αναζήτηση',
+      'απόσταση','αιωνιότητα','ανάμνηση','παρελθόν','μέλλον','ευκαιρία','στιγμή','χαμένος','ξένος','μοναχικός',
+      'ανήσυχος','περήφανος','τρελός','ελεύθερος','σκληρός','δυνατός','όμορφος','φοβισμένος','ταξίδι','επιστροφή',
+      'χωρισμός','συνάντηση','αρχή','τέλος','αντέχω','υπομένω','συγχωρώ','αγωνίζομαι','αγκαλιάζω','αναπνέω',
+      'παλεύω','αλλάζω','μεγαλώνω','κρύβω','φανερώνω','απελπισία','λαχτάρα','νοσταλγία','ανατριχίλα','συγκίνηση',
+      'αγωνία','χαρούμενος','θλιμμένος','γενναίος','δειλός','ανεξάρτητος','συνδεδεμένος','αποχωρισμένος','ξεχασμένος','αγαπημένος'
+    ],
+    hard: [
+      'παντοτινός','αναπόφευκτος','απερίγραπτος','συναισθηματικός','αναντικατάστατος',
+      'ανεπανάληπτος','παραμυθένιος','αξεπέραστος','απαράμιλλος','αναμφισβήτητος',
+      'υπερφυσικός','ανυπέρβλητος','ανεξέλεγκτος','απρόβλεπτος','ανατρεπτικός',
+      'καταστροφικός','αναστατωτικός','επαναστατικός','εκπληκτικός','συγκλονιστικός',
+      'συγκινητικός','συναρπαστικός','ξεχωριστός','ανεκτίμητος','αγέραστος',
+      'αθάνατος','ανεξίτηλος','διαχρονικός','παντοδύναμος','ακατανίκητος',
+      'ανυπόφορος','απαράβατος','αδιαπραγμάτευτος','αξιαγάπητος','ακαταμάχητος',
+      'ανεξήγητος','αδιανόητος','απαγορευμένος','αναπολόγητος','αξιοθαύμαστος'
+    ]
+  }
+};
+
+function getPool(diff, lang) {
+  if (lang === 'mix') {
+    return [...WORDS.en[diff], ...WORDS.gr[diff]];
+  }
+  return [...WORDS[lang][diff]];
+}
+
+/* ════════════════════════════════════════════════
+   GAME STATE
+   ════════════════════════════════════════════════ */
+let state = {
+  difficulty: 'easy',
+  language: 'en',
+  winTarget: 50,
+  teams: [],          // [{ name, score }]
+  pool: [],
+  usedPool: [],
+  wordsRevealed: 0,
+  timerInterval: null,
+  timerSeconds: 60,
+  timerRunning: false,
+  gameOver: false,
+};
+
+/* ════════════════════════════════════════════════
+   SETUP — STEP NAVIGATION
+   ════════════════════════════════════════════════ */
+let setupStep = 1;
+let teamCount = 4;
+
+function goToStep(n) {
+  setupStep = n;
+  document.getElementById('step-1').style.display = n === 1 ? '' : 'none';
+  document.getElementById('step-2').style.display = n === 2 ? '' : 'none';
+  document.getElementById('step-3').style.display = n === 3 ? '' : 'none';
+  for (let i = 0; i < 3; i++) {
+    const dot = document.getElementById('dot-' + i);
+    dot.className = 'step-dot' + (i + 1 < n ? ' done' : i + 1 === n ? ' active' : '');
+  }
+  if (n === 3) renderTeamInputs();
+}
+
+/* Difficulty buttons */
+document.querySelectorAll('[data-diff]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-diff]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    state.difficulty = btn.dataset.diff;
+  });
+});
+
+/* Language buttons */
+document.querySelectorAll('[data-lang]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-lang]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    state.language = btn.dataset.lang;
+  });
+});
+
+/* Win condition buttons */
+document.querySelectorAll('[data-win]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-win]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    state.winTarget = parseInt(btn.dataset.win);
+  });
+});
+
+/* Team count */
+document.getElementById('teams-minus').addEventListener('click', () => {
+  if (teamCount > 2) { teamCount--; updateTeamCount(); renderTeamInputs(); }
+});
+document.getElementById('teams-plus').addEventListener('click', () => {
+  if (teamCount < 10) { teamCount++; updateTeamCount(); renderTeamInputs(); }
+});
+function updateTeamCount() {
+  document.getElementById('team-count-display').textContent = teamCount;
+}
+
+function renderTeamInputs() {
+  const container = document.getElementById('team-name-inputs');
+  // preserve existing values
+  const existing = [...container.querySelectorAll('.team-name-input')].map(i => i.value);
+  container.innerHTML = '';
+  for (let i = 0; i < teamCount; i++) {
+    const inp = document.createElement('input');
+    inp.type = 'text';
+    inp.className = 'team-name-input';
+    inp.placeholder = 'Team ' + (i + 1);
+    inp.value = existing[i] !== undefined ? existing[i] : '';
+    container.appendChild(inp);
+  }
+}
+
+/* Nav buttons */
+document.getElementById('next-1').addEventListener('click', () => goToStep(2));
+document.getElementById('back-2').addEventListener('click', () => goToStep(1));
+document.getElementById('next-2').addEventListener('click', () => goToStep(3));
+document.getElementById('back-3').addEventListener('click', () => goToStep(2));
+
+document.getElementById('start-game').addEventListener('click', startGame);
+
+/* ════════════════════════════════════════════════
+   GAME LOGIC
+   ════════════════════════════════════════════════ */
+function startGame() {
+  // Collect team names
+  const inputs = document.querySelectorAll('.team-name-input');
+  state.teams = [...inputs].map((inp, i) => ({
+    name: inp.value.trim() || 'Team ' + (i + 1),
+    score: 0
+  }));
+
+  // Build word pool
+  state.pool = shuffle(getPool(state.difficulty, state.language));
+  state.usedPool = [];
+  state.wordsRevealed = 0;
+  state.gameOver = false;
+  stopTimer();
+
+  // Update badges
+  const diffLabels = { easy: '🟢 Easy', normal: '🟡 Normal', hard: '🔴 Hard' };
+  const langLabels = { en: '🇬🇧 English', gr: '🇬🇷 Greek', mix: '🌍 Mix' };
+  document.getElementById('badge-diff').textContent = diffLabels[state.difficulty];
+  document.getElementById('badge-lang').textContent = langLabels[state.language];
+  document.getElementById('badge-win').textContent = state.winTarget === 0 ? '♾ Unlimited' : 'First to ' + state.winTarget;
+
+  // Render teams + scoreboard
+  renderTeamButtons();
+  renderScoreboard();
+  resetWordArea();
+
+  showScreen('game');
+}
+
+function resetWordArea() {
+  const wordEl = document.getElementById('current-word');
+  wordEl.textContent = '· · ·';
+  wordEl.className = 'hidden-word';
+  document.getElementById('timer-display').textContent = '1:00';
+  document.getElementById('timer-display').classList.remove('urgent');
+  document.getElementById('timer-bar').style.width = '100%';
+  document.getElementById('timer-bar').classList.remove('urgent');
+  document.getElementById('btn-stop-timer').style.display = 'none';
+  document.getElementById('btn-reveal').disabled = false;
+  document.getElementById('round-counter').textContent = 'Words revealed: ' + state.wordsRevealed;
+}
+
+function drawWord() {
+  if (state.pool.length === 0) {
+    // reshuffle used pool
+    state.pool = shuffle([...state.usedPool]);
+    state.usedPool = [];
+  }
+  const word = state.pool.pop();
+  state.usedPool.push(word);
+  return word;
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/* Reveal word button */
+document.getElementById('btn-reveal').addEventListener('click', () => {
+  stopTimer();
+  const word = drawWord();
+  state.wordsRevealed++;
+
+  const wordEl = document.getElementById('current-word');
+  wordEl.textContent = word.toUpperCase();
+  wordEl.className = '';
+  document.getElementById('round-counter').textContent = 'Words revealed: ' + state.wordsRevealed;
+
+  document.getElementById('btn-reveal').disabled = true;
+  document.getElementById('btn-stop-timer').style.display = '';
+
+  startTimer();
+});
+
+/* Stop timer button */
+document.getElementById('btn-stop-timer').addEventListener('click', () => {
+  stopTimer();
+  document.getElementById('btn-stop-timer').style.display = 'none';
+  document.getElementById('btn-reveal').disabled = false;
+});
+
+/* End game button */
+document.getElementById('btn-end-game').addEventListener('click', () => {
+  if (confirm('Are you sure you want to end the game?')) {
+    endGame();
+  }
+});
+
+/* ── Timer ── */
+function startTimer() {
+  state.timerSeconds = 60;
+  state.timerRunning = true;
+  updateTimerUI();
+  state.timerInterval = setInterval(() => {
+    state.timerSeconds--;
+    updateTimerUI();
+    if (state.timerSeconds <= 0) {
+      stopTimer();
+      document.getElementById('btn-stop-timer').style.display = 'none';
+      document.getElementById('btn-reveal').disabled = false;
+      // Flash "Time's up!"
+      const wordEl = document.getElementById('current-word');
+      wordEl.style.color = 'var(--red)';
+      setTimeout(() => { wordEl.style.color = ''; }, 1000);
+    }
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(state.timerInterval);
+  state.timerRunning = false;
+}
+
+function updateTimerUI() {
+  const s = state.timerSeconds;
+  const mins = Math.floor(s / 60);
+  const secs = s % 60;
+  document.getElementById('timer-display').textContent =
+    mins + ':' + String(secs).padStart(2, '0');
+
+  const pct = (s / 60) * 100;
+  document.getElementById('timer-bar').style.width = pct + '%';
+
+  const urgent = s <= 10;
+  document.getElementById('timer-display').classList.toggle('urgent', urgent);
+  document.getElementById('timer-bar').classList.toggle('urgent', urgent);
+}
+
+/* ── Award Point ── */
+function awardPoint(teamIndex) {
+  state.teams[teamIndex].score++;
+  renderTeamButtons();
+  renderScoreboard();
+
+  // Flash the row
+  const rows = document.querySelectorAll('.team-row');
+  if (rows[teamIndex]) {
+    rows[teamIndex].style.background = 'rgba(16,185,129,0.2)';
+    setTimeout(() => { rows[teamIndex].style.background = ''; }, 600);
+  }
+
+  // Check win
+  if (state.winTarget > 0 && state.teams[teamIndex].score >= state.winTarget) {
+    stopTimer();
+    showWinOverlay(teamIndex);
+  }
+}
+
+function showWinOverlay(teamIndex) {
+  const team = state.teams[teamIndex];
+  document.getElementById('win-team-name').textContent = team.name;
+  document.getElementById('win-team-score').textContent = team.score + ' points';
+  document.getElementById('win-overlay').classList.add('active');
+}
+
+document.getElementById('btn-win-end').addEventListener('click', () => {
+  document.getElementById('win-overlay').classList.remove('active');
+  endGame();
+});
+document.getElementById('btn-win-continue').addEventListener('click', () => {
+  document.getElementById('win-overlay').classList.remove('active');
+  // Reset word area for next round
+  resetWordArea();
+});
+
+function endGame() {
+  stopTimer();
+  state.gameOver = true;
+
+  // Find winner (highest score)
+  const sorted = [...state.teams].sort((a, b) => b.score - a.score);
+  document.getElementById('gameover-winner').textContent = '🏆 ' + sorted[0].name;
+
+  // Final scoreboard
+  const list = document.getElementById('final-scoreboard-list');
+  list.innerHTML = '';
+  sorted.forEach((t, i) => {
+    const entry = document.createElement('div');
+    entry.className = 'score-entry' + (i === 0 ? ' top' : '');
+    entry.innerHTML = `
+      <span class="score-rank">${i + 1}</span>
+      <span class="score-name">${escHtml(t.name)}</span>
+      <span class="score-pts">${t.score}</span>
+    `;
+    list.appendChild(entry);
+  });
+
+  showScreen('gameover');
+}
+
+/* ── Render helpers ── */
+function renderTeamButtons() {
+  const container = document.getElementById('teams-list');
+  container.innerHTML = '';
+  state.teams.forEach((team, i) => {
+    const row = document.createElement('div');
+    row.className = 'team-row';
+    row.innerHTML = `
+      <div class="team-info">
+        <span class="team-name-label">${escHtml(team.name)}</span>
+        <span class="team-score-label">${team.score} point${team.score !== 1 ? 's' : ''}</span>
+      </div>
+      <button class="point-btn" data-idx="${i}">+1 Point</button>
+    `;
+    container.appendChild(row);
+  });
+  container.querySelectorAll('.point-btn').forEach(btn => {
+    btn.addEventListener('click', () => awardPoint(parseInt(btn.dataset.idx)));
+  });
+}
+
+function renderScoreboard() {
+  const sorted = [...state.teams]
+    .map((t, i) => ({ ...t, orig: i }))
+    .sort((a, b) => b.score - a.score);
+
+  const container = document.getElementById('scoreboard-list');
+  container.innerHTML = '';
+  sorted.forEach((t, rank) => {
+    const entry = document.createElement('div');
+    entry.className = 'score-entry' + (rank === 0 ? ' top' : '');
+    entry.innerHTML = `
+      <span class="score-rank">${rank + 1}</span>
+      <span class="score-name">${escHtml(t.name)}</span>
+      <span class="score-pts">${t.score}</span>
+    `;
+    container.appendChild(entry);
+  });
+}
+
+/* ── Screen switcher ── */
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-' + id).classList.add('active');
+}
+
+/* ── Play Again ── */
+document.getElementById('btn-play-again').addEventListener('click', () => {
+  goToStep(1);
+  showScreen('setup');
+});
+
+/* ── XSS safety ── */
+function escHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* Init */
+renderTeamInputs();
+updateTeamCount();
+</script>
+</body>
+</html>
