@@ -309,6 +309,64 @@
     }
     #timer-bar.urgent { background: var(--red); }
 
+    /* Timer slider */
+    .timer-slider-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+      padding: 0 4px;
+    }
+    .timer-slider-label {
+      font-size: 0.78rem;
+      color: var(--text2);
+      white-space: nowrap;
+      min-width: 56px;
+      text-align: right;
+    }
+    #timer-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      flex: 1;
+      height: 4px;
+      border-radius: 999px;
+      background: var(--border);
+      outline: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    #timer-slider:disabled { opacity: 0.35; cursor: not-allowed; }
+    #timer-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 8px rgba(245,158,11,0.5);
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    #timer-slider:not(:disabled)::-webkit-slider-thumb:hover {
+      transform: scale(1.25);
+      box-shadow: 0 0 14px rgba(245,158,11,0.7);
+    }
+    #timer-slider::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border: none;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 8px rgba(245,158,11,0.5);
+      cursor: pointer;
+    }
+    .timer-slider-val {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gold);
+      min-width: 36px;
+    }
+
     .word-actions {
       display: flex;
       gap: 12px;
@@ -627,6 +685,11 @@
             <div id="timer-bar"></div>
           </div>
         </div>
+        <div class="timer-slider-row">
+          <span class="timer-slider-label">⏱ Timer</span>
+          <input type="range" id="timer-slider" min="10" max="180" step="5" value="60">
+          <span class="timer-slider-val" id="timer-slider-val">60s</span>
+        </div>
         <div class="word-actions">
           <button class="btn-game reveal" id="btn-reveal">🎲 Reveal Word</button>
           <button class="btn-game stop-timer" id="btn-stop-timer" style="display:none;">⏹ Stop Timer</button>
@@ -935,13 +998,28 @@ let state = {
   teams: [],
   pool: [],
   usedPool: [],
-  currentEntry: null,   // { w, s } for the active word
+  currentEntry: null,
   wordsRevealed: 0,
+  timerDuration: 60,
   timerInterval: null,
   timerSeconds: 60,
   timerRunning: false,
   gameOver: false,
 };
+
+/* Timer slider */
+const timerSlider = document.getElementById('timer-slider');
+const timerSliderVal = document.getElementById('timer-slider-val');
+timerSlider.addEventListener('input', () => {
+  const v = parseInt(timerSlider.value);
+  state.timerDuration = v;
+  const mins = Math.floor(v / 60);
+  const secs = v % 60;
+  timerSliderVal.textContent = v + 's';
+  document.getElementById('timer-display').textContent =
+    mins + ':' + String(secs).padStart(2, '0');
+  document.getElementById('timer-bar').style.width = '100%';
+});
 
 /* ════════════════════════════════════════════════
    SETUP — STEP NAVIGATION
@@ -1049,10 +1127,13 @@ function resetWordArea() {
   wordEl.textContent = '· · ·';
   wordEl.className = 'hidden-word';
   wordEl.style.color = '';
-  document.getElementById('timer-display').textContent = '1:00';
+  const d = state.timerDuration;
+  document.getElementById('timer-display').textContent =
+    Math.floor(d / 60) + ':' + String(d % 60).padStart(2, '0');
   document.getElementById('timer-display').classList.remove('urgent');
   document.getElementById('timer-bar').style.width = '100%';
   document.getElementById('timer-bar').classList.remove('urgent');
+  document.getElementById('timer-slider').disabled = false;
   document.getElementById('btn-stop-timer').style.display = 'none';
   document.getElementById('btn-reveal').disabled = false;
   document.getElementById('round-counter').textContent = 'Words revealed: ' + state.wordsRevealed;
@@ -1144,8 +1225,9 @@ document.getElementById('btn-end-game').addEventListener('click', () => {
 
 /* ── Timer ── */
 function startTimer() {
-  state.timerSeconds = 60;
+  state.timerSeconds = state.timerDuration;
   state.timerRunning = true;
+  document.getElementById('timer-slider').disabled = true;
   updateTimerUI();
   state.timerInterval = setInterval(() => {
     state.timerSeconds--;
@@ -1164,13 +1246,14 @@ function startTimer() {
 function stopTimer() {
   clearInterval(state.timerInterval);
   state.timerRunning = false;
+  document.getElementById('timer-slider').disabled = false;
 }
 
 function updateTimerUI() {
   const s = state.timerSeconds;
   document.getElementById('timer-display').textContent =
     Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
-  document.getElementById('timer-bar').style.width = (s / 60 * 100) + '%';
+  document.getElementById('timer-bar').style.width = (s / state.timerDuration * 100) + '%';
   const urgent = s <= 10;
   document.getElementById('timer-display').classList.toggle('urgent', urgent);
   document.getElementById('timer-bar').classList.toggle('urgent', urgent);
