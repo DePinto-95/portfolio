@@ -63,9 +63,7 @@
     }
     #screen-setup.active { display: flex; }
 
-    .setup-hero {
-      text-align: center;
-    }
+    .setup-hero { text-align: center; }
     .setup-hero .mic-emoji {
       font-size: 4rem;
       display: block;
@@ -87,13 +85,8 @@
       background-clip: text;
       text-transform: uppercase;
     }
-    .setup-hero p {
-      color: var(--text2);
-      margin-top: 8px;
-      font-size: 0.95rem;
-    }
+    .setup-hero p { color: var(--text2); margin-top: 8px; font-size: 0.95rem; }
 
-    /* Step container */
     .setup-card {
       background: var(--bg2);
       border: 1px solid var(--border);
@@ -111,27 +104,17 @@
       margin-bottom: 18px;
     }
 
-    /* Step indicator */
-    .step-dots {
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-    }
+    .step-dots { display: flex; gap: 8px; justify-content: center; }
     .step-dot {
       width: 10px; height: 10px;
       border-radius: 50%;
       background: var(--border);
       transition: background 0.3s;
     }
-    .step-dot.done { background: var(--accent2); }
+    .step-dot.done   { background: var(--accent2); }
     .step-dot.active { background: var(--accent); }
 
-    /* Choice buttons */
-    .choice-group {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+    .choice-group { display: flex; gap: 12px; flex-wrap: wrap; }
     .choice-btn {
       flex: 1;
       min-width: 100px;
@@ -146,23 +129,10 @@
       transition: all 0.2s;
       text-align: center;
     }
-    .choice-btn:hover {
-      border-color: var(--accent2);
-      color: var(--text);
-    }
-    .choice-btn.selected {
-      border-color: var(--accent);
-      background: rgba(192,38,211,0.15);
-      color: var(--text);
-    }
+    .choice-btn:hover { border-color: var(--accent2); color: var(--text); }
+    .choice-btn.selected { border-color: var(--accent); background: rgba(192,38,211,0.15); color: var(--text); }
 
-    /* Team count */
-    .team-count-row {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
+    .team-count-row { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
     .count-btn {
       width: 36px; height: 36px;
       border-radius: 50%;
@@ -175,20 +145,9 @@
       transition: all 0.2s;
     }
     .count-btn:hover { border-color: var(--accent); color: var(--accent); }
-    #team-count-display {
-      font-size: 1.4rem;
-      font-weight: 700;
-      min-width: 40px;
-      text-align: center;
-    }
+    #team-count-display { font-size: 1.4rem; font-weight: 700; min-width: 40px; text-align: center; }
 
-    /* Team name inputs */
-    #team-name-inputs {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
+    #team-name-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
     .team-name-input {
       background: var(--bg3);
       border: 1px solid var(--border);
@@ -199,24 +158,11 @@
       width: 100%;
       transition: border-color 0.2s;
     }
-    .team-name-input:focus {
-      outline: none;
-      border-color: var(--accent2);
-    }
+    .team-name-input:focus { outline: none; border-color: var(--accent2); }
 
-    /* Win condition */
-    .win-label {
-      font-size: 0.85rem;
-      color: var(--text2);
-      margin-bottom: 10px;
-    }
+    .win-label { font-size: 0.85rem; color: var(--text2); margin-bottom: 10px; }
 
-    /* Nav buttons */
-    .setup-nav {
-      display: flex;
-      gap: 12px;
-      margin-top: 24px;
-    }
+    .setup-nav { display: flex; gap: 12px; margin-top: 24px; }
     .btn-setup {
       flex: 1;
       padding: 12px;
@@ -227,16 +173,9 @@
       border: none;
       transition: all 0.2s;
     }
-    .btn-setup.primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #fff;
-    }
+    .btn-setup.primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; }
     .btn-setup.primary:hover { opacity: 0.9; transform: translateY(-1px); }
-    .btn-setup.secondary {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      color: var(--text2);
-    }
+    .btn-setup.secondary { background: var(--bg3); border: 1px solid var(--border); color: var(--text2); }
     .btn-setup.secondary:hover { color: var(--text); border-color: var(--accent2); }
 
     /* ════════════════════════════════
@@ -251,7 +190,6 @@
     }
     #screen-game.active { display: flex; }
 
-    /* Game header */
     .game-header {
       display: flex;
       align-items: center;
@@ -261,17 +199,8 @@
       padding-bottom: 16px;
       border-bottom: 1px solid var(--border);
     }
-    .game-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--accent);
-      letter-spacing: 1px;
-    }
-    .game-badges {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
+    .game-title { font-size: 1.1rem; font-weight: 700; color: var(--accent); letter-spacing: 1px; }
+    .game-badges { display: flex; gap: 8px; flex-wrap: wrap; }
     .badge-pill {
       padding: 4px 12px;
       border-radius: 999px;
@@ -281,15 +210,15 @@
       letter-spacing: 1px;
     }
     .badge-diff { background: rgba(124,58,237,0.25); color: #a78bfa; border: 1px solid #4c1d95; }
-    .badge-lang { background: rgba(192,38,211,0.2); color: #e879f9; border: 1px solid #701a75; }
-    .badge-win  { background: rgba(245,158,11,0.2); color: var(--gold); border: 1px solid #92400e; }
+    .badge-lang { background: rgba(192,38,211,0.2);  color: #e879f9; border: 1px solid #701a75; }
+    .badge-win  { background: rgba(245,158,11,0.2);  color: var(--gold); border: 1px solid #92400e; }
 
     /* Word reveal area */
     .word-area {
       background: var(--bg2);
       border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 36px 24px;
+      padding: 36px 24px 24px;
       text-align: center;
     }
     #current-word {
@@ -302,11 +231,46 @@
       min-height: 1.2em;
       transition: all 0.3s;
     }
-    #current-word.hidden-word {
-      color: var(--muted);
-      letter-spacing: 20px;
-      font-size: 2rem;
+    #current-word.hidden-word { color: var(--muted); letter-spacing: 20px; font-size: 2rem; }
+
+    /* Song hint area */
+    .song-hint-wrap {
+      margin-top: 14px;
+      min-height: 48px;
     }
+    #btn-show-songs {
+      background: transparent;
+      border: 1px dashed var(--muted);
+      color: var(--text2);
+      border-radius: 8px;
+      padding: 7px 18px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: none;
+    }
+    #btn-show-songs:hover { border-color: var(--accent2); color: var(--text); }
+    #song-list {
+      display: none;
+      margin-top: 10px;
+      flex-direction: column;
+      gap: 5px;
+    }
+    #song-list.visible { display: flex; }
+    .song-hint-item {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      color: var(--text2);
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .song-hint-item::before { content: '🎵'; flex-shrink: 0; }
 
     /* Timer */
     .timer-row {
@@ -324,10 +288,7 @@
       text-align: center;
       transition: color 0.3s;
     }
-    #timer-display.urgent {
-      color: var(--red);
-      animation: blink-timer 0.6s ease-in-out infinite;
-    }
+    #timer-display.urgent { color: var(--red); animation: blink-timer 0.6s ease-in-out infinite; }
     @keyframes blink-timer {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.4; }
@@ -387,16 +348,16 @@
     }
     .btn-game.end-game:hover { border-color: var(--red); color: var(--red); }
 
-    /* Game layout: word+teams | scoreboard */
+    .round-counter { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 8px; }
+
+    /* Game layout */
     .game-body {
       display: grid;
       grid-template-columns: 1fr 280px;
       gap: 20px;
       align-items: start;
     }
-    @media (max-width: 700px) {
-      .game-body { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 700px) { .game-body { grid-template-columns: 1fr; } }
 
     /* Team point buttons */
     .teams-panel {
@@ -423,12 +384,7 @@
       gap: 12px;
     }
     .team-row:last-child { border-bottom: none; }
-    .team-info {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      min-width: 0;
-    }
+    .team-info { display: flex; flex-direction: column; flex: 1; min-width: 0; }
     .team-name-label {
       font-weight: 700;
       font-size: 0.95rem;
@@ -436,10 +392,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    .team-score-label {
-      font-size: 0.8rem;
-      color: var(--text2);
-    }
+    .team-score-label { font-size: 0.8rem; color: var(--text2); }
     .point-btn {
       padding: 6px 14px;
       border-radius: 8px;
@@ -483,38 +436,11 @@
     }
     .score-entry:last-child { border-bottom: none; }
     .score-entry.top { background: rgba(245,158,11,0.08); }
-    .score-rank {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--muted);
-      min-width: 20px;
-      text-align: center;
-    }
+    .score-rank { font-size: 0.8rem; font-weight: 700; color: var(--muted); min-width: 20px; text-align: center; }
     .score-entry.top .score-rank { color: var(--gold); }
-    .score-name {
-      flex: 1;
-      font-size: 0.9rem;
-      font-weight: 600;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .score-pts {
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--gold);
-    }
-    .score-entry.top .score-pts {
-      text-shadow: 0 0 10px rgba(245,158,11,0.5);
-    }
-
-    /* Round counter */
-    .round-counter {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.8rem;
-      margin-top: 8px;
-    }
+    .score-name { flex: 1; font-size: 0.9rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .score-pts { font-size: 1rem; font-weight: 800; color: var(--gold); }
+    .score-entry.top .score-pts { text-shadow: 0 0 10px rgba(245,158,11,0.5); }
 
     /* ════════════════════════════════
        WIN OVERLAY
@@ -544,12 +470,7 @@
       to   { transform: scale(1);   opacity: 1; }
     }
     .win-trophy { font-size: 4rem; margin-bottom: 12px; display: block; }
-    .win-box h2 {
-      font-size: 1.8rem;
-      font-weight: 900;
-      color: var(--gold);
-      margin-bottom: 6px;
-    }
+    .win-box h2 { font-size: 1.8rem; font-weight: 900; color: var(--gold); margin-bottom: 6px; }
     .win-box .win-team {
       font-size: 2.2rem;
       font-weight: 900;
@@ -559,11 +480,7 @@
       background-clip: text;
       margin-bottom: 4px;
     }
-    .win-box .win-score {
-      color: var(--text2);
-      margin-bottom: 28px;
-      font-size: 0.95rem;
-    }
+    .win-box .win-score { color: var(--text2); margin-bottom: 28px; font-size: 0.95rem; }
     .win-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
     /* ════════════════════════════════
@@ -578,13 +495,7 @@
       text-align: center;
     }
     #screen-gameover.active { display: flex; }
-    .gameover-title {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
+    .gameover-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: var(--muted); margin-bottom: 6px; }
     .gameover-winner {
       font-size: 2.5rem;
       font-weight: 900;
@@ -626,7 +537,6 @@
     <p>The karaoke game for people who can't sing!</p>
   </div>
 
-  <!-- Step dots -->
   <div class="step-dots">
     <div class="step-dot active" id="dot-0"></div>
     <div class="step-dot" id="dot-1"></div>
@@ -663,16 +573,13 @@
   <!-- Step 3: Teams + Win condition -->
   <div class="setup-card" id="step-3" style="display:none;">
     <h2>Step 3 — Teams & Win Condition</h2>
-
     <div class="team-count-row">
       <button class="count-btn" id="teams-minus">−</button>
       <span id="team-count-display">4</span>
       <button class="count-btn" id="teams-plus">+</button>
       <span style="color:var(--text2);font-size:0.9rem;">teams</span>
     </div>
-
     <div id="team-name-inputs"></div>
-
     <p class="win-label">Win condition — first team to reach:</p>
     <div class="choice-group" id="win-choice-group">
       <button class="choice-btn" data-win="20">20 pts</button>
@@ -680,7 +587,6 @@
       <button class="choice-btn" data-win="100">100 pts</button>
       <button class="choice-btn" data-win="0">♾ Unlimited</button>
     </div>
-
     <div class="setup-nav">
       <button class="btn-setup secondary" id="back-3">← Back</button>
       <button class="btn-setup primary" id="start-game">🎤 Start Game!</button>
@@ -708,6 +614,13 @@
       <!-- Word area -->
       <div class="word-area">
         <div id="current-word" class="hidden-word">· · ·</div>
+
+        <!-- Song hints (hidden until button clicked) -->
+        <div class="song-hint-wrap">
+          <button id="btn-show-songs">🎵 Show example songs</button>
+          <div id="song-list"></div>
+        </div>
+
         <div class="timer-row">
           <div id="timer-display">1:00</div>
           <div class="timer-bar-wrap">
@@ -766,7 +679,7 @@
     <div class="win-team" id="win-team-name"></div>
     <div class="win-score" id="win-team-score"></div>
     <div class="win-actions">
-      <button class="btn-setup primary" id="btn-win-end" style="max-width:180px;">See Final Results</button>
+      <button class="btn-setup primary"   id="btn-win-end"      style="max-width:180px;">See Final Results</button>
       <button class="btn-setup secondary" id="btn-win-continue" style="max-width:180px;">Keep Playing</button>
     </div>
   </div>
@@ -774,71 +687,241 @@
 
 <script>
 /* ════════════════════════════════════════════════
-   WORD POOLS
+   WORD DATABASE  — each entry: { w: 'word', s: ['Song — Artist', ...] }
    ════════════════════════════════════════════════ */
 const WORDS = {
   en: {
     easy: [
-      'love','night','rain','home','heart','dance','fire','dream','road','sun',
-      'moon','star','run','fall','fly','time','eyes','smile','hand','feel',
-      'lost','blue','hold','stay','wake','move','real','strong','young','break',
-      'light','deep','cold','free','sing','cry','gone','far','warm','safe',
-      'trust','face','life','world','mind','soul','wish','sleep','wait','wild',
-      'gold','ring','voice','touch','fear','save','change','rise','burn','shine',
-      'fall','call','tell','know','show','walk','talk','look','find','give'
+      { w:'love',   s:['Love Story — Taylor Swift', 'Crazy in Love — Beyoncé', 'I Will Always Love You — Whitney Houston'] },
+      { w:'night',  s:['Night Changes — One Direction', 'Good Night — The Beatles', 'Dancing in the Night — Neon Trees'] },
+      { w:'rain',   s:['Rain on Me — Lady Gaga & Ariana Grande', 'November Rain — Guns N\' Roses', 'Set Fire to the Rain — Adele'] },
+      { w:'home',   s:['Home — Michael Bublé', 'Take Me Home, Country Roads — John Denver', 'Home — Phillip Phillips'] },
+      { w:'heart',  s:['My Heart Will Go On — Celine Dion', 'Total Eclipse of the Heart — Bonnie Tyler', 'Unbreak My Heart — Toni Braxton'] },
+      { w:'dance',  s:['Dance Monkey — Tones and I', 'Dancing Queen — ABBA', 'Let\'s Dance — David Bowie'] },
+      { w:'fire',   s:['Girl on Fire — Alicia Keys', 'Light My Fire — The Doors', 'Ring of Fire — Johnny Cash'] },
+      { w:'dream',  s:['Dream On — Aerosmith', 'Dreaming of You — Selena', 'California Dreamin\' — The Mamas & The Papas'] },
+      { w:'road',   s:['Life is a Highway — Tom Cochrane', 'On the Road Again — Willie Nelson', 'Road to Hell — Chris Rea'] },
+      { w:'sun',    s:['Here Comes the Sun — The Beatles', 'Walking on Sunshine — Katrina & The Waves', 'You Are the Sunshine of My Life — Stevie Wonder'] },
+      { w:'moon',   s:['Fly Me to the Moon — Frank Sinatra', 'Bad Moon Rising — CCR', 'Moonlight Sonata — Beethoven'] },
+      { w:'star',   s:['Starboy — The Weeknd', 'Twinkle Twinkle Little Star', 'Lucky Star — Madonna'] },
+      { w:'run',    s:['Run — Snow Patrol', 'Born to Run — Bruce Springsteen', 'Run the World — Beyoncé'] },
+      { w:'fall',   s:['Fall for You — Secondhand Serenade', 'Free Fallin\' — Tom Petty', 'Autumn Leaves — Ed Sheeran'] },
+      { w:'fly',    s:['I Believe I Can Fly — R. Kelly', 'Learning to Fly — Pink Floyd', 'Fly Me to the Moon — Frank Sinatra'] },
+      { w:'time',   s:['Time After Time — Cyndi Lauper', 'Time — Pink Floyd', 'Good Times Bad Times — Led Zeppelin'] },
+      { w:'eyes',   s:['Behind Blue Eyes — The Who', 'These Eyes — The Guess Who', 'Angel Eyes — ABBA'] },
+      { w:'smile',  s:['Smile — Nat King Cole', 'Smile — Katy Perry', 'Put on a Happy Face — Broadway'] },
+      { w:'hand',   s:['Hand in Hand — Dire Straits', 'I Want to Hold Your Hand — The Beatles', 'Helping Hand — Elton John'] },
+      { w:'lost',   s:['Lost — Coldplay', 'All is Lost — Moby', 'Lost Without You — Robin Thicke'] },
+      { w:'blue',   s:['Blue — Eiffel 65', 'Something Blue — The Beatles', 'Blue Suede Shoes — Elvis Presley'] },
+      { w:'hold',   s:['Hold On — Wilson Phillips', 'Can\'t Hold Us — Macklemore & Ryan Lewis', 'Hold Me Now — Thompson Twins'] },
+      { w:'stay',   s:['Stay — Rihanna ft. Mikky Ekko', 'Stay With Me — Sam Smith', 'I\'m Gonna Be (500 Miles) — The Proclaimers'] },
+      { w:'wake',   s:['Wake Me Up — Avicii', 'Wake Up — Rage Against the Machine', 'Good Morning — Kanye West'] },
+      { w:'move',   s:['Move Your Body — Sia', 'Let\'s Move — Madonna', 'Move on Up — Curtis Mayfield'] },
+      { w:'real',   s:['Keep It Real — Big Pun', 'Real Love — The Beatles', 'Unreal — Bon Jovi'] },
+      { w:'young',  s:['Forever Young — Alphaville', 'Young and Beautiful — Lana Del Rey', 'Young Blood — 5 Seconds of Summer'] },
+      { w:'break',  s:['Break Free — Ariana Grande', 'Heartbreak Hotel — Elvis Presley', 'Break My Heart — Dua Lipa'] },
+      { w:'light',  s:['Blinding Lights — The Weeknd', 'Light Up the World — Glee Cast', 'Speed of Light — Iron Maiden'] },
+      { w:'cold',   s:['Cold Water — Major Lazer ft. Justin Bieber', 'Baby It\'s Cold Outside', 'Cold as Ice — Foreigner'] },
+      { w:'free',   s:['Free Fallin\' — Tom Petty', 'Freedom — George Michael', 'Free Bird — Lynyrd Skynyrd'] },
+      { w:'sing',   s:['Sing — Ed Sheeran', 'Sing — Travis', 'Don\'t Stop Me Now — Queen'] },
+      { w:'cry',    s:['Cry Me a River — Justin Timberlake', 'Big Girls Don\'t Cry — Fergie', 'Crying — Roy Orbison'] },
+      { w:'gone',   s:['Gone — NSYNC', 'Gone with the Wind — Rhett Butler', 'Gone Till November — Wyclef Jean'] },
+      { w:'warm',   s:['Warm it Up — Kris Kross', 'Winter Wonderland', 'You Are So Beautiful — Joe Cocker'] },
+      { w:'safe',   s:['Safe and Sound — Taylor Swift', 'Safe — Westlife', 'You\'ll Be Safe Here — Rivermaya'] },
+      { w:'face',   s:['Face to Face — Daft Punk', 'In Your Face — New Kids on the Block', 'Face Down — Red Jumpsuit Apparatus'] },
+      { w:'life',   s:['That\'s Life — Frank Sinatra', 'Life is Beautiful — Sixx:A.M.', 'Life Goes On — BTS'] },
+      { w:'world',  s:['We Are the World — USA for Africa', 'World — Five', 'It\'s a Small World'] },
+      { w:'soul',   s:['Soul Sister — Train', 'Lose Yourself — Eminem', 'Soul Man — Sam & Dave'] },
+      { w:'wish',   s:['Wish You Were Here — Pink Floyd', 'Make a Wish — NCT 127', 'I Wish — Stevie Wonder'] },
+      { w:'sleep',  s:['Don\'t Sleep in the Subway — Petula Clark', 'Sleep on the Floor — The Lumineers', 'Go to Sleep — Radiohead'] },
+      { w:'wild',   s:['Wild Ones — Flo Rida ft. Sia', 'Wild Thing — The Troggs', 'Born to Be Wild — Steppenwolf'] },
+      { w:'gold',   s:['Gold — Spandau Ballet', 'Heart of Gold — Neil Young', 'Gold Digger — Kanye West'] },
+      { w:'voice',  s:['The Voice Within — Christina Aguilera', 'Voice of an Angel — Charlotte Church', 'Sweet Child O\' Mine — Guns N\' Roses'] },
+      { w:'touch',  s:['Can\'t Touch This — MC Hammer', 'Touch Me — The Doors', 'Reach Out and Touch — Diana Ross'] },
+      { w:'fear',   s:['Fear of the Dark — Iron Maiden', 'Fear — Blue October', 'No Fear — Supertramp'] },
+      { w:'change', s:['Changes — David Bowie', 'Change the World — Eric Clapton', 'A Change Is Gonna Come — Sam Cooke'] },
+      { w:'rise',   s:['Rise — Katy Perry', 'Rise Up — Andra Day', 'The Rising — Bruce Springsteen'] },
+      { w:'burn',   s:['Burning Down the House — Talking Heads', 'We Didn\'t Start the Fire — Billy Joel', 'Burn — Usher'] },
+      { w:'shine',  s:['Shine On You Crazy Diamond — Pink Floyd', 'You Make My Dreams Come True — Hall & Oates', 'Let the Sunshine In — Hair'] },
+      { w:'call',   s:['The Call — The Backstreet Boys', 'Call Me Maybe — Carly Rae Jepsen', 'Call Me — Blondie'] },
+      { w:'walk',   s:['Walk This Way — Aerosmith', 'Walk Like an Egyptian — The Bangles', 'Walk of Life — Dire Straits'] },
+      { w:'know',   s:['You Don\'t Know My Name — Alicia Keys', 'I Know — Fiona Apple', 'Do You Know the Way to San Jose — Dionne Warwick'] },
+      { w:'look',   s:['Don\'t Look Back in Anger — Oasis', 'Look What You Made Me Do — Taylor Swift', 'Lookin\' Out My Back Door — CCR'] },
+      { w:'find',   s:['Find the River — R.E.M.', 'I Will Find You — Clannad', 'Find My Way — Foo Fighters'] },
+      { w:'give',   s:['Give Me Everything — Pitbull', 'Give Peace a Chance — John Lennon', 'Give It Away — Red Hot Chili Peppers'] },
     ],
     normal: [
-      'shadow','whisper','broken','forever','silence','thunder','breathe','wonder','always','tonight',
-      'escape','hunger','memories','courage','faithful','surrender','midnight','beauty','deserve','regret',
-      'soldier','hollow','patient','angel','reason','ocean','poison','mirror','chance','second',
-      'follow','pieces','harder','better','faster','stranger','darker','fading','bleeding','healing',
-      'chasing','missing','fighting','standing','falling','turning','burning','leaving','winning','losing',
-      'staying','speaking','laughing','dreaming','screaming','wishing','hoping','praying','reaching','climbing',
-      'falling','rising','hiding','finding','breaking','making','taking','giving','living','breathing'
+      { w:'shadow',    s:['Me and My Shadow — Frank Sinatra', 'Shadow of a Doubt — Sonic Youth', 'Shadow — Britney Spears'] },
+      { w:'whisper',   s:['Whisper — Evanescence', 'The Sound of Silence — Simon & Garfunkel', 'Breathe — Faith Hill'] },
+      { w:'broken',    s:['Broken — Seether ft. Amy Lee', 'We Are Broken — Paramore', 'Fix You — Coldplay'] },
+      { w:'forever',   s:['Forever Young — Rod Stewart', 'I Will Love You Forever — Celine Dion', 'Forever — Chris Brown'] },
+      { w:'silence',   s:['The Sound of Silence — Simon & Garfunkel', 'Silence — Delerium ft. Sarah McLachlan', 'Sounds of Silence — Disturbed'] },
+      { w:'thunder',   s:['Thunder — Imagine Dragons', 'Thunderstruck — AC/DC', 'Riders on the Storm — The Doors'] },
+      { w:'breathe',   s:['Breathe — Faith Hill', 'Breathe (2 AM) — Anna Nalick', 'Just Breathe — Pearl Jam'] },
+      { w:'wonder',    s:['Superstition — Stevie Wonder', 'I Wonder — ABBA', 'Stevie Wonder — Signed Sealed Delivered'] },
+      { w:'always',    s:['Always — Bon Jovi', 'I\'ll Always Love You — Whitney Houston', 'Always on My Mind — Elvis Presley'] },
+      { w:'tonight',   s:['Tonight — Fun.', 'Tonight I\'m Yours — Rod Stewart', 'Hot for Teacher — Van Halen'] },
+      { w:'escape',    s:['Escape (Pina Colada Song) — Rupert Holmes', 'Escape — Enrique Iglesias', 'Escape — Metallica'] },
+      { w:'memories',  s:['Memories — Maroon 5', 'The Memory Remains — Metallica', 'In My Life — The Beatles'] },
+      { w:'surrender', s:['Surrender — Cheap Trick', 'White Flag — Dido', 'I Surrender — Celine Dion'] },
+      { w:'midnight',  s:['Midnight Train to Georgia — Gladys Knight', 'After Midnight — Eric Clapton', 'Midnight City — M83'] },
+      { w:'angel',     s:['Angel — Sarah McLachlan', 'Angel of Mine — Monica', 'Angel Eyes — ABBA'] },
+      { w:'ocean',     s:['Ocean Eyes — Billie Eilish', 'Oceans — Hillsong United', 'Sail Away — Enya'] },
+      { w:'poison',    s:['Every Rose Has Its Thorn — Poison', 'Poison — Alice Cooper', 'Toxic — Britney Spears'] },
+      { w:'mirror',    s:['Man in the Mirror — Michael Jackson', 'Mirror — Lil Wayne ft. Bruno Mars', 'Look at Me — Migos'] },
+      { w:'stranger',  s:['Stranger in the Night — Frank Sinatra', 'The Stranger — Billy Joel', 'Stranger Things — Kygo'] },
+      { w:'bleeding',  s:['Bleeding Love — Leona Lewis', 'Blood in the Water — Grandson', 'Cuts Like a Knife — Bryan Adams'] },
+      { w:'healing',   s:['Heal the World — Michael Jackson', 'Healer — Kari Jobe', 'The Healing Has Begun — Van Morrison'] },
+      { w:'chasing',   s:['Chasing Cars — Snow Patrol', 'Chasing Pavements — Adele', 'Chasing the Sun — The Wanted'] },
+      { w:'missing',   s:['Miss You — Rolling Stones', 'I Miss You — Blink-182', 'Missing — Everything But the Girl'] },
+      { w:'fighting',  s:['Fight Song — Rachel Platten', 'Eye of the Tiger — Survivor', 'Fighter — Christina Aguilera'] },
+      { w:'burning',   s:['I\'m on Fire — Bruce Springsteen', 'Great Balls of Fire — Jerry Lee Lewis', 'Burning — Sam Smith'] },
+      { w:'leaving',   s:['Leaving on a Jet Plane — John Denver', 'I\'m Leaving on a Jet Plane — Peter Paul & Mary', 'When I Leave — Celine Dion'] },
+      { w:'dreaming',  s:['Dreaming — Blondie', 'Daydream Believer — The Monkees', 'Dream Weaver — Gary Wright'] },
+      { w:'screaming', s:['Scream — Michael Jackson', 'Scream and Shout — will.i.am ft. Britney Spears', 'Screaming at the Sky — Kelly Clarkson'] },
+      { w:'hoping',    s:['Hope — R. Kelly', 'Candle in the Wind — Elton John', 'Something Just Like This — Chainsmokers'] },
+      { w:'praying',   s:['Praying — Kesha', 'I\'ll Be Praying — Casting Crowns', 'Like a Prayer — Madonna'] },
+      { w:'rising',    s:['The Rising — Bruce Springsteen', 'Rise Up — Andra Day', 'Keep on Rising — Leann Rimes'] },
+      { w:'finding',   s:['Find Me — Sigma ft. Birdy', 'Finder — Dua Lipa', 'Found/Tonight — Lin-Manuel Miranda'] },
+      { w:'breaking',  s:['Breaking the Habit — Linkin Park', 'Breakeven — The Script', 'Breaking Free — High School Musical'] },
+      { w:'living',    s:['Living on a Prayer — Bon Jovi', 'Good Life — OneRepublic', 'Stayin\' Alive — Bee Gees'] },
+      { w:'soldier',   s:['Soldier — Destiny\'s Child', 'Soldier of Fortune — Deep Purple', 'When You Come Back Down — Nickel Creek'] },
+      { w:'reason',    s:['The Reason — Hoobastank', 'Reason to Believe — Rod Stewart', 'Give Me One Reason — Tracy Chapman'] },
+      { w:'chance',    s:['Take a Chance on Me — ABBA', 'Last Chance — Def Leppard', 'Another Day in Paradise — Phil Collins'] },
+      { w:'pieces',    s:['Pieces of Me — Ashlee Simpson', 'All Falls Down — Kanye West', 'Broken Pieces — Apocalyptica'] },
+      { w:'fading',    s:['Fade to Black — Metallica', 'Fading Like a Flower — Roxette', 'Fade — Kanye West'] },
+      { w:'turning',   s:['The Times They Are A-Changin\' — Bob Dylan', 'Turn! Turn! Turn! — The Byrds', 'It\'s My Life — Bon Jovi'] },
     ],
     hard: [
-      'kaleidoscope','euphoria','renaissance','melancholy','catastrophe','apocalypse','labyrinth','serendipity','paradox','phenomenon',
-      'revolutionary','extraordinary','unconditional','supernatural','invincible','psychological','masterpiece','equilibrium','devastation','resurrection',
-      'magnificent','illuminate','oscillation','hallelujah','thunderstruck','bittersweet','synchronize','crystallize','overwhelm','catastrophic',
-      'earthquake','deteriorate','evermore','nightmare','hurricane','diamond','titanium','radioactive','centuries','believer',
-      'warriors','imagine','yesterday','beautiful','wonderful','dangerous','everything','everybody','somewhere','anything',
-      'inevitable','unforgettable','incomparable','irreplaceable','undeniable','phenomenal','extraordinary','breathtaking','overwhelming','unbreakable'
+      { w:'kaleidoscope',   s:['Kaleidoscope — Coldplay', 'Kaleidoscope Dream — Miguel'] },
+      { w:'euphoria',       s:['Euphoria — Loreen', 'Euphoria — BTS', 'Levels — Avicii'] },
+      { w:'melancholy',     s:['Numb/Encore — Jay-Z & Linkin Park', 'Mellon Collie — Smashing Pumpkins', 'Creep — Radiohead'] },
+      { w:'labyrinth',      s:['Labyrinth — Taylor Swift', 'Magic Dance — David Bowie (Labyrinth)'] },
+      { w:'serendipity',    s:['Serendipity — BTS', 'Accidentally in Love — Counting Crows'] },
+      { w:'paradox',        s:['Time — Pink Floyd', 'Nature Boy — Nat King Cole', 'Karma Police — Radiohead'] },
+      { w:'hallelujah',     s:['Hallelujah — Leonard Cohen', 'Hallelujah — Jeff Buckley', 'Hallelujah — Pentatonix'] },
+      { w:'thunderstruck',  s:['Thunderstruck — AC/DC', 'Thunder — Imagine Dragons'] },
+      { w:'bittersweet',    s:['Bittersweet Symphony — The Verve', 'Bittersweet — Hinder', 'Beautiful Day — U2'] },
+      { w:'masterpiece',    s:['Masterpiece — Madonna', 'Masterpiece — Atlantic Starr', 'Titanium — David Guetta'] },
+      { w:'resurrection',   s:['Life Is Beautiful — Sixx:A.M.', 'Lazarus — David Bowie', 'Back from the Dead — Ozzy Osbourne'] },
+      { w:'hurricane',      s:['Hurricane — Bob Dylan', 'Rock You Like a Hurricane — Scorpions', '99 Problems — Jay-Z'] },
+      { w:'diamond',        s:['Lucy in the Sky with Diamonds — The Beatles', 'Diamonds — Rihanna', 'Shine Bright Like a Diamond — Rihanna'] },
+      { w:'titanium',       s:['Titanium — David Guetta ft. Sia', 'Iron Man — Black Sabbath'] },
+      { w:'radioactive',    s:['Radioactive — Imagine Dragons', 'Radioactivity — Kraftwerk'] },
+      { w:'centuries',      s:['Centuries — Fall Out Boy', 'My Generation — The Who'] },
+      { w:'believer',       s:['Believer — Imagine Dragons', 'I\'m a Believer — The Monkees', 'Just a Believer — Solange'] },
+      { w:'warriors',       s:['Warriors — Imagine Dragons', 'We Are the Champions — Queen', 'Hall of Fame — The Script'] },
+      { w:'imagine',        s:['Imagine — John Lennon', 'Imagine — Ariana Grande'] },
+      { w:'yesterday',      s:['Yesterday — The Beatles', 'Yesterday Once More — Carpenters'] },
+      { w:'beautiful',      s:['Beautiful — Christina Aguilera', 'Isn\'t She Lovely — Stevie Wonder', 'You Are Beautiful — James Blunt'] },
+      { w:'wonderful',      s:['What a Wonderful World — Louis Armstrong', 'Wonderful Tonight — Eric Clapton'] },
+      { w:'dangerous',      s:['Dangerous — Michael Jackson', 'Dangerous Woman — Ariana Grande', 'It\'s Tricky — Run-D.M.C.'] },
+      { w:'everything',     s:['Everything — Michael Bublé', 'Everything at Once — Lenka', 'Everything I Do — Bryan Adams'] },
+      { w:'somewhere',      s:['Somewhere Only We Know — Keane', 'Somewhere Over the Rainbow', 'Somewhere I Belong — Linkin Park'] },
+      { w:'inevitable',     s:['Inevitable — Shakira', 'Unstoppable — Sia', 'Invincible — Michael Jackson'] },
+      { w:'unforgettable',  s:['Unforgettable — Nat King Cole', 'Unforgettable — French Montana ft. Swae Lee'] },
+      { w:'irreplaceable',  s:['Irreplaceable — Beyoncé', 'Irresistible — Fall Out Boy'] },
+      { w:'breathtaking',   s:['Breathe — Faith Hill', 'Breathe Again — Toni Braxton', 'Just Breathe — Pearl Jam'] },
+      { w:'unbreakable',    s:['Unbreakable — Michael Jackson', 'Unbreakable — Westlife', 'Fighter — Christina Aguilera'] },
+      { w:'invincible',     s:['Invincible — Michael Jackson', 'Invincible — Two Steps from Hell', 'Titanium — David Guetta'] },
+      { w:'devastation',    s:['In the End — Linkin Park', 'How Could This Happen to Me — Simple Plan', 'Boulevard of Broken Dreams — Green Day'] },
+      { w:'illuminate',     s:['Shining Light — Annie Lennox', 'This Little Light of Mine', 'Shine — Take That'] },
+      { w:'evermore',       s:['Evermore — Beauty and the Beast', 'Evermore — Taylor Swift', 'Long Live — Taylor Swift'] },
+      { w:'nightmare',      s:['Nightmare — Halsey', 'Welcome to My Nightmare — Alice Cooper', 'Enter Sandman — Metallica'] },
     ]
   },
   gr: {
     easy: [
-      'αγάπη','νύχτα','βροχή','καρδιά','ήλιος','θάλασσα','φίλος','χαρά','λύπη','ουρανός',
-      'φεγγάρι','αστέρι','δρόμος','χέρι','μάτια','ζωή','χρόνος','μουσική','τραγούδι','ψυχή',
-      'φτερά','πόλη','σπίτι','χορός','φωτιά','κόσμος','σκοτάδι','φως','ελπίδα','όνειρο',
-      'νερό','αέρας','γη','πόνος','χαμόγελο','φύση','πρωί','βράδυ','άνοιξη','καλοκαίρι',
-      'φιλί','αγκαλιά','σιωπή','λόγια','φωνή','σύννεφα','κύμα','ξεχνώ','θυμάμαι','χάνω',
-      'βρίσκω','περπατώ','τρέχω','κλαίω','γελώ','τραγουδώ','αγαπώ','ονειρεύομαι','μένω','φεύγω'
+      { w:'αγάπη',     s:['Αγάπη μου — Σταμάτης Κόκοτας', 'Η αγάπη είναι φτερά — Γιώργος Νταλάρας', 'Σ\'αγαπώ — Κώστας Μακεδόνας'] },
+      { w:'νύχτα',     s:['Ατέλειωτη νύχτα — Πυξ Λαξ', 'Νύχτα χαρά — Γιώργος Νταλάρας', 'Τα λάθη μας — Νότης Σφακιανάκης'] },
+      { w:'βροχή',     s:['Βροχή — Αντώνης Ρέμος', 'Μες στη βροχή — Γιώργος Νταλάρας', 'Στη βροχή — Πυξ Λαξ'] },
+      { w:'καρδιά',    s:['Καρδιά μου — Αντώνης Ρέμος', 'Μαύρη καρδιά — Νότης Σφακιανάκης', 'Η καρδιά μου — Αλέξης Παππάς'] },
+      { w:'ήλιος',     s:['Ήλιε μου — Λάκης Παπαδόπουλος', 'Κάτω από τον ήλιο — Αντώνης Ρέμος', 'Ήλιε φωτιά — Μιχάλης Χατζηγιάννης'] },
+      { w:'θάλασσα',   s:['Θάλασσα — Ελένη Τσαλιγοπούλου', 'Η θάλασσα — Γιώργος Νταλάρας', 'Τα κύματα — Σταμάτης Κραουνάκης'] },
+      { w:'χαρά',      s:['Χαρά — Αντώνης Ρέμος', 'Ο χαρούμενος — Μιχάλης Χατζηγιάννης', 'Η χαρά — Γιώργος Νταλάρας'] },
+      { w:'λύπη',      s:['Λύπη — Νότης Σφακιανάκης', 'Μελαγχολία — Στέλιος Καζαντζίδης', 'Πάρε με τηλέφωνο — Αντώνης Ρέμος'] },
+      { w:'ουρανός',   s:['Ουρανός — Γιώργος Νταλάρας', 'Στον ουρανό — Σταμάτης Κόκοτας', 'Αστέρια — Μιχάλης Χατζηγιάννης'] },
+      { w:'φεγγάρι',   s:['Φεγγάρι — Δήμητρα Γαλάνη', 'Φεγγάρι μου — Γιώργος Νταλάρας', 'Παλιό φεγγάρι — Πυξ Λαξ'] },
+      { w:'αστέρι',    s:['Αστέρι — Αντώνης Ρέμος', 'Σαν αστέρι — Μιχάλης Χατζηγιάννης', 'Φωτεινό αστέρι — Νότης Σφακιανάκης'] },
+      { w:'δρόμος',    s:['Ο δρόμος — Γιώργος Νταλάρας', 'Στο δρόμο — Πυξ Λαξ', 'Δρόμοι — Αλκίνοος Ιωαννίδης'] },
+      { w:'μάτια',     s:['Μάτια — Αντώνης Ρέμος', 'Τα μαύρα μάτια — Γιώργος Νταλάρας', 'Μάτια βαθιά — Μιχάλης Χατζηγιάννης'] },
+      { w:'ζωή',       s:['Ζωή μου — Μιχάλης Χατζηγιάννης', 'Η ζωή — Γιώργος Νταλάρας', 'Ζωή χωρίς αγάπη — Νότης Σφακιανάκης'] },
+      { w:'μουσική',   s:['Μουσική — Αντώνης Ρέμος', 'Η μουσική — Γιώργος Νταλάρας', 'Μουσική ψυχή — Πυξ Λαξ'] },
+      { w:'τραγούδι',  s:['Τραγούδι — Αλκίνοος Ιωαννίδης', 'Ένα τραγούδι — Γιώργος Νταλάρας', 'Το τελευταίο τραγούδι — Μιχάλης Χατζηγιάννης'] },
+      { w:'ψυχή',      s:['Η ψυχή μου — Νότης Σφακιανάκης', 'Ψυχή — Γιώργος Νταλάρας', 'Χάρισέ μου τη ψυχή σου — Αντώνης Ρέμος'] },
+      { w:'φτερά',     s:['Φτερά — Μιχάλης Χατζηγιάννης', 'Δώσε μου φτερά — Αντώνης Ρέμος', 'Με φτερά — Γιώργος Νταλάρας'] },
+      { w:'πόλη',      s:['Η πόλη — Πυξ Λαξ', 'Αθήνα — Αντώνης Ρέμος', 'Στην πόλη — Γιώργος Νταλάρας'] },
+      { w:'σπίτι',     s:['Σπίτι μου — Μιχάλης Χατζηγιάννης', 'Γυρνώ σπίτι — Αντώνης Ρέμος', 'Σπιτικό — Πυξ Λαξ'] },
+      { w:'χορός',     s:['Ελληνικός χορός — Γιώργος Νταλάρας', 'Χορεύω — Αντώνης Ρέμος', 'Ζεϊμπέκικο — Στέλιος Καζαντζίδης'] },
+      { w:'φωτιά',     s:['Φωτιά — Αντώνης Ρέμος', 'Φωτιά και τσεκούρι — Γιώργος Νταλάρας', 'Μέσα στη φωτιά — Νότης Σφακιανάκης'] },
+      { w:'κόσμος',    s:['Ο κόσμος — Μιχάλης Χατζηγιάννης', 'Κόσμε — Γιώργος Νταλάρας', 'Ο κόσμος μου — Αντώνης Ρέμος'] },
+      { w:'φως',       s:['Φως — Αλκίνοος Ιωαννίδης', 'Φεγγαράκι μου — παραδοσιακό', 'Φως στο σκοτάδι — Γιώργος Νταλάρας'] },
+      { w:'ελπίδα',    s:['Ελπίδα — Αντώνης Ρέμος', 'Μια ελπίδα — Γιώργος Νταλάρας', 'Η ελπίδα — Μιχάλης Χατζηγιάννης'] },
+      { w:'όνειρο',    s:['Όνειρο — Μιχάλης Χατζηγιάννης', 'Ζω ένα όνειρο — Αντώνης Ρέμος', 'Τα όνειρα — Γιώργος Νταλάρας'] },
+      { w:'πόνος',     s:['Πόνος — Νότης Σφακιανάκης', 'Πονώ — Γιώργος Νταλάρας', 'Τον πόνο μου — Στέλιος Καζαντζίδης'] },
+      { w:'φιλί',      s:['Ένα φιλί — Αντώνης Ρέμος', 'Δώσε μου φιλί — Μιχάλης Χατζηγιάννης', 'Το φιλί — Γιώργος Νταλάρας'] },
+      { w:'αγκαλιά',   s:['Αγκαλιά μου — Αντώνης Ρέμος', 'Στην αγκαλιά — Μιχάλης Χατζηγιάννης', 'Αγκαλιάσου — Νότης Σφακιανάκης'] },
+      { w:'σιωπή',     s:['Σιωπή — Αλκίνοος Ιωαννίδης', 'Μες τη σιωπή — Γιώργος Νταλάρας', 'Η σιωπή σου — Μιχάλης Χατζηγιάννης'] },
+      { w:'φωνή',      s:['Φωνή — Γιώργος Νταλάρας', 'Τη φωνή σου — Αντώνης Ρέμος', 'Η φωνή — Μιχάλης Χατζηγιάννης'] },
+      { w:'κύμα',      s:['Κύματα — Γιώργος Νταλάρας', 'Πάνω στα κύματα — Αντώνης Ρέμος', 'Κύμα ζωής — Πυξ Λαξ'] },
+      { w:'αγαπώ',     s:['Σ\'αγαπώ — Αντώνης Ρέμος', 'Σ\'αγαπώ — Γιώργος Νταλάρας', 'Σ\'αγαπώ — Μιχάλης Χατζηγιάννης'] },
+      { w:'κλαίω',     s:['Κλαίω — Νότης Σφακιανάκης', 'Μη με κλαις — Γιώργος Νταλάρας', 'Κλαίω μόνος — Στέλιος Καζαντζίδης'] },
+      { w:'τρέχω',     s:['Τρέχω — Μιχάλης Χατζηγιάννης', 'Ξεφεύγω — Πυξ Λαξ', 'Τρέχω να σε φτάσω — Αντώνης Ρέμος'] },
+      { w:'φεύγω',     s:['Φεύγω — Μιχάλης Χατζηγιάννης', 'Σε αφήνω — Αντώνης Ρέμος', 'Φύγε — Νότης Σφακιανάκης'] },
+      { w:'μένω',      s:['Μένω — Αντώνης Ρέμος', 'Μείνε — Μιχάλης Χατζηγιάννης', 'Εδώ μένω — Γιώργος Νταλάρας'] },
+      { w:'χάνω',      s:['Σε χάνω — Αντώνης Ρέμος', 'Χαμένος — Νότης Σφακιανάκης', 'Χαμένα χρόνια — Γιώργος Νταλάρας'] },
     ],
     normal: [
-      'μυστήριο','ουτοπία','μοναξιά','αλήθεια','ελευθερία','δύναμη','θάρρος','αδυναμία','απογοήτευση','αναζήτηση',
-      'απόσταση','αιωνιότητα','ανάμνηση','παρελθόν','μέλλον','ευκαιρία','στιγμή','χαμένος','ξένος','μοναχικός',
-      'ανήσυχος','περήφανος','τρελός','ελεύθερος','σκληρός','δυνατός','όμορφος','φοβισμένος','ταξίδι','επιστροφή',
-      'χωρισμός','συνάντηση','αρχή','τέλος','αντέχω','υπομένω','συγχωρώ','αγωνίζομαι','αγκαλιάζω','αναπνέω',
-      'παλεύω','αλλάζω','μεγαλώνω','κρύβω','φανερώνω','απελπισία','λαχτάρα','νοσταλγία','ανατριχίλα','συγκίνηση',
-      'αγωνία','χαρούμενος','θλιμμένος','γενναίος','δειλός','ανεξάρτητος','συνδεδεμένος','αποχωρισμένος','ξεχασμένος','αγαπημένος'
+      { w:'μοναξιά',      s:['Μοναξιά — Νότης Σφακιανάκης', 'Η μοναξιά μου — Γιώργος Νταλάρας', 'Μόνος μου — Μιχάλης Χατζηγιάννης'] },
+      { w:'αλήθεια',      s:['Αλήθεια — Αντώνης Ρέμος', 'Πες μου αλήθεια — Μιχάλης Χατζηγιάννης', 'Η αλήθεια — Γιώργος Νταλάρας'] },
+      { w:'ελευθερία',    s:['Ελευθερία — Αντώνης Ρέμος', 'Ελεύθερος — Γιώργος Νταλάρας', 'Ελεύθερη ψυχή — Πυξ Λαξ'] },
+      { w:'δύναμη',       s:['Δύναμη — Μιχάλης Χατζηγιάννης', 'Δυνατός — Αντώνης Ρέμος', 'Έχω δύναμη — Γιώργος Νταλάρας'] },
+      { w:'ανάμνηση',     s:['Αναμνήσεις — Γιώργος Νταλάρας', 'Παλιές αναμνήσεις — Στέλιος Καζαντζίδης', 'Θυμάμαι — Μιχάλης Χατζηγιάννης'] },
+      { w:'παρελθόν',     s:['Παρελθόν — Μιχάλης Χατζηγιάννης', 'Στο παρελθόν — Αντώνης Ρέμος', 'Άσε το παρελθόν — Γιώργος Νταλάρας'] },
+      { w:'ευκαιρία',     s:['Ευκαιρία — Αντώνης Ρέμος', 'Δεύτερη ευκαιρία — Μιχάλης Χατζηγιάννης', 'Μια ευκαιρία — Γιώργος Νταλάρας'] },
+      { w:'μοναχικός',    s:['Μόνος — Νότης Σφακιανάκης', 'Μοναχικό πουλί — Γιώργος Νταλάρας', 'Μοναχός — Σταμάτης Κραουνάκης'] },
+      { w:'ταξίδι',       s:['Ταξίδι — Αντώνης Ρέμος', 'Σε ταξιδεύω — Μιχάλης Χατζηγιάννης', 'Ταξιδεύω — Πυξ Λαξ'] },
+      { w:'επιστροφή',    s:['Επιστροφή — Νότης Σφακιανάκης', 'Γυρίζω — Αντώνης Ρέμος', 'Η επιστροφή — Γιώργος Νταλάρας'] },
+      { w:'χωρισμός',     s:['Χωρισμός — Μιχάλης Χατζηγιάννης', 'Σε χωρίζω — Νότης Σφακιανάκης', 'Χωρίσαμε — Αντώνης Ρέμος'] },
+      { w:'συνάντηση',    s:['Συνάντηση — Γιώργος Νταλάρας', 'Θα σε συναντήσω — Αντώνης Ρέμος', 'Πάμε μια βόλτα — Μιχάλης Χατζηγιάννης'] },
+      { w:'αντέχω',       s:['Δεν αντέχω — Νότης Σφακιανάκης', 'Αντέχω — Γιώργος Νταλάρας', 'Θα αντέξω — Μιχάλης Χατζηγιάννης'] },
+      { w:'συγχωρώ',      s:['Συγχώρα με — Αντώνης Ρέμος', 'Συγγνώμη — Μιχάλης Χατζηγιάννης', 'Σε συγχωρώ — Νότης Σφακιανάκης'] },
+      { w:'νοσταλγία',    s:['Νοσταλγία — Γιώργος Νταλάρας', 'Νοσταλγώ — Αντώνης Ρέμος', 'Τα παλιά — Σταμάτης Κόκοτας'] },
+      { w:'αγωνία',       s:['Αγωνία — Νότης Σφακιανάκης', 'Με αγωνία — Γιώργος Νταλάρας', 'Περιμένω — Αντώνης Ρέμος'] },
+      { w:'θλιμμένος',    s:['Θλίψη — Νότης Σφακιανάκης', 'Είμαι θλιμμένος — Γιώργος Νταλάρας', 'Στεναχώρια — Μιχάλης Χατζηγιάννης'] },
+      { w:'ξεχασμένος',   s:['Ξεχασμένος — Νότης Σφακιανάκης', 'Μη με ξεχάσεις — Αντώνης Ρέμος', 'Ξέχνα με — Μιχάλης Χατζηγιάννης'] },
+      { w:'αγαπημένος',   s:['Αγαπημένος — Αντώνης Ρέμος', 'Ο αγαπημένος — Μιχάλης Χατζηγιάννης', 'Αγαπώ — Γιώργος Νταλάρας'] },
+      { w:'παλεύω',       s:['Παλεύω — Μιχάλης Χατζηγιάννης', 'Παλεύω να αντέξω — Νότης Σφακιανάκης', 'Αγωνίζομαι — Αντώνης Ρέμος'] },
+      { w:'αλλάζω',       s:['Αλλάζω — Αντώνης Ρέμος', 'Άλλαξε — Μιχάλης Χατζηγιάννης', 'Αλλαγή — Γιώργος Νταλάρας'] },
+      { w:'λαχτάρα',      s:['Λαχτάρα — Νότης Σφακιανάκης', 'Σε λαχταράω — Αντώνης Ρέμος', 'Λαχτάρισα — Γιώργος Νταλάρας'] },
+      { w:'απελπισία',    s:['Απελπισία — Νότης Σφακιανάκης', 'Απεγνωσμένα — Μιχάλης Χατζηγιάννης', 'Χαμένος — Γιώργος Νταλάρας'] },
+      { w:'συγκίνηση',    s:['Συγκίνηση — Αντώνης Ρέμος', 'Με συγκινείς — Γιώργος Νταλάρας', 'Συγκινούμαι — Μιχάλης Χατζηγιάννης'] },
     ],
     hard: [
-      'παντοτινός','αναπόφευκτος','απερίγραπτος','συναισθηματικός','αναντικατάστατος',
-      'ανεπανάληπτος','παραμυθένιος','αξεπέραστος','απαράμιλλος','αναμφισβήτητος',
-      'υπερφυσικός','ανυπέρβλητος','ανεξέλεγκτος','απρόβλεπτος','ανατρεπτικός',
-      'καταστροφικός','αναστατωτικός','επαναστατικός','εκπληκτικός','συγκλονιστικός',
-      'συγκινητικός','συναρπαστικός','ξεχωριστός','ανεκτίμητος','αγέραστος',
-      'αθάνατος','ανεξίτηλος','διαχρονικός','παντοδύναμος','ακατανίκητος',
-      'ανυπόφορος','απαράβατος','αδιαπραγμάτευτος','αξιαγάπητος','ακαταμάχητος',
-      'ανεξήγητος','αδιανόητος','απαγορευμένος','αναπολόγητος','αξιοθαύμαστος'
+      { w:'παντοτινός',       s:['Παντοτινή — Αντώνης Ρέμος', 'Για πάντα — Μιχάλης Χατζηγιάννης', 'Για πάντα μαζί — Γιώργος Νταλάρας'] },
+      { w:'αναπόφευκτος',     s:['Αναπόφευκτα — Νότης Σφακιανάκης', 'Δεν μπορώ να αποφύγω — Αντώνης Ρέμος'] },
+      { w:'αναντικατάστατος', s:['Δεν σε αντικαθιστώ — Μιχάλης Χατζηγιάννης', 'Μοναδικός — Αντώνης Ρέμος'] },
+      { w:'παραμυθένιος',     s:['Σαν παραμύθι — Αντώνης Ρέμος', 'Παραμύθι — Μιχάλης Χατζηγιάννης'] },
+      { w:'αξεπέραστος',      s:['Ανυπέρβλητος — Νότης Σφακιανάκης', 'Δεν σε ξεπερνώ — Αντώνης Ρέμος', 'Ανυπέρβλητη — Μιχάλης Χατζηγιάννης'] },
+      { w:'υπερφυσικός',      s:['Μαγεία — Αντώνης Ρέμος', 'Μαγευτικός — Μιχάλης Χατζηγιάννης'] },
+      { w:'ανεξέλεγκτος',     s:['Τρελαίνομαι — Νότης Σφακιανάκης', 'Χάνω τον έλεγχο — Αντώνης Ρέμος'] },
+      { w:'επαναστατικός',    s:['Επανάσταση — Πυξ Λαξ', 'Αντάρτης — Γιώργος Νταλάρας'] },
+      { w:'συγκλονιστικός',   s:['Με συγκλονίζεις — Αντώνης Ρέμος', 'Τρέμω — Νότης Σφακιανάκης'] },
+      { w:'συναρπαστικός',    s:['Με παρασύρεις — Αντώνης Ρέμος', 'Ξετρελάθηκα — Μιχάλης Χατζηγιάννης'] },
+      { w:'ξεχωριστός',       s:['Ξεχωριστός — Αντώνης Ρέμος', 'Μοναδικός — Μιχάλης Χατζηγιάννης', 'Ξεχωριστή — Νότης Σφακιανάκης'] },
+      { w:'αθάνατος',         s:['Αθάνατος — Γιώργος Νταλάρας', 'Δεν πεθαίνεις ποτέ — Αντώνης Ρέμος', 'Αθανασία — Μιχάλης Χατζηγιάννης'] },
+      { w:'διαχρονικός',      s:['Διαχρονικός έρωτας — Γιώργος Νταλάρας', 'Παντοτινή αγάπη — Αντώνης Ρέμος'] },
+      { w:'ακατανίκητος',     s:['Ακατανίκητος — Νότης Σφακιανάκης', 'Αήττητος — Αντώνης Ρέμος'] },
+      { w:'αδιανόητος',       s:['Αδύνατο — Μιχάλης Χατζηγιάννης', 'Αδύνατον — Αντώνης Ρέμος', 'Δεν μπορώ να το πιστέψω — Νότης Σφακιανάκης'] },
     ]
   }
 };
 
+/* ════════════════════════════════════════════════
+   POOL BUILDER — returns array of entry objects
+   ════════════════════════════════════════════════ */
 function getPool(diff, lang) {
-  if (lang === 'mix') {
-    return [...WORDS.en[diff], ...WORDS.gr[diff]];
-  }
+  if (lang === 'mix') return [...WORDS.en[diff], ...WORDS.gr[diff]];
   return [...WORDS[lang][diff]];
 }
 
@@ -849,9 +932,10 @@ let state = {
   difficulty: 'easy',
   language: 'en',
   winTarget: 50,
-  teams: [],          // [{ name, score }]
+  teams: [],
   pool: [],
   usedPool: [],
+  currentEntry: null,   // { w, s } for the active word
   wordsRevealed: 0,
   timerInterval: null,
   timerSeconds: 60,
@@ -877,7 +961,6 @@ function goToStep(n) {
   if (n === 3) renderTeamInputs();
 }
 
-/* Difficulty buttons */
 document.querySelectorAll('[data-diff]').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('[data-diff]').forEach(b => b.classList.remove('selected'));
@@ -886,7 +969,6 @@ document.querySelectorAll('[data-diff]').forEach(btn => {
   });
 });
 
-/* Language buttons */
 document.querySelectorAll('[data-lang]').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('[data-lang]').forEach(b => b.classList.remove('selected'));
@@ -895,7 +977,6 @@ document.querySelectorAll('[data-lang]').forEach(btn => {
   });
 });
 
-/* Win condition buttons */
 document.querySelectorAll('[data-win]').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('[data-win]').forEach(b => b.classList.remove('selected'));
@@ -904,7 +985,6 @@ document.querySelectorAll('[data-win]').forEach(btn => {
   });
 });
 
-/* Team count */
 document.getElementById('teams-minus').addEventListener('click', () => {
   if (teamCount > 2) { teamCount--; updateTeamCount(); renderTeamInputs(); }
 });
@@ -917,7 +997,6 @@ function updateTeamCount() {
 
 function renderTeamInputs() {
   const container = document.getElementById('team-name-inputs');
-  // preserve existing values
   const existing = [...container.querySelectorAll('.team-name-input')].map(i => i.value);
   container.innerHTML = '';
   for (let i = 0; i < teamCount; i++) {
@@ -930,44 +1009,38 @@ function renderTeamInputs() {
   }
 }
 
-/* Nav buttons */
 document.getElementById('next-1').addEventListener('click', () => goToStep(2));
 document.getElementById('back-2').addEventListener('click', () => goToStep(1));
 document.getElementById('next-2').addEventListener('click', () => goToStep(3));
 document.getElementById('back-3').addEventListener('click', () => goToStep(2));
-
 document.getElementById('start-game').addEventListener('click', startGame);
 
 /* ════════════════════════════════════════════════
    GAME LOGIC
    ════════════════════════════════════════════════ */
 function startGame() {
-  // Collect team names
   const inputs = document.querySelectorAll('.team-name-input');
   state.teams = [...inputs].map((inp, i) => ({
     name: inp.value.trim() || 'Team ' + (i + 1),
     score: 0
   }));
 
-  // Build word pool
   state.pool = shuffle(getPool(state.difficulty, state.language));
   state.usedPool = [];
   state.wordsRevealed = 0;
+  state.currentEntry = null;
   state.gameOver = false;
   stopTimer();
 
-  // Update badges
   const diffLabels = { easy: '🟢 Easy', normal: '🟡 Normal', hard: '🔴 Hard' };
   const langLabels = { en: '🇬🇧 English', gr: '🇬🇷 Greek', mix: '🌍 Mix' };
   document.getElementById('badge-diff').textContent = diffLabels[state.difficulty];
   document.getElementById('badge-lang').textContent = langLabels[state.language];
   document.getElementById('badge-win').textContent = state.winTarget === 0 ? '♾ Unlimited' : 'First to ' + state.winTarget;
 
-  // Render teams + scoreboard
   renderTeamButtons();
   renderScoreboard();
   resetWordArea();
-
   showScreen('game');
 }
 
@@ -975,6 +1048,7 @@ function resetWordArea() {
   const wordEl = document.getElementById('current-word');
   wordEl.textContent = '· · ·';
   wordEl.className = 'hidden-word';
+  wordEl.style.color = '';
   document.getElementById('timer-display').textContent = '1:00';
   document.getElementById('timer-display').classList.remove('urgent');
   document.getElementById('timer-bar').style.width = '100%';
@@ -982,17 +1056,21 @@ function resetWordArea() {
   document.getElementById('btn-stop-timer').style.display = 'none';
   document.getElementById('btn-reveal').disabled = false;
   document.getElementById('round-counter').textContent = 'Words revealed: ' + state.wordsRevealed;
+  // Hide song hints
+  document.getElementById('btn-show-songs').style.display = 'none';
+  document.getElementById('song-list').classList.remove('visible');
+  document.getElementById('song-list').innerHTML = '';
+  document.getElementById('btn-show-songs').textContent = '🎵 Show example songs';
 }
 
-function drawWord() {
+function drawEntry() {
   if (state.pool.length === 0) {
-    // reshuffle used pool
     state.pool = shuffle([...state.usedPool]);
     state.usedPool = [];
   }
-  const word = state.pool.pop();
-  state.usedPool.push(word);
-  return word;
+  const entry = state.pool.pop();
+  state.usedPool.push(entry);
+  return entry;
 }
 
 function shuffle(arr) {
@@ -1004,35 +1082,64 @@ function shuffle(arr) {
   return a;
 }
 
-/* Reveal word button */
+/* Reveal word */
 document.getElementById('btn-reveal').addEventListener('click', () => {
   stopTimer();
-  const word = drawWord();
+  const entry = drawEntry();
+  state.currentEntry = entry;
   state.wordsRevealed++;
 
   const wordEl = document.getElementById('current-word');
-  wordEl.textContent = word.toUpperCase();
+  wordEl.textContent = entry.w.toUpperCase();
   wordEl.className = '';
+  wordEl.style.color = '';
   document.getElementById('round-counter').textContent = 'Words revealed: ' + state.wordsRevealed;
 
   document.getElementById('btn-reveal').disabled = true;
   document.getElementById('btn-stop-timer').style.display = '';
 
+  // Show the song hint button
+  const showBtn = document.getElementById('btn-show-songs');
+  showBtn.style.display = '';
+  showBtn.textContent = '🎵 Show example songs';
+  document.getElementById('song-list').classList.remove('visible');
+  document.getElementById('song-list').innerHTML = '';
+
   startTimer();
 });
 
-/* Stop timer button */
+/* Show example songs toggle */
+document.getElementById('btn-show-songs').addEventListener('click', () => {
+  const list = document.getElementById('song-list');
+  const btn  = document.getElementById('btn-show-songs');
+  if (list.classList.contains('visible')) {
+    list.classList.remove('visible');
+    btn.textContent = '🎵 Show example songs';
+  } else {
+    list.innerHTML = '';
+    if (state.currentEntry && state.currentEntry.s.length) {
+      state.currentEntry.s.forEach(song => {
+        const item = document.createElement('div');
+        item.className = 'song-hint-item';
+        item.textContent = song;
+        list.appendChild(item);
+      });
+    }
+    list.classList.add('visible');
+    btn.textContent = '🙈 Hide example songs';
+  }
+});
+
+/* Stop timer */
 document.getElementById('btn-stop-timer').addEventListener('click', () => {
   stopTimer();
   document.getElementById('btn-stop-timer').style.display = 'none';
   document.getElementById('btn-reveal').disabled = false;
 });
 
-/* End game button */
+/* End game */
 document.getElementById('btn-end-game').addEventListener('click', () => {
-  if (confirm('Are you sure you want to end the game?')) {
-    endGame();
-  }
+  if (confirm('Are you sure you want to end the game?')) endGame();
 });
 
 /* ── Timer ── */
@@ -1047,7 +1154,6 @@ function startTimer() {
       stopTimer();
       document.getElementById('btn-stop-timer').style.display = 'none';
       document.getElementById('btn-reveal').disabled = false;
-      // Flash "Time's up!"
       const wordEl = document.getElementById('current-word');
       wordEl.style.color = 'var(--red)';
       setTimeout(() => { wordEl.style.color = ''; }, 1000);
@@ -1062,14 +1168,9 @@ function stopTimer() {
 
 function updateTimerUI() {
   const s = state.timerSeconds;
-  const mins = Math.floor(s / 60);
-  const secs = s % 60;
   document.getElementById('timer-display').textContent =
-    mins + ':' + String(secs).padStart(2, '0');
-
-  const pct = (s / 60) * 100;
-  document.getElementById('timer-bar').style.width = pct + '%';
-
+    Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+  document.getElementById('timer-bar').style.width = (s / 60 * 100) + '%';
   const urgent = s <= 10;
   document.getElementById('timer-display').classList.toggle('urgent', urgent);
   document.getElementById('timer-bar').classList.toggle('urgent', urgent);
@@ -1081,14 +1182,12 @@ function awardPoint(teamIndex) {
   renderTeamButtons();
   renderScoreboard();
 
-  // Flash the row
   const rows = document.querySelectorAll('.team-row');
   if (rows[teamIndex]) {
     rows[teamIndex].style.background = 'rgba(16,185,129,0.2)';
     setTimeout(() => { rows[teamIndex].style.background = ''; }, 600);
   }
 
-  // Check win
   if (state.winTarget > 0 && state.teams[teamIndex].score >= state.winTarget) {
     stopTimer();
     showWinOverlay(teamIndex);
@@ -1108,29 +1207,21 @@ document.getElementById('btn-win-end').addEventListener('click', () => {
 });
 document.getElementById('btn-win-continue').addEventListener('click', () => {
   document.getElementById('win-overlay').classList.remove('active');
-  // Reset word area for next round
   resetWordArea();
 });
 
 function endGame() {
   stopTimer();
   state.gameOver = true;
-
-  // Find winner (highest score)
   const sorted = [...state.teams].sort((a, b) => b.score - a.score);
   document.getElementById('gameover-winner').textContent = '🏆 ' + sorted[0].name;
 
-  // Final scoreboard
   const list = document.getElementById('final-scoreboard-list');
   list.innerHTML = '';
   sorted.forEach((t, i) => {
     const entry = document.createElement('div');
     entry.className = 'score-entry' + (i === 0 ? ' top' : '');
-    entry.innerHTML = `
-      <span class="score-rank">${i + 1}</span>
-      <span class="score-name">${escHtml(t.name)}</span>
-      <span class="score-pts">${t.score}</span>
-    `;
+    entry.innerHTML = `<span class="score-rank">${i + 1}</span><span class="score-name">${escHtml(t.name)}</span><span class="score-pts">${t.score}</span>`;
     list.appendChild(entry);
   });
 
@@ -1149,8 +1240,7 @@ function renderTeamButtons() {
         <span class="team-name-label">${escHtml(team.name)}</span>
         <span class="team-score-label">${team.score} point${team.score !== 1 ? 's' : ''}</span>
       </div>
-      <button class="point-btn" data-idx="${i}">+1 Point</button>
-    `;
+      <button class="point-btn" data-idx="${i}">+1 Point</button>`;
     container.appendChild(row);
   });
   container.querySelectorAll('.point-btn').forEach(btn => {
@@ -1159,37 +1249,27 @@ function renderTeamButtons() {
 }
 
 function renderScoreboard() {
-  const sorted = [...state.teams]
-    .map((t, i) => ({ ...t, orig: i }))
-    .sort((a, b) => b.score - a.score);
-
+  const sorted = [...state.teams].map((t, i) => ({ ...t, orig: i })).sort((a, b) => b.score - a.score);
   const container = document.getElementById('scoreboard-list');
   container.innerHTML = '';
   sorted.forEach((t, rank) => {
     const entry = document.createElement('div');
     entry.className = 'score-entry' + (rank === 0 ? ' top' : '');
-    entry.innerHTML = `
-      <span class="score-rank">${rank + 1}</span>
-      <span class="score-name">${escHtml(t.name)}</span>
-      <span class="score-pts">${t.score}</span>
-    `;
+    entry.innerHTML = `<span class="score-rank">${rank + 1}</span><span class="score-name">${escHtml(t.name)}</span><span class="score-pts">${t.score}</span>`;
     container.appendChild(entry);
   });
 }
 
-/* ── Screen switcher ── */
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById('screen-' + id).classList.add('active');
 }
 
-/* ── Play Again ── */
 document.getElementById('btn-play-again').addEventListener('click', () => {
   goToStep(1);
   showScreen('setup');
 });
 
-/* ── XSS safety ── */
 function escHtml(str) {
   return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
