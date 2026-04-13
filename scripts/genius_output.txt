@@ -1,0 +1,437 @@
+
+── EASY ──
+  Ιανουάριος           → Γραμμή (Grammi) — Vito Soprano
+  Φεβρουάριος          → Άγιος Φεβρουάριος (Agios Fevrouarios) — Petri Salpea
+  Μάρτιος              → Εικόνα (Eikona) — N.O.E. (GRC)
+  Απρίλιος             → ΚΟΠΡΟΙ (KOPROI) — Dani Gambino
+  Μάιος                → Μάιος (Maios) — Rise (GRC)
+  Ιούνιος              → Ιούνιος (Iounios) — KNK-UC
+  Ιούλιος              → Ιούλιος του ’18 (Ioulios tou ’18) — Logos Timis
+  Αύγουστος            → Αύγουστος (Aygoustos) — Marina Spanou
+  Σεπτέμβριος          → Παυσίπονα (Pafsipona) — LEX (GRC)
+  Οκτώβριος            → Οκτώβριος (Oktovrios) — Stereo Nova
+  Νοέμβριος            → Η Δικιά μου Iστορία — Zoumpas
+  Δεκέμβριος           → Χειροβομβίδες (Xeirovomvides) — Buzz (GRC)
+  άνοιξη               → Φέτος η Άνοιξη (Fetos i Anoixi) — Anser (GRC)
+  καλοκαίρι            → Καλοκαίρι (Kalokairi) — Trannos
+  φθινόπωρο            → Φθινόπωρο (Fthinoporo) — Kako (GRC)
+  χειμώνας             → Εδώ Ήταν Πάντοτε Χειμώνας — Skiaxtro
+  κόκκινος             → Κόκκινος μανδύας (Kokkinos Mandias) — Smuggler
+  μπλε                 → Ήθελες Να Μπλέξεις (Itheles Na Mplekseis) — Kako (GRC)
+  πράσινος             → Πράσινος Χρυσός (Prasinos Chrisos) — Taki Tsan
+  κίτρινος             → Κίτρινος Τύπος (Kitrinos Typos) — Ethismos
+  μαύρος               → Μαύρος Ήλιος (Mavros Ilios) — Logos Timis
+  άσπρος               → ΚΟΜΠΟΡΡΗΜΩΝ ΚΑΙ ΑΠΛΗΣΤΟΣ (KOBORRIMON KAI APLISTOS) — Negros Tou Moria
+  μωβ                  → Μωβ Βροχή (Mov Vroxi) — LEX (GRC)
+  πορτοκαλί            → Πορτοκάλι (Portokali) — Alkistis Protopsalti
+  ροζ                  → Ρόζα (Roza) — Dimitris Mitropanos
+  ασημένιος            → Ασημένιος Μαχητής (Asimenios Maxitis) — Fi Vita Sigma
+  Δευτέρα              → Δευτέρα Βράδυ (Deytera Vrady) — Long3
+  Τρίτη                → Ματωμένη Τρίτη (Matomeni Triti) — LEX (GRC)
+  Τετάρτη              → Μαύρη Τετάρτη (Mavri Tetarti) — Wednesday Night Cypher
+  Πέμπτη               → Πέμπτη Βράδυ (Pempth Vrady) — FY
+  Παρασκευή            → Παρασκευή Πρωί (Paraskevi Proi) — Κωνσταντίνος Αργυρός (Konstantinos Argiros)
+  Σάββατο              → Ένα Σάββατο Που Μοιάζει Κυριακή (Ena Savvato Pou Miazi Kiriaki) — Foivos Delivorias
+  Κυριακή              → Ένα Σάββατο Που Μοιάζει Κυριακή (Ena Savvato Pou Miazi Kiriaki) — Foivos Delivorias
+  αγάπη                → Αλήτικη Αγάπη (Alitiki Agapi) — LEX (GRC)
+  νύχτα                → Μια Νύχτα Που Πονάς Και Εγκαταλείπεις (Mia Nixta Pou Ponas Kai Egkataleipeis) — Fi Vita Sigma
+  βροχή                → Μωβ Βροχή (Mov Vroxi) — LEX (GRC)
+  καρδιά               → Μοναχική Καρδιά (Monaxiki Kardia) — Melisses
+  ήλιος                → Μαύρος Ήλιος (Mavros Ilios) — Logos Timis
+  θάλασσα              → Θάλασσα (Thalassa) — Stixoima
+  χαρά                 → Μια Χαρά (Mia Xara - Demo) — KANON (GRC)
+  λύπη                 → Έλα Πάρε Μου Τη Λύπη (Ela Pare Mou Ti Lipi) — Eleni Tsaligopoulou
+  ουρανός              → Δυο Μέτρα Ουρανός (Dyo Metra Ouranos) — Πάνος Κιάμος (Panos Kiamos)
+  φεγγάρι              → Φεγγάρι (Feggari) — APON
+  αστέρι               → Τυχερό Αστέρι (Tyxero Asteri) — K.Bhta
+  δρόμος               → Ο Δρόμος (O Dromos) — Μάνος Λοΐζος (Manos Loizos)
+  μάτια                → Ρώτα Τα Μάτια Μου (Rota Ta Matia Mou) — Toquel
+  ζωή                  → Η Ζωή Σου Ζάρι (I Zoi Sou Zari) — Helena Paparizou
+  μουσική              → Μουσική Για Τσόγλανους (Mousiki Gia Tsoglanous) — LEX (GRC)
+  τραγούδι             → Το Τραγούδι του Βαγγέλη (To Tragoudi Tou Vageli) — SKIADARESES
+  ψυχή                 → Ψυχή (Psihi) — Logos Timis
+  φτερά                → Ανοίγω Φτερά (Anoigo Ftera) — Eisvoleas
+  πόλη                 → Αμαρτωλή Πόλη (Amartoli Poli) — Tzamal
+  σπίτι                → Σπίτι (Spiti) — Sidarta
+  χορός                → Χορός (XOROS) — Sicario (GRC)
+  φωτιά                → Φωτιά (Fotia) — Logos Timis
+  κόσμος               → Ο Κόσμος Κακός (O Kosmos Kakos) — LEX (GRC)
+  φως                  → Ηλιοβασιλέμα-(Part 2 - Φως) — Κωνσταντίνος Αργυρός (Konstantinos Argiros)
+  ελπίδα               → Ελπίδα (Elpida) — Mad Clip
+  όνειρο               → Oniro mou (Όνειρο μου) — Yianna Terzi
+  πόνος                → ΠΟΝΟΣ ΚΡΥΦΟΣ (PONOS KRIFOS) — Marina Satti
+  φιλί                 → Φιλικό (Filiko) — Eisvoleas
+  αγκαλιά              → Πάρε με αγκαλιά (Pare Me Agkalia) — Κωνσταντίνος Αργυρός (Konstantinos Argiros)
+  σιωπή                → Σιωπή (Siopi) — Bong Da City
+  νερό                 → ΝΕΡΟ (NERO) — Κωνσταντίνος Αργυρός (Konstantinos Argiros)
+  φίλος                → Η φιλοσοφία μου (I philosophia mou) — Giorgos Mazonakis
+  χέρι                 → Χέρια Ψηλά από το Πίσω Kάθισμα (Xeria Psila apo to Piso Kathisma) — Joker/Two-Face
+  στιγμή               → ΛΑΘΟΣ ΣΤΙΓΜΗ (LATHOS STIGMI) — Saske (GRC)
+  παιδί                → Παιδιά Του Παγετού (Paidia Tou Pagetou) — LEX (GRC)
+  χαμόγελο             → Το χαμόγελό σου (To hamogelo sou) — Elli Kokkinou
+  δάκρυ                → Είναι Μυστήρια η Χώρα των Δακρύων (2007) — Bitapeis
+  λόγια                → ΛΟΓΙΑ (LOGIA) — Kidd
+  χρόνος               → 1 Χρόνος (1 Xronos) — Trannos
+  μέρα                 → Μια Καλή Μέρα (Mia Kali Mera) — Bloody Hawk
+  καλοκαίρι            → Καλοκαίρι (Kalokairi) — Trannos
+  χειμώνας             → Εδώ Ήταν Πάντοτε Χειμώνας — Skiaxtro
+  βουνό                → Βουνό (Bouno) — iLLEOo
+  γη                   → ΚΑΘΩΣ ΑΠΟΜΑΚΡΥΝΟΜΑΙ ΑΠ’ ΤΗ ΓΗ (KATHOS APOMAKRINOMAI AP’ TI GI) — Fi Vita Sigma
+  φύση                 → Επιστροφή στην Φύση (Epistrofi Stin Fisi) — Ypo
+  φωνή                 → Φωνή του Ανέμου (Foni tou Anemou) — Logos Timis
+  κύμα                 → Κύμα (Kyma) — Sigma (GRC)
+  πόρτα                → Πόρτα Για Τον Ουρανό (Porta Gia Ton Ourano) — Helena Paparizou
+  ανάσα                → ΑΝΑΣΑΙΝΩ ΚΑΙ ΖΑΛΙΖΟΜΑΙ (ANASAINO KAI ZALIZOMAI) — LILA (GRC)
+  σκιά                 → Lucky Luke (Σαν Σκιά) (San Skia) — N.O.E. (GRC)
+  όμορφος              → Φαίνομαι Τόσο Όμορφος (Fenome Toso Omorfos) — The Boy (GRC)
+  μόνος                → Μόνος (Monos) — WANG (GRC)
+  τρελός               → Είμαι Τρελός (Eimai Trelos) — Mad Clip
+  ζεστός               → Ζεστός Αέρας (Zestos Aeras) — Xylina Spathia
+  κρύος                → Σύμπτωση (Symptosi) — Bloody Hawk
+  γλυκός               → Είσουν Καλός Κι Είσουν Γλυκός (Isoun Kalos) — Grigoris Bithikotsis
+  σκοτεινός            → Σκοτεινός Ουρανός (Skoteinos Ouranos) — Mani (GRC)
+  φωτεινός             → Bon Jovi - Always (Ελληνική μετάφραση) — Genius Greek Translations (Ελληνικές μεταφράσεις)
+  αληθινός             → Αληθινός (Alithinos) — Thug Slime
+  ελεύθερος            → Ελεύθερος (Eleftheros) — Κωνσταντίνος Αργυρός (Konstantinos Argiros)
+  χαρούμενος           → Το Παράθυρό Μου (To Parathiro Mou) — LEX (GRC)
+  λυπημένος            → USA For Africa - We Are the World (Ελληνική μετάφραση) — Genius Greek Translations (Ελληνικές μεταφράσεις)
+  δυνατός              → Νιώθω Έντονα (Niotho Entona) — Logos Timis
+  ωραίος               → Ο ωραίος κι η ωραία (O oreos kai i orea) — Kateryna Kouka
+  καλός                → Η Καλοσύνη Πέθανε (I Kalosini Pethane) — Fullface
+  αγαπώ                → Σ’ Αγαπώ (Sagapw) — Bossikan
+  χορεύω               → Χορεύω Ακόμα Trance (Xoreuo Akoma Trance) — Skoumas
+  τραγουδώ             → Να σου τραγουδώ (Na sou tragoudw) — Stavento
+  κλαίω                → Αν Με Δεις Να Κλαίω (An Me Deis Na Klaio) — Helena Paparizou
+  γελώ                 → Φάντασμα (Fantasma) — Bloody Hawk
+  τρέχω                → Μες στην Πόλη Τρέχω (Mestin Poli Trexw) — Ivan Greko
+  φεύγω                → Φεύγω Την Kάνω — Above The Hood
+  μένω                 → Ακόμα Μένω Ζωντανός (Akoma Meno Zontanos) — FANN
+  κοιτώ                → Όταν σε Κοιτώ (Otan Se Koito — Konstantinos Koufos
+  ακούω                → Ακούω την αγάπη (Akouo Tin Agapi) — Tripes
+  θυμάμαι              → Θυμάμαι (Thimamai) — HGEMONA$
+  ονειρεύομαι          → Και Ονειρεύομαι Κόσμους (Kai Oneirevomai Kosmous) — Fi Vita Sigma
+  περιμένω             → Περιμένω (Perimenw) — Pavlos Pavlidis
+  ζω                   → Η Ζωή Σου Ζάρι (I Zoi Sou Zari) — Helena Paparizou
+  αγκαλιάζω            → Το Τραγούδι του Βαγγέλη (To Tragoudi Tou Vageli) — SKIADARESES
+
+── NORMAL ──
+  μοναξιά              → Μοναξιά (Monaksia) — APON
+  αλήθεια              → ΑΛΗΘΕΙΑ (ALITHEIA) — Saske (GRC)
+  ελευθερία            → Ελευθερία ή Θάνατος (Eleftheria I Thanatos) — Hawk (GRC)
+  δύναμη               → Λεφτά, Δύναμη & Respect — Mikros Kleftis
+  ανάμνηση             → Η Ανάμνηση Της Ευτυχίας (H Anamnhsh Ths Eutuxias) — Pavlos Pavlidis
+  παρελθόν             → Το παρελθόν μου (To parelthon mou) — Anna Vissi
+  ευκαιρία             → Η Ευκαιρία Μου (I Efkairia Mou) — Ethismos
+  ταξίδι               → Ταξίδι (Taxidi) — Marina Spanou
+  επιστροφή            → Επιστροφή (Epistrofi) — FANN
+  χωρισμός             → Ο χωρισμός σου θάνατος (O horismos sou thanatos) — Natasa Theodoridou
+  συνάντηση            → Συνάντηση 14:15 (Sinantisi 14:15) — Vita Peis & EPLKT
+  νοσταλγία            → Αγία Νοσταλγία (Agia Nostalgia) — Thanasis Papakonstantinou
+  αγωνία               → Αγωνία (Agonia) — Tolis voskopoulos
+  λαχτάρα              → Λαχταράς (Lahtaras) — The Boy (GRC)
+  απελπισία            → Κουράστηκα (Kourastika) — Toquel
+  μυστικό              → ΚΟΙΝΟ ΜΥΣΤΙΚΟ (KOINO MYSTIKO) — LILA (GRC)
+  ευτυχία              → Μια Παραλίγο Ευτυχία (Mia Paraligo Eftihia) — Natasa Theodoridou
+  μαγεία               → Άσπρη Μαγεία (Aspri Mageia) — X.T.P. (GRC)
+  απόσταση             → Απόσταση (Apostasi) — Mad Clip
+  εκδίκηση             → Εκδίκηση (Ekdikisi) — Katerina Stikoudi
+  ζήλεια               → Ζήλεια μου (Zilia mou) — Katy Garbi
+  προδοσία             → Προδοσία (Prodosia) — Mando (GRC)
+  αντρεία              → Ο Ανδρειωμένος (Andreiomenos) — Γιάννης Μαρκόπουλος [Giannis Markopoulos]
+  αδυναμία             → ADYNAMIA (ΑΔΥΝΑΜΙΑ) — ZiZZi
+  μελαγχολία           → Η Οδυνηρή Μελαγχολία Ενός Βλέμματος (Bonus Track) — Solmeister
+  εξουσία              → Το Παιχνίδι Της Εξουσίας (To Paihnidi Tis Exousias) — Stereo Nova
+  μνήμη                → Τα δάκρυα του εκτελεστή / Μια τελευταία σελίδα ανθρώπινης μνήμης — Apsinthos
+  παράδεισος           → Παράδεισος (Paradeisos) — Kostas Karafotis
+  κόλαση               → Κόλαση (Kolasi) — Toquel
+  αντίσταση            → Κράτα Αντίσταση (Krata Antistasi) — 4012 Beats
+  μοναχικός            → Βαρύ (Vary) — Bloody Hawk
+  θλιμμένος            → Ένας θλιμμένος εραστής (Enas thlimenos erastis) — Γιώργος Στρατάκης (Giorgos Stratakis)
+  ξεχασμένος           → Φλόγα (Floga) — Novel 729
+  αγαπημένος           → Ο αγαπημένος σου (O Agapimenos sou) — Mad Clip
+  χαμένος              → Ο Χαμένος Τα Παίρνει Όλα (O Hamenos Ta Pairnei Ola) — Γιάννης Αγγελάκας (Giannis Aggelakas)
+  ζωντανός             → Ακόμα Μένω Ζωντανός (Akoma Meno Zontanos) — FANN
+  αδικημένος           → Φλόγα (Floga) — Taf Lathos
+  ατέλειωτος           → Καταιγίδα (Kataigida) — Sigma (GRC)
+  γλυκόπικρος          → 40 Ώρες Πρίν (40 Wres Prin) — Bitapeis
+  ανίκητος             → Ανίκητος (Anikitos) — Thanasis Papakonstantinou
+  κρυμμένος            → Οικογένεια (Oikogeneia) — Logos Timis
+  σπασμένος            → Σπασμένος Στα Δύο (Spasmenos Sta Dio) — Πάνος Κιάμος (Panos Kiamos)
+  τρελαμένος           → Τρελαμένος² (Trelamenos²) — Long3
+  αδύναμος             → 05 (Κενό) — Jolly Roger
+  ανυπόμονος           → Υπέροχες Υπερβολές (Yperoxes Ypervoles) — Stk (GRC)
+  παλεύω               → Δεν την παλεύω (Den tin palevo) — Elli Kokkinou
+  συγχωρώ              → Δε σε συγχωρώ (De se sighoro) — Peggy Zina
+  αλλάζω               → Δεν Αλλάζω (Den Allazo) — Helena Paparizou
+  αντέχω               → Δεν Τους Αντέχω Με Τίποτα (Den Tous Antexo Me Tipota) — Complex (GRC)
+  ελπίζω               → Για Όσα Ελπίζω (Gia Osa Elpizo) — F.F.C
+  φοβάμαι              → Δε Φοβάμαι (De Fovame) — Bloody Hawk
+  προχωρώ              → Προχωρώ (Proxwrw) — Dexon
+  αφήνω                → Αφού Σε Βρήκα, Δε Σ’ Αφήνω (Afou Se Vrika, De S’ Afino) — Κωνσταντίνος Αργυρός (Konstantinos Argiros)
+  χάνομαι              → Χάνομαι (Xanomai) — Marseaux
+  αναπνέω              → Τυχερό Αστέρι (Tyxero Asteri) — K.Bhta
+  αποφασίζω            → Το Παράθυρό Μου (To Parathiro Mou) — LEX (GRC)
+  σκέφτομαι            → Σκέφτομαι και Νιώθω (Skeftomai kai Niotho) — Stk (GRC)
+  ξεχνώ                → Δεν Ξεχνώ (Den Ksexnw) — XKIRA
+  πονάω                → Όταν Πονάω Το Γλεντάω (Otan Ponao To Glentao) — Knock Out (GRC)
+  λατρεύω              → Για Σένα Που Λατρεύω (Gia Sena Pou Latrevo) — Stavento
+
+── HARD ──
+  παντοτινός           → Νιώσε Την Απειλή (Niose Tin Apeili) — Ihitiki Apeili
+  αναπόφευκτος         → Δεν Είδες, δεν Άκουσες, δεν Είπες (Den Eides, Den Akouses, Den Eipes) — Bitapeis
+  αναντικατάστατος     → Στην Αθήνα (Stin Athina) — Tus
+  παραμυθένιος         → Αυτοκράτειρα (Aftokrateira) — Bloody Hawk
+  αξεπέραστος          → Πως Tus (Pos Tus) — Tus
+  υπερφυσικός          → Beyoncé - ALIEN SUPERSTAR (Ελληνική μετάφραση) — Genius Greek Translations (Ελληνικές μεταφράσεις)
+  ανεξέλεγκτος         → Προφητεία (Profitia) — Saske (GRC)
+  επαναστατικός        → Άδικη Kατάρα (Adiki Katara) — DJ Alx
+  συγκλονιστικός       → Τέλειος έρωτας (Telios erotas) — Anna Vissi
+  διαχρονικός          → Καλό/Κακό (Kalo/Kako) — Pepe Frantik
+  αθάνατος             → Αθάνατος (Athanatos) — Notis sfakianakis
+  ξεχωριστός           → Ληστείες (Listies) — Thug Slime
+  αδιαχώριστος         → [no results]
+  αναπάντεχος          → Όλα τα Ελληνικά Χιπ-Χοπ Συγκροτήματα + Έλληνες MCs — Greek Hip-Hop
+  αμετάκλητος          → Στον Αμανέ Tου Πεισματάρη — Above The Hood
+  ανεκπλήρωτος         → Το Γράμμα (To Gramma) — Apsinthos
+  αξέχαστος            → Γολγοθάς (Golgothas) — SADAM (GRC)
+  απαράμιλλος          → Τυφλοπόντικας(Tuflopontikas) — Maverick (GRC)
+  ανεξίτηλος           → Πρώτη Θέση (Proti Thesi) — Light
+  αδιανόητος           → Έκτακτο (Ektakto) — N.O.E. (GRC)
+  αξιοθαύμαστος        → Πλημοίρα (Plimoira) — N.O.E. (GRC)
+  αυτοκαταστροφή       → ΑΥΤΟΚΑΤΑΣΤΡΟΦΗ (AFTOKATASTROFI) — Sigma (GRC)
+  συμφιλίωση           → Συμφιλίωση (Simfiliosi) — Kore Ydro
+  αναστάτωση           → Επίθεση (Epithesi) — Bitapeis
+  ψευδαίσθηση          → Ψευδαίσθηση Αξίας (Psevdesthisi Aksias) — Apsinthos
+  απελευθέρωση         → Τέρατος Απελευθέρωση (Teratos Apeleftherosi) — TNT (GRC)
+  αντιπαράθεση         → Όπου Κι Αν Κοιτάξω (Opou Ki An Koitaxo) — Goin’ Through
+  αυτοσυγκράτηση       → Μας Ακούνε Kρυφά (2005) — Bitapeis
+  αναζωπύρωση          → Παγίδα (Pagida) — Bitapeis
+  κατακτητής           → Ble Trohia (Mπλε Tροχιά) — Nalyssa Green
+  αυτοκαταστρέφομαι    → Νύχτες Οργής (Nuxtes Orgis) — Bitapeis
+  εξουθενώνομαι        → [no results]
+  αναστατώνομαι        → HEAΔΣHOT — Hoffman (XF)
+  παραλογίζομαι        → Παραλογίζομαι (Paralogizomai) — Elina Konstantopoulou
+  εξιδανικεύω          → Αυτά Από ’Μας (Afta Apo ’Mas) — Wednesday Night Cypher
+  αντιπαρατίθεμαι      → [no results]
+
+
+============================================================
+// ── Paste this into sing-the-song.html (gr section) ──
+============================================================
+gr: {
+  easy: [
+    { w:"Ιανουάριος"           s:["Γραμμή (Grammi) — Vito Soprano", "Μια Θάλασσα Τον Ιανουάριο (Mia Thalassa Ton Ianouario) — Pan Pan (GRC)", "Φάντασμα (Fantasma) — Bloody Hawk"] },
+    { w:"Φεβρουάριος"          s:["Άγιος Φεβρουάριος (Agios Fevrouarios) — Petri Salpea", "Άγιος Φεβρουάριος / Φινάλε (Agios Fevrouarios Finale) — Petri Salpea", "08. Έξοδος — Bdelygma"] },
+    { w:"Μάρτιος"              s:["Εικόνα (Eikona) — N.O.E. (GRC)", "Το Κυνήγι (To Kinigi) — LEX (GRC)", "Εσύ (Esy) — Light"] },
+    { w:"Απρίλιος"             s:["ΚΟΠΡΟΙ (KOPROI) — Dani Gambino", "Διχοτόμηση της δραχμής (25-3-1922) — Istoria tou ellēnikou ethnous", "Ικανότητες (Ikanotites) — Logos Apeili"] },
+    { w:"Μάιος"                s:["Μάιος (Maios) — Rise (GRC)", "Το Τελευταίο Βράδυ Της Άνοιξης (To Teleutaio Vrady Tis Anoiksis) — Marseaux", "Σπίτι (Spiti) — Rammenos Assos"] },
+    { w:"Ιούνιος"              s:["Ιούνιος (Iounios) — KNK-UC", "Το καλοκαίρι (To kalokairi) — Dionisis Shinas", "Ασύμμετρη Διάταξη (Asimetri Diataxi) — Stereo Nova"] },
+    { w:"Ιούλιος"              s:["Ιούλιος του ’18 (Ioulios tou ’18) — Logos Timis", "Γρανίτες Και Τσιγάρα (Granites Kai Tsigara) — LEX (GRC)", "Αεροπλάνα (Aeroplana) — Bloody Hawk"] },
+    { w:"Αύγουστος"            s:["Αύγουστος (Aygoustos) — Marina Spanou", "Αύγουστος (Avgoustos) — Anastasia", "Αύγουστος (Augustos) — Mpelafon"] },
+    { w:"Σεπτέμβριος"          s:["Παυσίπονα (Pafsipona) — LEX (GRC)", "Εις το Επανιδείν (Eis) — Kritis", "Ψιλή Βροχή 4 Το Απόγευμα Σεπτέμβριο (Psili Vroxi 4 To Apogeuma Septemvrio) — Pan Pan (GRC)"] },
+    { w:"Οκτώβριος"            s:["Οκτώβριος (Oktovrios) — Stereo Nova", "Xαλασμένη Πυξίδα (Pyxida) — Rammenos Assos", "Λαχταράς (Lahtaras) — The Boy (GRC)"] },
+    { w:"Νοέμβριος"            s:["Η Δικιά μου Iστορία — Zoumpas", "Μαλάκα — Marina And The Devil", "Η Γιορτή (I Giorti) — Goin’ Through"] },
+    { w:"Δεκέμβριος"           s:["Χειροβομβίδες (Xeirovomvides) — Buzz (GRC)", "08. Έξοδος — Bdelygma", "Ο Kύκλος της Oργής — Obnoxious Kas"] },
+    { w:"άνοιξη"               s:["Φέτος η Άνοιξη (Fetos i Anoixi) — Anser (GRC)", "Το Τελευταίο Βράδυ Της Άνοιξης (To Teleutaio Vrady Tis Anoiksis) — Marseaux", "Άνοιξη (Anixi) — Sofia Vossou"] },
+    { w:"καλοκαίρι"            s:["Καλοκαίρι (Kalokairi) — Trannos", "Τριανταπέντε Καλοκαίρια (Triantapente Kalokairia) — Tzamal", "Χειμώνα Καλοκαίρι (Himona Kalokairi) — Mad Clip"] },
+    { w:"φθινόπωρο"            s:["Φθινόπωρο (Fthinoporo) — Kako (GRC)", "ΦΥΛΛΑ ΦΘΙΝΟΠΩΡΟΥ — Rat P", "Φθινόπωρο (Fthinoporo) — Lena Papadopoulou"] },
+    { w:"χειμώνας"             s:["Εδώ Ήταν Πάντοτε Χειμώνας — Skiaxtro", "Χειμώνας (Cheimonas) — FANN", "Αυτός Ο Χειμώνας (Aftos O Cheimonas) — Natassa Bofiliou"] },
+    { w:"κόκκινος"             s:["Κόκκινος μανδύας (Kokkinos Mandias) — Smuggler", "Κόκκινος Στίβος (Kokkinos Stivos) — Pix Lax", "Οι Δρόμοι Λένε (Oi Dromoi Lene) — FANN"] },
+    { w:"μπλε"                 s:["Ήθελες Να Μπλέξεις (Itheles Na Mplekseis) — Kako (GRC)", "Κόκκινα Μπλε (Kokkina Mple) — FLY LO (GRC)", "Μπλεγμένος (Blegmenos) — Thug Slime"] },
+    { w:"πράσινος"             s:["Πράσινος Χρυσός (Prasinos Chrisos) — Taki Tsan", "Αράχνη Tarantino — Yonka Mayonka", "Lana Del Rey - Grandfather please stand on the shoulders of my father while he’s deep-sea fishing ft. RIOPY (Ελληνική μετάφραση) — Genius Greek Translations (Ελληνικές μεταφράσεις)"] },
+    { w:"κίτρινος"             s:["Κίτρινος Τύπος (Kitrinos Typos) — Ethismos", "Ένα (Ena) — KANON (GRC)", "Ζούγκλα (Zougla) — Iratus"] },
+    { w:"μαύρος"               s:["Μαύρος Ήλιος (Mavros Ilios) — Logos Timis", "Ο Μαύρος (O Mavros) — Eisvoleas", "Μαύρος Πυρετός (mavros piretos) — ΒΑΝΔΑΛΟΥΠ (VANDALOUP)"] },
+    { w:"άσπρος"               s:["ΚΟΜΠΟΡΡΗΜΩΝ ΚΑΙ ΑΠΛΗΣΤΟΣ (KOBORRIMON KAI APLISTOS) — Negros Tou Moria", "Το Χρώμα του Χρήματος (To Xroma Tou Xrimatos — Voreia Asteria", "Θάλασσα (Thalassa) — Helena Paparizou"] },
+    { w:"μωβ"                  s:["Μωβ Βροχή (Mov Vroxi) — LEX (GRC)", "Μωβ (Mov) — Iratus & Tom Dzik", "Μωβ (Mov) — Bong Da City"] },
+    { w:"πορτοκαλί"            s:["Πορτοκάλι (Portokali) — Alkistis Protopsalti", "Βότκα Πορτοκάλι (Vodka Portokali) — Dr. Dreez", "Πορτοκαλί (Portokali) — Zouzounia"] },
+    { w:"ροζ"                  s:["Ρόζα (Roza) — Dimitris Mitropanos", "Ροζ Πάνθηρας (Roz Panthiras) — Light", "Ο Τελευταίος Χορός της Ρόζας (O Telefteos Xoros Tis Rozas) — Wednesday Night Cypher"] },
+    { w:"ασημένιος"            s:["Ασημένιος Μαχητής (Asimenios Maxitis) — Fi Vita Sigma", "Ασημένιος Πλανήτης (Asimenios Planitis) — The Boy (GRC)", "ΣΤΗΝ ΠΑΓΩΜΕΝΗ ΣΟΥ ΦΥΛΑΚΗ (STIN PAGOMENI SOU FYLAKI) — Fi Vita Sigma"] },
+    { w:"Δευτέρα"              s:["Δευτέρα Βράδυ (Deytera Vrady) — Long3", "3 Δεύτερα (3 Deftera) — Thitis", "Τα Παιδιά της Δευτέρας (Δαγκωμένη Καλημέρα (Ta Paidia Tis Defteras (Dagkomeni Kalimera) — TNT (GRC)"] },
+    { w:"Τρίτη"                s:["Ματωμένη Τρίτη (Matomeni Triti) — LEX (GRC)", "Triti - τρίτη — Sponty", "Λάθη Στην Τρίτη Τελεια (Lathi Stin Triti Teleia) — Stk (GRC)"] },
+    { w:"Τετάρτη"              s:["Μαύρη Τετάρτη (Mavri Tetarti) — Wednesday Night Cypher", "Τέταρτη Διάσταση (Tetarti Diastasi) — ΔΠΘ | Deltapithita", "Τετάρτη Βράδυ (Tetarti Vradi) — Melina Aslanidou"] },
+    { w:"Πέμπτη"               s:["Πέμπτη Βράδυ (Pempth Vrady) — FY", "Πέμπτη Μέρα (Pempti Mera) — Arleta", "7/7 — Ιουλία Καλλιμάνη (Ioulia Kallimani)"] },
+    { w:"Παρασκευή"            s:["Παρασκευή Πρωί (Paraskevi Proi) — Κωνσταντίνος Αργυρός (Konstantinos Argiros)", "Παρασκευή βράδυ (Paraskevi vradi) — Kianna (USA)", "Παρασκευή και 13 — Mikros Kleftis"] },
+    { w:"Σάββατο"              s:["Ένα Σάββατο Που Μοιάζει Κυριακή (Ena Savvato Pou Miazi Kiriaki) — Foivos Delivorias", "Σάββατο (Savvato) — Giorgos Mazonakis", "Σάββατο Βράδυ (Savvato Vrady) — Long3"] },
+    { w:"Κυριακή"              s:["Ένα Σάββατο Που Μοιάζει Κυριακή (Ena Savvato Pou Miazi Kiriaki) — Foivos Delivorias", "Κυριακή του Πάσχα (KYRIAKI TOY PASKA) — WazGucci Stone", "Σήμερα Είναι Κυριακή (Simera Einai Kuriaki) — Bitapeis"] },
+    { w:"αγάπη"                s:["Αλήτικη Αγάπη (Alitiki Agapi) — LEX (GRC)", "ΑΓΑΠΗ (AGAPI) — Sigma (GRC)", "Αγάπη (Agapi Remix) — Sigma (GRC)"] },
+    { w:"νύχτα"                s:["Μια Νύχτα Που Πονάς Και Εγκαταλείπεις (Mia Nixta Pou Ponas Kai Egkataleipeis) — Fi Vita Sigma", "Η Νύχτα Που Έπαψα Να Μεταφράζω Τις Σιωπές (H Nixta Pou Epapsa Na Metafrazo Tis Siopes) — Βέβηλος (Vevilos)", "Δε Φτάνει Μόνο Μια Νύχτα Να Βγάλεις Τη Μάσκα (De Ftanei Mono Mia Nixta Na Vgaleis Ti Maska) — Mani (GRC)"] },
+    { w:"βροχή"                s:["Μωβ Βροχή (Mov Vroxi) — LEX (GRC)", "Όνειρο Βροχή (Oneiro Vroxi) — Joker/Two-Face", "Βροχή (VROXI) — Sidarta"] },
+    { w:"καρδιά"               s:["Μοναχική Καρδιά (Monaxiki Kardia) — Melisses", "Αχ Καρδιά Μου (Ax Kardia Mou) — Κωνσταντίνος Αργυρός (Konstantinos Argiros)", "Καρδιά Μου (Kardia Mou) — Mente Fuerte"] },
+    { w:"ήλιος"                s:["Μαύρος Ήλιος (Mavros Ilios) — Logos Timis", "Ο Ήλιος Καεί (O Ilios Kaiei) — Plokami Tou Karxaria", "Ήλιος δε βγαίνει αν δεν πεις καλημέρα (Ilios de vgainei an den peis kalimera) — Katy Garbi"] },
+    { w:"θάλασσα"              s:["Θάλασσα (Thalassa) — Stixoima", "Θάλασσα (THALASSA) — Sicario (GRC)", "Άγρια Θάλασσα (Agria Thalassa) — Giorgos Sabanis"] },
+    { w:"χαρά"                 s:["Μια Χαρά (Mia Xara - Demo) — KANON (GRC)", "Χαράματα (Haramata) — Klavdia", "Μουσική με Χαρακτήρα (Mousiki Me Xaraktira) — Bitapeis"] },
+    { w:"λύπη"                 s:["Έλα Πάρε Μου Τη Λύπη (Ela Pare Mou Ti Lipi) — Eleni Tsaligopoulou", "Λυπητερή (Lipiteri) — Anser (GRC)", "Κορίτσια σε λύπη — Melentini"] },
+    { w:"ουρανός"              s:["Δυο Μέτρα Ουρανός (Dyo Metra Ouranos) — Πάνος Κιάμος (Panos Kiamos)", "Ουρανός (Ouranos) — Locomondo", "Ουρανός (Ouranos) — To sfalma"] },
+    { w:"φεγγάρι"              s:["Φεγγάρι (Feggari) — APON", "Paidia Tou Feggariou (Παιδιά Του Φεγγαριού) — Vlospa", "Φεγγάρι (Fegari) — Natasa Theodoridou"] },
+    { w:"αστέρι"               s:["Τυχερό Αστέρι (Tyxero Asteri) — K.Bhta", "Ένα Αστέρι Από Τσιμέντο (Ena Asteri Apo Tsimento) — Eversor", "Αν είσαι ένα αστέρι (An Eisai Ena Asteri) — Nikos Vertis"] },
+    { w:"δρόμος"               s:["Ο Δρόμος (O Dromos) — Μάνος Λοΐζος (Manos Loizos)", "Ένα Τσιγάρο Δρόμος (Ena Tsigaro Dromos) — Rapsodos Filologos", "Ο δρόμος μου για σένα (O dromos mou gia sena) — Kore Ydro"] },
+    { w:"μάτια"                s:["Ρώτα Τα Μάτια Μου (Rota Ta Matia Mou) — Toquel", "Mina Ögon (Τα Μάτια Μου) — Nineb Youk", "Με Τα Ίδια Μάτια (Me Ta Idia Matia) — FY"] },
+    { w:"ζωή"                  s:["Η Ζωή Σου Ζάρι (I Zoi Sou Zari) — Helena Paparizou", "Ωραία Τύπισσα η Ζωή (Oraia Tipisa I Zoi) — Psycho (GRC)", "Η γυναίκα της ζωής σου (I gineka tis zois sou) — Κατερίνα Λιόλιου (Katerina Lioliou)"] },
+    { w:"μουσική"              s:["Μουσική Για Τσόγλανους (Mousiki Gia Tsoglanous) — LEX (GRC)", "Μαύρη Μουσική (Mavri Mousiki) — KANON (GRC)", "Μουσική με Χαρακτήρα (Mousiki Me Xaraktira) — Bitapeis"] },
+    { w:"τραγούδι"             s:["Το Τραγούδι του Βαγγέλη (To Tragoudi Tou Vageli) — SKIADARESES", "Το Τραγούδι Του Άρη (To Tragoudi Tou Ari) — SKIADARESES", "Το τραγούδι του Miner — CaptainPanez"] },
+    { w:"ψυχή"                 s:["Ψυχή (Psihi) — Logos Timis", "Ψυχή Με Ψυχή (Psixi Me Psixi) — Giorgos Sabanis", "Ψυχή Όμορφη (Psixi Omorfi) — Iratus"] },
+    { w:"φτερά"                s:["Ανοίγω Φτερά (Anoigo Ftera) — Eisvoleas", "Φτερά (Ftera) — Trouf", "Χωρίς φτερά (Horis ftera) — Peggy Zina"] },
+    { w:"πόλη"                 s:["Αμαρτωλή Πόλη (Amartoli Poli) — Tzamal", "Ομίχλη Μες Στην Πόλη (Omixli Mes Stin Poli) — Joker/Two-Face", "Από Την Πόλη Που Kαίγεται (Apo Tin Poli Pou Kegete) — Logos Timis"] },
+    { w:"σπίτι"                s:["Σπίτι (Spiti) — Sidarta", "Δεν Κάνω Εγώ Για Σπίτι (Den Kano Ego Gia Spiti) — Eleni Foureira", "Μπύρες Για Το Σπίτι (Mpires Gia To Spiti) — Rammenos Assos"] },
+    { w:"χορός"                s:["Χορός (XOROS) — Sicario (GRC)", "Ο Χορός των Μεθυσμένων Αετών (O Xoros ton Methysmenon Aeton) — Logos Timis", "Ο Τελευταίος Χορός της Ρόζας (O Telefteos Xoros Tis Rozas) — Wednesday Night Cypher"] },
+    { w:"φωτιά"                s:["Φωτιά (Fotia) — Logos Timis", "Φωτιά η Αλήθεια (Fwtia H Alhtheia) — Logos Timis", "Φωτιά (Fotiá) — Eleni Foureira"] },
+    { w:"κόσμος"               s:["Ο Κόσμος Κακός (O Kosmos Kakos) — LEX (GRC)", "Ο Κόσμος Σου (O Kosmos Sou) — Νεφέλη Φασούλη (Nefeli Fasouli)", "Κόσμος (COSMOS) — OGE (GRC)"] },
+    { w:"φως"                  s:["Ηλιοβασιλέμα-(Part 2 - Φως) — Κωνσταντίνος Αργυρός (Konstantinos Argiros)", "ΦΩΣ ΣΤΟΝ ΔΡΟΜΟ (FOS STON DROMO) — Sidarta", "Το Φως Που Σε Τρομάζει (To Fws Pou Se Tromazei) — Taf Lathos"] },
+    { w:"ελπίδα"               s:["Ελπίδα (Elpida) — Mad Clip", "Ελπίδα (Elpida) — Κωνσταντίνος Αργυρός (Konstantinos Argiros)", "Ελπίδα (Elpida) — Taf Lathos"] },
+    { w:"όνειρο"               s:["Oniro mou (Όνειρο μου) — Yianna Terzi", "Από το Εγώ στο Εμείς και από το Όνειρο στην Πράξη (Apo to Ego sto Emeis kai apo to Oneiro stin Praksi) — Logos Timis", "Όνειρο Βροχή (Oneiro Vroxi) — Joker/Two-Face"] },
+    { w:"πόνος"                s:["ΠΟΝΟΣ ΚΡΥΦΟΣ (PONOS KRIFOS) — Marina Satti", "Ο Πόνος του Πρεζάκια (O Ponos Tou Prezakia) — Anestis Delias", "Πόνος (Ponos) — Rammenos Assos"] },
+    { w:"φιλί"                 s:["Φιλικό (Filiko) — Eisvoleas", "Σ’ αγαπώ, να προσέχεις, φιλιά — Marina Spanou", "Τα Φιλιά Μου (Ta Filia Mou) — Κατερίνα Λιόλιου (Katerina Lioliou)"] },
+    { w:"αγκαλιά"              s:["Πάρε με αγκαλιά (Pare Me Agkalia) — Κωνσταντίνος Αργυρός (Konstantinos Argiros)", "Πάρε με αγκαλιά (Pare me agkalia) — Mike (GRC)", "Στην Αγκαλιά Του Μάρκου (Stin Agkalia Tou Markou) — Stixoima"] },
+    { w:"σιωπή"                s:["Σιωπή (Siopi) — Bong Da City", "Σιωπή (Siopi) — Xylina Spathia", "Αόρατη Σιωπή (Aorati Siwpi) — Logos Timis"] },
+    { w:"νερό"                 s:["ΝΕΡΟ (NERO) — Κωνσταντίνος Αργυρός (Konstantinos Argiros)", "Νερό (Nero) 💦 — N.O.E. (GRC)", "Θέλω Νερό (Thelo Nero) — Lil Barty"] },
+    { w:"φίλος"                s:["Η φιλοσοφία μου (I philosophia mou) — Giorgos Mazonakis", "Αν Ήσουν Φίλος (An Isoun Filos) — Bitapeis", "Φιλοσοφία Zωής — Anser & Eversor"] },
+    { w:"χέρι"                 s:["Χέρια Ψηλά από το Πίσω Kάθισμα (Xeria Psila apo to Piso Kathisma) — Joker/Two-Face", "Τα Χέρια σας Ψηλά (Ta Xeria Sas Psila) — Terror X Crew", "Χέρια ψηλά (Heria psila) — Μιχάλης Χατζηγιάννης (Michalis Hatzigiannis)"] },
+    { w:"στιγμή"               s:["ΛΑΘΟΣ ΣΤΙΓΜΗ (LATHOS STIGMI) — Saske (GRC)", "Μαγική Στιγμή (Magiki Stigmi) — Rationalistas (GRC)", "Συμπεράσματα της Στιγμής (Symperasmata ths Stigmhs) — Χάτου Δερά (Xatoy Dera)"] },
+    { w:"παιδί"                s:["Παιδιά Του Παγετού (Paidia Tou Pagetou) — LEX (GRC)", "Περίεργα Παιδιά (Perierga Paidia) — Logos Timis", "Παιδί (Paidi) — Dj The Boy (GRC)"] },
+    { w:"χαμόγελο"             s:["Το χαμόγελό σου (To hamogelo sou) — Elli Kokkinou", "ΣΠΑΣΜΕΝΟ ΧΑΜΟΓΕΛΟ (SPASMENO XAMOGELO) — Lil Avgikos", "Ανάποδο Χαμόγελο — LeoDean"] },
+    { w:"δάκρυ"                s:["Είναι Μυστήρια η Χώρα των Δακρύων (2007) — Bitapeis", "Δάκρυα (Dakria) — Tsaki", "Δακρυγόνο (Dakrygono) (Revisited) — Solmeister"] },
+    { w:"λόγια"                s:["ΛΟΓΙΑ (LOGIA) — Kidd", "Λόγια (Logia) — Ivi Adamou", "Λόγια και σιωπές (Logia kai siopes) — Anna Vissi"] },
+    { w:"χρόνος"               s:["1 Χρόνος (1 Xronos) — Trannos", "Ο Χρόνος Περνά (O Hronos Perna) — Mad Clip", "Ο Χρόνος (O Xronos) — Pavlos Pavlidis"] },
+    { w:"μέρα"                 s:["Μια Καλή Μέρα (Mia Kali Mera) — Bloody Hawk", "ΚΑΘΕ ΜΕΡΑ (KATHE MERA) — Bloody Hawk", "Η Μέρα μου Όμορφη — Taf Lathos"] },
+    { w:"καλοκαίρι"            s:["Καλοκαίρι (Kalokairi) — Trannos", "Τριανταπέντε Καλοκαίρια (Triantapente Kalokairia) — Tzamal", "Χειμώνα Καλοκαίρι (Himona Kalokairi) — Mad Clip"] },
+    { w:"χειμώνας"             s:["Εδώ Ήταν Πάντοτε Χειμώνας — Skiaxtro", "Χειμώνας (Cheimonas) — FANN", "Αυτός Ο Χειμώνας (Aftos O Cheimonas) — Natassa Bofiliou"] },
+    { w:"βουνό"                s:["Βουνό (Bouno) — iLLEOo", "Το βουνό (To vouno) — Peggy Zina", "Το Βουνό Κι Ο Κάμπος (To Vouno Ki O Kampos) — Locomondo"] },
+    { w:"γη"                   s:["ΚΑΘΩΣ ΑΠΟΜΑΚΡΥΝΟΜΑΙ ΑΠ’ ΤΗ ΓΗ (KATHOS APOMAKRINOMAI AP’ TI GI) — Fi Vita Sigma", "Γη των Θαυμάτων (Gi ton Thaumaton) — Logos Timis", "Η γη κι η σελήνη (I gi ki i selini) — Despina Vandi"] },
+    { w:"φύση"                 s:["Επιστροφή στην Φύση (Epistrofi Stin Fisi) — Ypo", "Ευτυχισμένες Ημέρες in C Minor — Beats Pliz", "Ωραία Τύπισσα η Ζωή (Oraia Tipisa I Zoi) — Psycho (GRC)"] },
+    { w:"φωνή"                 s:["Φωνή του Ανέμου (Foni tou Anemou) — Logos Timis", "Η Φωνή των Τρελών (I Foni Ton Trelon) — DJ Aldow", "Όσο έχω φωνή (Oso eho foni) — Anna Vissi"] },
+    { w:"κύμα"                 s:["Κύμα (Kyma) — Sigma (GRC)", "Κύμα μου (Kyma mou) — Josephine (GRC)", "Χύμα στο κύμα (Hima sto kima) — Vasilis Karras"] },
+    { w:"πόρτα"                s:["Πόρτα Για Τον Ουρανό (Porta Gia Ton Ourano) — Helena Paparizou", "Ο Διάβολος Σου Χτυπά Την Πόρτα (O Diavolos Sou Chtypaei Tin Porta) — Thitis", "Με Την Πόρτα Ανοιχτή (Me Tin Porta Anoixti) — Antonis Remos"] },
+    { w:"ανάσα"                s:["ΑΝΑΣΑΙΝΩ ΚΑΙ ΖΑΛΙΖΟΜΑΙ (ANASAINO KAI ZALIZOMAI) — LILA (GRC)", "Ανάσανα (Anasana) — Novel 729", "Ανάσα (Anasa) — Giorgos Mazonakis"] },
+    { w:"σκιά"                 s:["Lucky Luke (Σαν Σκιά) (San Skia) — N.O.E. (GRC)", "Σκιά Του Δράκου Σαμουράι (Skia Tou Drakou Samurai) — Sadomas", "Χορός με τη Σκιά μου (Dance With My Own Shadow) — Manos Hadjidakis"] },
+    { w:"όμορφος"              s:["Φαίνομαι Τόσο Όμορφος (Fenome Toso Omorfos) — The Boy (GRC)", "Ποτέ Δε Σημαδεύουνε Στα Πόδια (Pote De Simadevoume Sta Podia) — Βέβηλος (Vevilos)", "Εδώ Ήταν Πάντοτε Χειμώνας — Skiaxtro"] },
+    { w:"μόνος"                s:["Μόνος (Monos) — WANG (GRC)", "Μόνος Μου (Monos Mou) — Snik", "ΜΟΝΟΣ (MONOS) — Light"] },
+    { w:"τρελός"               s:["Είμαι Τρελός (Eimai Trelos) — Mad Clip", "Σαν Τρελός (San Trelos) — Κωνσταντίνος Αργυρός (Konstantinos Argiros)", "Σαν Τρελός σε Αγαπάω (San Trelos Se Agapao) — Nikos Vertis"] },
+    { w:"ζεστός"               s:["Ζεστός Αέρας (Zestos Aeras) — Xylina Spathia", "Κομπλεξικό (Komplexiko) — Bloody Hawk", "Rihanna - Stay (Ελληνική μετάφραση) — Genius Greek Translations (Ελληνικές μεταφράσεις)"] },
+    { w:"κρύος"                s:["Σύμπτωση (Symptosi) — Bloody Hawk", "Rihanna - Stay (Ελληνική μετάφραση) — Genius Greek Translations (Ελληνικές μεταφράσεις)", "Εδώ Δεν Ξημερώνει (Edo Den Ksimeronei) — Apethantos"] },
+    { w:"γλυκός"               s:["Είσουν Καλός Κι Είσουν Γλυκός (Isoun Kalos) — Grigoris Bithikotsis", "Μόνιμα Πρόστυχος (Monima Prostixos) — Iratus", "Κόβω Χαμόγελα (Kovo Xamogela) — Fi Vita Sigma"] },
+    { w:"σκοτεινός"            s:["Σκοτεινός Ουρανός (Skoteinos Ouranos) — Mani (GRC)", "Ένας σκοτεινός μονόλογος με θέα το σύμπαν (Enas skoteinos monologos me theato sympan) — Mi Vita Psi", "Δρόμος Σκοτεινός / Dromos Skoteinos — RAJA ELAJEMIA"] },
+    { w:"φωτεινός"             s:["Bon Jovi - Always (Ελληνική μετάφραση) — Genius Greek Translations (Ελληνικές μεταφράσεις)", "Αστέρι Μου (Asteri Mou) [Duplicate] — Notis sfakianakis", "Θεία Κοινωνία (Theia Koinonia) — N.O.E. (GRC)"] },
+    { w:"αληθινός"             s:["Αληθινός (Alithinos) — Thug Slime", "Μείνε Αληθινός (Meine Alithinos) — Trouf", "Συνθήκες (Sinthikes) — Mad Clip"] },
+    { w:"ελεύθερος"            s:["Ελεύθερος (Eleftheros) — Κωνσταντίνος Αργυρός (Konstantinos Argiros)", "Ελεύθερος Όσο Κανείς (Elefteros Oso Kaneis) — Bitapeis", "Ζήσε Ελεύθερος (Zise Eleftheros) — X.T.P. (GRC)"] },
+    { w:"χαρούμενος"           s:["Το Παράθυρό Μου (To Parathiro Mou) — LEX (GRC)", "Ηλιοβασιλέμα-(Part 2 - Φως) — Κωνσταντίνος Αργυρός (Konstantinos Argiros)", "Σκόνη (Skoni) — Toquel"] },
+    { w:"λυπημένος"            s:["USA For Africa - We Are the World (Ελληνική μετάφραση) — Genius Greek Translations (Ελληνικές μεταφράσεις)", "Το νησί (To nisi) — Despina Vandi", "Enrique Iglesias - Tired Of Being Sorry (Ελληνική μετάφραση) — Genius Greek Translations (Ελληνικές μεταφράσεις)"] },
+    { w:"δυνατός"              s:["Νιώθω Έντονα (Niotho Entona) — Logos Timis", "Εκείνο το Τίποτα (Ekeino to Tipota) — Anser (GRC)", "Οικογένεια (Oikogeneia) — Logos Timis"] },
+    { w:"ωραίος"               s:["Ο ωραίος κι η ωραία (O oreos kai i orea) — Kateryna Kouka", "Πες το Ξανά / Ανήκω σε Μένα/ Να το Πάρεις το Κορίτσι/ Ο Ωραίος και η Ωραία - Live (Pes To Xana / Aniko Se Mena / Na To Paris To Koritsi / O Oraios Kai I Oraia - Live Pes To Xana / Aniko Se Mena / Na To Paris To Koritsi / O Oraios Kai I Oraia - Live) — Eleni Foureira", "Ελεύθερος και Ωραίος (Eleftheros Ki Oreos) — Lefteris Pantazis"] },
+    { w:"καλός"                s:["Η Καλοσύνη Πέθανε (I Kalosini Pethane) — Fullface", "Ο Καλός, ο Κακός και ο Άσχημος (O Kalos, o Kakos kai o Asximos) — Zontani Nekri", "Ο Καλός, O Κακός Κι Ο Άγνωστος — EPILEKTOI"] },
+    { w:"αγαπώ"                s:["Σ’ Αγαπώ (Sagapw) — Bossikan", "Είναι Που Ακόμα Σ΄ Αγαπώ- (Part 3 - Ενέργεια) — Κωνσταντίνος Αργυρός (Konstantinos Argiros)", "Μου Αρέσω Μ’ Αγαπώ (Mou Areso M’ Agapo) — FY"] },
+    { w:"χορεύω"               s:["Χορεύω Ακόμα Trance (Xoreuo Akoma Trance) — Skoumas", "Όταν Σου Χορεύω (Otan Sou Horevo) — Rena Morfi", "Ξυπόλυτη χορεύω (Ksipoliti horevo) — Katy Garbi"] },
+    { w:"τραγουδώ"             s:["Να σου τραγουδώ (Na sou tragoudw) — Stavento", "Να Τραγουδώ Πως Σ’ Αγαπάω (Na Tragoudo Pos S’ Agapao) — Πάνος Κιάμος (Panos Kiamos)", "Να, Να, Να- Τραγουδώ για Σένα — Petros Iakovidis"] },
+    { w:"κλαίω"                s:["Αν Με Δεις Να Κλαίω (An Me Deis Na Klaio) — Helena Paparizou", "Καλύτερα Μονάχος μου κι ας Κλάιω (Kalytera Monachos mou ki as Klaio) — Kostantinos Papaioannoy", "Όταν Βλέπετε Να Κλαίω (Otan Vlepete Na Kleo) — Stelios Kazantzidis"] },
+    { w:"γελώ"                 s:["Φάντασμα (Fantasma) — Bloody Hawk", "Σελήνη (Selini) — Solmeister", "κόρη. (kori.) — Marseaux"] },
+    { w:"τρέχω"                s:["Μες στην Πόλη Τρέχω (Mestin Poli Trexw) — Ivan Greko", "Τρέχω την Πόλη (Trexo tin Poli) — Aria (GR)", "Γεννημένος Να Τρέχω (Gennimenos Na Treho) — Γιώργος Μαργαρίτης (Giorgos Margaritis)"] },
+    { w:"φεύγω"                s:["Φεύγω Την Kάνω — Above The Hood", "Όλο Φεύγω (Olo Feugo) — Novel 729", "Φεύγω για μένα (Fevgo gia mena) — Giorgos Mazonakis"] },
+    { w:"μένω"                 s:["Ακόμα Μένω Ζωντανός (Akoma Meno Zontanos) — FANN", "Δεν Μένω Μακριά (Den Meno Makria) — SKIADARESES", "Μένω εκτός (Picture) — Eleftheria Arvanitaki"] },
+    { w:"κοιτώ"                s:["Όταν σε Κοιτώ (Otan Se Koito — Konstantinos Koufos", "Κοιτώ ψηλά τον ουρανό (Koitw pshla ton ourano) — Dexon", "Κοιτώ Τα Μάτια Σου (Koito Ta Matia Sou) — Stavros Zoras"] },
+    { w:"ακούω"                s:["Ακούω την αγάπη (Akouo Tin Agapi) — Tripes", "Ακούω Πολλά (Akouw Polla) — Niko Malteze", "Δεν Ακούω Κανέναν (Den Akouo Kanenan) — Antonis Remos"] },
+    { w:"θυμάμαι"              s:["Θυμάμαι (Thimamai) — HGEMONA$", "Δε Θυμάμαι (De Thymame) — HGEMONA$", "Θυμάμαι Τα Πάντα (Thimamai Ta Panta) — Rio (GRC)"] },
+    { w:"ονειρεύομαι"          s:["Και Ονειρεύομαι Κόσμους (Kai Oneirevomai Kosmous) — Fi Vita Sigma", "Ονειρεύομαι (Onirevomai) — Vasilis Karras", "ΧΙΛΙΟΜΕΤΡΑ (XILIOMETRA) — Light"] },
+    { w:"περιμένω"             s:["Περιμένω (Perimenw) — Pavlos Pavlidis", "Όχι Δεν Περιμένω (Oxi Den Perimeno) — Trannos", "Κι όλο περιμένω (Ki olo perimeno) — Kalomira"] },
+    { w:"ζω"                   s:["Η Ζωή Σου Ζάρι (I Zoi Sou Zari) — Helena Paparizou", "Ωραία Τύπισσα η Ζωή (Oraia Tipisa I Zoi) — Psycho (GRC)", "Ακόμα Μένω Ζωντανός (Akoma Meno Zontanos) — FANN"] },
+    { w:"αγκαλιάζω"            s:["Το Τραγούδι του Βαγγέλη (To Tragoudi Tou Vageli) — SKIADARESES", "Ένα Αστέρι Από Τσιμέντο (Ena Asteri Apo Tsimento) — Eversor", "Μην (Min) — Above The Hood"] },
+  ],
+  normal: [
+    { w:"μοναξιά"              s:["Μοναξιά (Monaksia) — APON", "Μοναξιά (Monaxia) — Giorgos Kakosaios", "Η Μοναξια ΕΙναι Της Μοδας (Loneliness Is Fashion) — Selofan"] },
+    { w:"αλήθεια"              s:["ΑΛΗΘΕΙΑ (ALITHEIA) — Saske (GRC)", "Αλήθεια;! (Alitheia?!) — Evangelia", "Φωτιά η Αλήθεια (Fwtia H Alhtheia) — Logos Timis"] },
+    { w:"ελευθερία"            s:["Ελευθερία ή Θάνατος (Eleftheria I Thanatos) — Hawk (GRC)", "Ὕμνος εἰς τὴν Ἐλευθερίαν (Hýmnos eis tin Eleftherían) [Cyprus’ and Greece’s National Anthem] — National Anthems", "Ελευθερία (Eleftheria) — N.O.E. (GRC)"] },
+    { w:"δύναμη"               s:["Λεφτά, Δύναμη & Respect — Mikros Kleftis", "H Δύναμη που δεν Yπολογίζανε — Zoro&Buzz", "Δύναμη (Dinami) — Negros Tou Moria"] },
+    { w:"ανάμνηση"             s:["Η Ανάμνηση Της Ευτυχίας (H Anamnhsh Ths Eutuxias) — Pavlos Pavlidis", "Ανάμνηση (Anamnisi) — Natasa Theodoridou", "Ανάμνηση Πασχαλινή (Anamnisi Paschalini) — Panos Savvopoulos"] },
+    { w:"παρελθόν"             s:["Το παρελθόν μου (To parelthon mou) — Anna Vissi", "Είσαι Παρελθόν (Ise Parelthon) — Vasilis Karras", "Το μέλλον απ’το παρελθόν (To mellon ap’ to parelthon) — Foivos Delivorias"] },
+    { w:"ευκαιρία"             s:["Η Ευκαιρία Μου (I Efkairia Mou) — Ethismos", "Άλλη Μια Ευκαιρία (Alli Mia Efkeria) — Pantelis Pantelidis", "Έψαξα να Βρω μια Ευκαιρία (Epsaxa Na Vro Mia Efkairia) — Vasilis Karras"] },
+    { w:"ταξίδι"               s:["Ταξίδι (Taxidi) — Marina Spanou", "Ταξιδιάρα ψυχή (Taksidiara psihi) — Tripes", "Ταξίδι (TAXIDI) — Sicario (GRC)"] },
+    { w:"επιστροφή"            s:["Επιστροφή (Epistrofi) — FANN", "Επιστροφή - Στην Κνίτισσα, Vol. 2 (Epistrofi - Stin Knitissa, Vol. 2) — Xatzifrageta", "Η Επιστροφή Του Βασιλιά (I Epistrofi Tou Vasilia) — Mani (GRC)"] },
+    { w:"χωρισμός"             s:["Ο χωρισμός σου θάνατος (O horismos sou thanatos) — Natasa Theodoridou", "Χωρισμός (Horismos) — Alkinoos Ioannidis", "Χωρισμός (Xorismos) — Sophie lies"] },
+    { w:"συνάντηση"            s:["Συνάντηση 14:15 (Sinantisi 14:15) — Vita Peis & EPLKT", "Συνάντηση (Sinantisi) — Antonis Remos", "Συνάντηση (Synantisi) — Stavros Zoras"] },
+    { w:"νοσταλγία"            s:["Αγία Νοσταλγία (Agia Nostalgia) — Thanasis Papakonstantinou", "Νοσταλγία (Nostalgia) — Anna Vissi", "Η Νοσταλγία (I Nostalgia) — Stelios Kazantzidis"] },
+    { w:"αγωνία"               s:["Αγωνία (Agonia) — Tolis voskopoulos", "Η αγωνία μου είναι φως (H Agonia Mou Einai Fos) — Tripes", "ΑΓΩΝΙΑ (AGONIA) — ΛΥΚΟΣ ΤΗΣ ΣΤΕΠΑΣ - LYKOS THS STEPAS"] },
+    { w:"λαχτάρα"              s:["Λαχταράς (Lahtaras) — The Boy (GRC)", "Ηρεμία (Iremia) — WANG (GRC)", "Για Σένα (Gia Sena) — Stavento"] },
+    { w:"απελπισία"            s:["Κουράστηκα (Kourastika) — Toquel", "Το Σεξ (To Sex) — Ημισκούμπρια (Imiskoubria)", "06 (Κενό) — Jolly Roger"] },
+    { w:"μυστικό"              s:["ΚΟΙΝΟ ΜΥΣΤΙΚΟ (KOINO MYSTIKO) — LILA (GRC)", "Μυστικό (Mystiko) — Anastasia", "Μυστικό (MYSTIKO) — XRS (GRC)"] },
+    { w:"ευτυχία"              s:["Μια Παραλίγο Ευτυχία (Mia Paraligo Eftihia) — Natasa Theodoridou", "Η Ανάμνηση Της Ευτυχίας (H Anamnhsh Ths Eutuxias) — Pavlos Pavlidis", "Υδρόγειος (Idrogeios) — WANG (GRC)"] },
+    { w:"μαγεία"               s:["Άσπρη Μαγεία (Aspri Mageia) — X.T.P. (GRC)", "Μαγεία (Mageia) — Lobo (GRC)", "Μαγεια των καθρεφτων (Magick of Mirrors) — Acherontas"] },
+    { w:"απόσταση"             s:["Απόσταση (Apostasi) — Mad Clip", "Απόσταση Αναπνοής (Apostash Anapnohs) — FANN", "14. ΠΙΑΝΩ ΑΠΟΣΤΑΣΗ — Julio & Smilin"] },
+    { w:"εκδίκηση"             s:["Εκδίκηση (Ekdikisi) — Katerina Stikoudi", "Η Εκδίκηση των Χαμένων Είναι Πάντα Λίγο Πριν την Τελευταία Σκηνή (I Ekdikisi ton Xamenon Einai Panta Ligo Prin tin Teleftaia Skini) — Solmeister", "Η Εκδίκηση του Αληθινού (I Ekdikisi Toy Alithinou) — Terror X Crew"] },
+    { w:"ζήλεια"               s:["Ζήλεια μου (Zilia mou) — Katy Garbi", "Ζήλεια (Zileia) — Peggy Zina", "Ζήλεια (Zileia) — Katy Garbi"] },
+    { w:"προδοσία"             s:["Προδοσία (Prodosia) — Mando (GRC)", "Προδοσία (Prodosia) — Yiannis kotsiras", "Εσχάτη προδοσία (Eshati prodosia) — Antzy Samiou"] },
+    { w:"αντρεία"              s:["Ο Ανδρειωμένος (Andreiomenos) — Γιάννης Μαρκόπουλος [Giannis Markopoulos]", "Καπετάν Αντρέα Ζέππο (Kapetan Andrea Zeppo) — Odysseas Moschonas", "Δίλημμα (Dilimma) — Bloody Hawk"] },
+    { w:"αδυναμία"             s:["ADYNAMIA (ΑΔΥΝΑΜΙΑ) — ZiZZi", "Αδυναμία μου (Adinamia mou) — Lena Papadopoulou", "Αδυναμία (Adynamia) — DJ Stephan"] },
+    { w:"μελαγχολία"           s:["Η Οδυνηρή Μελαγχολία Ενός Βλέμματος (Bonus Track) — Solmeister", "Τεχνικές Δραπέτευσης (Texnikes Drapeteusis) — Logos Timis", "Η Ευκαιρία Μου (I Efkairia Mou) — Ethismos"] },
+    { w:"εξουσία"              s:["Το Παιχνίδι Της Εξουσίας (To Paihnidi Tis Exousias) — Stereo Nova", "Στην Ταράτσα (Stin Taratsa) — Tzamal", "Τον Μπούλο (Ton Mpoulo) — RNS (GRC)"] },
+    { w:"μνήμη"                s:["Τα δάκρυα του εκτελεστή / Μια τελευταία σελίδα ανθρώπινης μνήμης — Apsinthos", "Το Νερό Έχει Μνήμη (To Nero Ekhi Mnimi) — Lolek (GRC)", "Στη Μνήμη Της Κυρά Τούλας (Ορχήστρα) (Sti Mnimi Tis Kira Toulas) — Stavros Xarchakos"] },
+    { w:"παράδεισος"           s:["Παράδεισος (Paradeisos) — Kostas Karafotis", "Αν υπάρχει παράδεισος (An iparhi paradisos) — Natasa Theodoridou", "Παράδεισος (Paradeisos) — Elena Tsagrinou"] },
+    { w:"κόλαση"               s:["Κόλαση (Kolasi) — Toquel", "Τα Λέμε στην Κόλαση (Ta Leme stin Kolasi) — Solmeister", "Κόλαση (Kolasi) — To sfalma"] },
+    { w:"αντίσταση"            s:["Κράτα Αντίσταση (Krata Antistasi) — 4012 Beats", "Φτιάξε Έναν Ήλιο (Ftiakse Enan Ilio) — Βέβηλος (Vevilos)", "Η Τελευταία Φαντασίωση (I Teleftaia Fantasiosi) — Rapsodos Filologos"] },
+    { w:"μοναχικός"            s:["Βαρύ (Vary) — Bloody Hawk", "Καλύτερες Μέρες (Kaliteres Meres) — Voreia Asteria", "Μια Τζούρα Ρεαλισμού (Mia Tzoura Realismou) — LEX (GRC)"] },
+    { w:"θλιμμένος"            s:["Ένας θλιμμένος εραστής (Enas thlimenos erastis) — Γιώργος Στρατάκης (Giorgos Stratakis)", "Άκρως Ερωτικό (Akros Erotiko) — Fullface", "Αεροπλάνα (Aeroplana) — Bloody Hawk"] },
+    { w:"ξεχασμένος"           s:["Φλόγα (Floga) — Novel 729", "Καλοκαιριάζει (Kalokairiazei) — Zoro (GRC)", "Ο Βασιλιάς Της Σκόνης (O Vasilias Tis Skonhs) — Xylina Spathia"] },
+    { w:"αγαπημένος"           s:["Ο αγαπημένος σου (O Agapimenos sou) — Mad Clip", "Κρίμα (Krima) — Bloody Hawk", "Φέρε (Fere) — Mad Clip"] },
+    { w:"χαμένος"              s:["Ο Χαμένος Τα Παίρνει Όλα (O Hamenos Ta Pairnei Ola) — Γιάννης Αγγελάκας (Giannis Aggelakas)", "Είμαι Χαμένος (Eimai Xamenos) — Stixoima", "Ποιος Είναι ο Χαμένος; (Poios Einai o Hamenos?) — Yoda Priest"] },
+    { w:"ζωντανός"             s:["Ακόμα Μένω Ζωντανός (Akoma Meno Zontanos) — FANN", "Ακόμα Ζωντανός (Akoma Zontanos) — Taki Tsan", "Ο Ζωντανός Νεκρός (O Zontanos Nekros) — Ypo"] },
+    { w:"αδικημένος"           s:["Φλόγα (Floga) — Taf Lathos", "Μέλλον (Mellon) — N.O.E. (GRC)", "Ως Τότε (Os Tote) — Bloody Hawk"] },
+    { w:"ατέλειωτος"           s:["Καταιγίδα (Kataigida) — Sigma (GRC)", "Τρίτο Σκαλί (Trito Skali) — Marina Spanou", "Ελεύθερη Πτώση (Eleftheri Ptwsi) — Bitapeis"] },
+    { w:"γλυκόπικρος"          s:["40 Ώρες Πρίν (40 Wres Prin) — Bitapeis", "Μισή Καρδιά (Misi Kardia) — Melisses", "Στάχτη (Staxti) — Solmeister"] },
+    { w:"ανίκητος"             s:["Ανίκητος (Anikitos) — Thanasis Papakonstantinou", "Τα Γέλια Των Χαμένων (Ta Gelia Ton Xamenon) — Tzamal", "Περσεφόνη (Persefoni) — Solmeister"] },
+    { w:"κρυμμένος"            s:["Οικογένεια (Oikogeneia) — Logos Timis", "Να Αγαπάς Τελικά Είναι Πιο Εύκολο (Na Agapas Telika Einai Pio Efkolo) — Anser (GRC)", "Από Το Λόφο (Apo To Lofo) — RNS (GRC)"] },
+    { w:"σπασμένος"            s:["Σπασμένος Στα Δύο (Spasmenos Sta Dio) — Πάνος Κιάμος (Panos Kiamos)", "Σπασμένος Κώδικας (Spasmenos Kodikas) — Brok3n Cod3", "Διάγνωση (Diagnosi) — Novel 729"] },
+    { w:"τρελαμένος"           s:["Τρελαμένος² (Trelamenos²) — Long3", "Αντιγονιδών (Antigonidon) — Bloody Hawk", "Άκρως Ερωτικό (Akros Erotiko) — Fullface"] },
+    { w:"αδύναμος"             s:["05 (Κενό) — Jolly Roger", "Ακόμα Μένω Ζωντανός (Akoma Meno Zontanos) — FANN", "Εσύ (Esi) — Above The Hood"] },
+    { w:"ανυπόμονος"           s:["Υπέροχες Υπερβολές (Yperoxes Ypervoles) — Stk (GRC)", "Ο Επόμενος (O Epomenos) — Phyrosun", "Ψηφιακός Παγετώνας (Psifiakos Pagetonas) — Stolen Mic"] },
+    { w:"παλεύω"               s:["Δεν την παλεύω (Den tin palevo) — Elli Kokkinou", "Γιατί δεν την Παλεύω (Giati Den Tin Palevo) — Tus", "Παλέυω (Palevo) — LilNick (GRC)"] },
+    { w:"συγχωρώ"              s:["Δε σε συγχωρώ (De se sighoro) — Peggy Zina", "Σε συγχωρώ (Se sighoro) — Γιάννης Πάριος (Giannis Parios)", "Δε Συγχωρώ (De Sygxwrw) — Lil Pop (GRC)"] },
+    { w:"αλλάζω"               s:["Δεν Αλλάζω (Den Allazo) — Helena Paparizou", "Δεν Αλλαζω (Den Allazo) — Hawk (GRC)", "Δε σ’ αλλάζω (De s’allazo) — Anna Vissi"] },
+    { w:"αντέχω"               s:["Δεν Τους Αντέχω Με Τίποτα (Den Tous Antexo Me Tipota) — Complex (GRC)", "Δεν Αντέχω (301 Και Σήμερα) [Den Antecho (301 Kai Simera)] — Goin’ Through", "Δεν Αντέχω (Den Antexw) — Skliros"] },
+    { w:"ελπίζω"               s:["Για Όσα Ελπίζω (Gia Osa Elpizo) — F.F.C", "Ακόμα Ελπίζω (Akoma Elpizo) — Katafthimenos", "Ελπιζώντες (Elpizontes) — Fingaz Crossed"] },
+    { w:"φοβάμαι"              s:["Δε Φοβάμαι (De Fovame) — Bloody Hawk", "Φοβάμαι (Fovamai) — Sigma (GRC)", "Μη Ρωτάς Τι Φοβάμαι (Mi Rotas Ti Fovamai) — Tzamal"] },
+    { w:"προχωρώ"              s:["Προχωρώ (Proxwrw) — Dexon", "Πια Δε Με Νοιάζει (Pia De Me Noiazei) — Anser (GRC)", "Φτάνουμε (Ftanoume) — Bloody Hawk"] },
+    { w:"αφήνω"                s:["Αφού Σε Βρήκα, Δε Σ’ Αφήνω (Afou Se Vrika, De S’ Afino) — Κωνσταντίνος Αργυρός (Konstantinos Argiros)", "Μωρό μου σε Αφήνω (Moro mou se Afino) — Tus", "Δε Σ’ Αφήνω (De S’ Afino) — Ivi Adamou"] },
+    { w:"χάνομαι"              s:["Χάνομαι (Xanomai) — Marseaux", "Κάθε Φορά που Χάνομαι (Kathe Fora Pou Xanomai) — Bitapeis", "ΧΑΝΟΜΑΙ (XANOMAI) — EKPE"] },
+    { w:"αναπνέω"              s:["Τυχερό Αστέρι (Tyxero Asteri) — K.Bhta", "Τορόντο (Toronto) — Dof Twogee", "Ακόμα Μένω Ζωντανός (Akoma Meno Zontanos) — FANN"] },
+    { w:"αποφασίζω"            s:["Το Παράθυρό Μου (To Parathiro Mou) — LEX (GRC)", "Ψυχοθεραπεία — Τρίτος Οφθαλμός (Tritos Ofthalmos)", "Κόκκινο Διαμάντι (Kokkino Diamanti) — Novel 729"] },
+    { w:"σκέφτομαι"            s:["Σκέφτομαι και Νιώθω (Skeftomai kai Niotho) — Stk (GRC)", "Σκέφτομαι Γυναίκες (Skeftomai Gynaikes) — Lektikos Epexergastis", "Σε σκέφτομαι συνέχεια (Se skeftome sinehia) — Anna Vissi"] },
+    { w:"ξεχνώ"                s:["Δεν Ξεχνώ (Den Ksexnw) — XKIRA", "Το Τραγούδι Δεν Ξεχνώ (To Tragoudi Den Ksexno) — Locomondo", "Δεν Ξεχνώ (Den Ksexno) — Agnwstos Xeimwnas"] },
+    { w:"πονάω"                s:["Όταν Πονάω Το Γλεντάω (Otan Ponao To Glentao) — Knock Out (GRC)", "Κι ας πονάω (Ki as ponao) — Κωνσταντίνος Αργυρός (Konstantinos Argiros)", "Αγαπάω και πονάω (Agapao kai ponao) — Giorgos Papadopoulos"] },
+    { w:"λατρεύω"              s:["Για Σένα Που Λατρεύω (Gia Sena Pou Latrevo) — Stavento", "Τα Σκυλιά (Ta Skilia) — Logos Timis", "Απατεών (Apatewn) — Dani Gambino"] },
+  ],
+  hard: [
+    { w:"παντοτινός"           s:["Νιώσε Την Απειλή (Niose Tin Apeili) — Ihitiki Apeili", "Μπελάς (Mpelas) — Logos Timis", "3 Δεύτερα (3 Deftera) — Thitis"] },
+    { w:"αναπόφευκτος"         s:["Δεν Είδες, δεν Άκουσες, δεν Είπες (Den Eides, Den Akouses, Den Eipes) — Bitapeis", "Epistolí tou Víktoros Oungó ston Diethní Síndesmo yia tin Iríni kai tin Elefthería sto Loungáno (Ελληνική μετάφραση) — Victor Hugo", "Kontra Paidi — Ιουλία Καλλιμάνη (Ioulia Kallimani)"] },
+    { w:"αναντικατάστατος"     s:["Στην Αθήνα (Stin Athina) — Tus", "Αγοράκι μου (Agoraki mou) — Antzy Samiou", "Ένας Λύκος — Envippi"] },
+    { w:"παραμυθένιος"         s:["Αυτοκράτειρα (Aftokrateira) — Bloody Hawk", "Χημείες (Ximeies) — ΔΠΘ | Deltapithita", "Παραμυθένιο αστέρι (Graffi sulla schiena) — Elli Kokkinou"] },
+    { w:"αξεπέραστος"          s:["Πως Tus (Pos Tus) — Tus", "07. Πολιτική ανόρθωση — Bdelygma", "Σκοπό (Skopo) — Mikros Kleftis"] },
+    { w:"υπερφυσικός"          s:["Beyoncé - ALIEN SUPERSTAR (Ελληνική μετάφραση) — Genius Greek Translations (Ελληνικές μεταφράσεις)", "Εύφλεκτον (Euflekton) — Bitapeis", "Χειμώνας (Cheimonas) — FANN"] },
+    { w:"ανεξέλεγκτος"         s:["Προφητεία (Profitia) — Saske (GRC)", "Πανόπτικον (Panoptikon) — Bitapeis", "Blocks του Μίσους (Blocks tou Misous) — Eversor"] },
+    { w:"επαναστατικός"        s:["Άδικη Kατάρα (Adiki Katara) — DJ Alx", "Το Επαναστατικό Ταξίδι (To Epanastatiko Taxidi) — MC Yinka", "Εψιλον (Epsilon) — Ευθυμης (Euthymes)"] },
+    { w:"συγκλονιστικός"       s:["Τέλειος έρωτας (Telios erotas) — Anna Vissi", "Ευτυχισμένες Ημέρες in C Minor — Beats Pliz", "Ό,τι θες εγώ (O,ti thes ego) — Anna Vissi"] },
+    { w:"διαχρονικός"          s:["Καλό/Κακό (Kalo/Kako) — Pepe Frantik", "Φαύλος Κύκλος (Favlos Kyklos) — FY", "Για Τους Παλιούς Εγωιστές, Για Τη Nέα Γενιά — Slogan"] },
+    { w:"αθάνατος"             s:["Αθάνατος (Athanatos) — Notis sfakianakis", "Παρενέργεια (ParEnergeia) ⚡️ — DJ.Silence", "Να Γιατί (Na Giati) — Complex (GRC)"] },
+    { w:"ξεχωριστός"           s:["Ληστείες (Listies) — Thug Slime", "Δε μας Ξες Καλά (De Mas Kses Kala) — Anapoda Kapela", "Πίσω απ’ το Πουθενά (Piso ap’ to Pouthena) — Wednesday Night Cypher"] },
+    { w:"αδιαχώριστος"         s:["TODO — no results found"] },
+    { w:"αναπάντεχος"          s:["Όλα τα Ελληνικά Χιπ-Χοπ Συγκροτήματα + Έλληνες MCs — Greek Hip-Hop", "Οι Πιο Ωραίες Μας Στιγμές (Oi Pio Oraies Mas Stigmes) — Ethismos", "Το Κλειδί (To Kleidi) — Τρίτος Οφθαλμός (Tritos Ofthalmos)"] },
+    { w:"αμετάκλητος"          s:["Στον Αμανέ Tου Πεισματάρη — Above The Hood", "Πάνθεον (Pantheon) — Above The Hood", "Ἡ Ἐξαφάνισίς του (I Exafaganisis tou) — Τα Παιδιά της Παλαιότητας (Ta Paidia tis Paleotitas)"] },
+    { w:"ανεκπλήρωτος"         s:["Το Γράμμα (To Gramma) — Apsinthos", "Αποκάλυψις (Apokalipsis) — Bitapeis", "Όνειρο Ήταν (Oneiro Itan) — Wednesday Night Cypher"] },
+    { w:"αξέχαστος"            s:["Γολγοθάς (Golgothas) — SADAM (GRC)", "Αξέχαστο (Aksexasto) — Bitapeis", "Το Αθάνατο, Αξέχαστο για τους Οπαδούς (To Athanato, Aksexasto Gia Tous Opadous) — Bitapeis"] },
+    { w:"απαράμιλλος"          s:["Τυφλοπόντικας(Tuflopontikas) — Maverick (GRC)", "Φούτερ (Fouter) — Bong Da City", "Κάπως Έτσι (Kapos Etsi) — Mani (GRC)"] },
+    { w:"ανεξίτηλος"           s:["Πρώτη Θέση (Proti Thesi) — Light", "Έτσι Δουλεύει (Etsi Doulevei) — Bitapeis", "Κανείς (Kaneis) — Trouf"] },
+    { w:"αδιανόητος"           s:["Έκτακτο (Ektakto) — N.O.E. (GRC)", "ΕΠΟΜΈΝΗ ΣΤΆΣΗ (NEXT STOP) — Eddie Dark", "Το εβένινο λαούτο (κεφ. 1) — Panagiotis Agapitos"] },
+    { w:"αξιοθαύμαστος"        s:["Πλημοίρα (Plimoira) — N.O.E. (GRC)", "Τον τελευταίο καιρό (Ton telefteo kairo) — Giannis Lazaris"] },
+    { w:"αυτοκαταστροφή"       s:["ΑΥΤΟΚΑΤΑΣΤΡΟΦΗ (AFTOKATASTROFI) — Sigma (GRC)", "Αυτοκαταστροφή (Aftokatastrofi) — Litsa Giagkousi", "Ο Χορός των Μεθυσμένων Αετών (O Xoros ton Methysmenon Aeton) — Logos Timis"] },
+    { w:"συμφιλίωση"           s:["Συμφιλίωση (Simfiliosi) — Kore Ydro", "Λιγμός (Ligmos) — Novel 729", "Η μέρα μας θα έρθει — Obnoxious Kas"] },
+    { w:"αναστάτωση"           s:["Επίθεση (Epithesi) — Bitapeis", "Πάρε Με (Pare Me) — Tamta", "Καμία Σχέση (Kamia Sxesi) — Paremvoles"] },
+    { w:"ψευδαίσθηση"          s:["Ψευδαίσθηση Αξίας (Psevdesthisi Aksias) — Apsinthos", "Ψευδαίσθηση (Psefdaisthisi) — Sexpyr", "Κάνε μου Κακό (Kane mou Kako) — Wednesday Night Cypher"] },
+    { w:"απελευθέρωση"         s:["Τέρατος Απελευθέρωση (Teratos Apeleftherosi) — TNT (GRC)", "Ποτέ Δε Σημαδεύουνε Στα Πόδια (Pote De Simadevoume Sta Podia) — Βέβηλος (Vevilos)", "Φωνή του Ανέμου (Foni tou Anemou) — Logos Timis"] },
+    { w:"αντιπαράθεση"         s:["Όπου Κι Αν Κοιτάξω (Opou Ki An Koitaxo) — Goin’ Through", "Υπερβολές (Ypervoles) — Logos Apeili x DJ X-Lib", "Ευτυχισμένος (Eftixismenos) — N.O.E. (GRC)"] },
+    { w:"αυτοσυγκράτηση"       s:["Μας Ακούνε Kρυφά (2005) — Bitapeis"] },
+    { w:"αναζωπύρωση"          s:["Παγίδα (Pagida) — Bitapeis", "Χωριστός βίος (Khoristos vios) — Kore Ydro", "Χτύπημα στον Λαιμό (Xtipima) — Ladose"] },
+    { w:"κατακτητής"           s:["Ble Trohia (Mπλε Tροχιά) — Nalyssa Green", "Πώς σε λένε (Pos se lene) — Lena Papadopoulou", "Αποσπερίτης (Aposperitis) — Skiaxtro"] },
+    { w:"αυτοκαταστρέφομαι"    s:["Νύχτες Οργής (Nuxtes Orgis) — Bitapeis", "Είναι Αστείο Δεν (Einai Asteio Den) — Bong Da City", "Τυραννιέμαι (Tyranniemai) — Anna Vissi"] },
+    { w:"εξουθενώνομαι"        s:["TODO — no results found"] },
+    { w:"αναστατώνομαι"        s:["HEAΔΣHOT — Hoffman (XF)", "Για Μια Φορά (Gia Mia Fora) — Kings (GRC)", "Τρελαίνομαι (Kλίμα τροπικό) [Trelenome] — Anna Vissi"] },
+    { w:"παραλογίζομαι"        s:["Παραλογίζομαι (Paralogizomai) — Elina Konstantopoulou", "Παραλογίζομαι (Paralogizomai) — Bloody Hawk", "Βήματα Χαμέvα (Vimata Xamena) — Rio (GRC)"] },
+    { w:"εξιδανικεύω"          s:["Αυτά Από ’Μας (Afta Apo ’Mas) — Wednesday Night Cypher", "Ταξική Περίπτωση Βλάβης (Taxiki Periptosi Vlavis) — Sumo Beats", "Πάντα Γελαστοί (Panta Gelastoi) — Solmeister"] },
+    { w:"αντιπαρατίθεμαι"      s:["TODO — no results found"] },
+  ],
+}
