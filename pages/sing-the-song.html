@@ -55,7 +55,6 @@
        SETUP SCREEN
        ════════════════════════════════ */
     #screen-setup {
-      display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
@@ -415,6 +414,7 @@
       gap: 20px;
       align-items: start;
     }
+    .game-body > * { min-width: 0; }
     @media (max-width: 700px) { .game-body { grid-template-columns: 1fr; } }
 
     /* Team point buttons */
@@ -545,7 +545,6 @@
        GAME OVER SCREEN
        ════════════════════════════════ */
     #screen-gameover {
-      display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
@@ -553,6 +552,7 @@
       text-align: center;
     }
     #screen-gameover.active { display: flex; }
+    #screen-gameover .btn-setup { flex: 0 0 auto; }
     .gameover-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: var(--muted); margin-bottom: 6px; }
     .gameover-winner {
       font-size: 2.5rem;
@@ -1479,6 +1479,8 @@ function resetWordArea() {
   wordEl.textContent = '· · ·';
   wordEl.className = 'hidden-word';
   wordEl.style.color = '';
+  wordEl.style.fontSize = '';
+  wordEl.style.letterSpacing = '';
   const d = state.timerDuration;
   document.getElementById('timer-display').textContent =
     Math.floor(d / 60) + ':' + String(d % 60).padStart(2, '0');
@@ -1506,6 +1508,21 @@ function drawEntry() {
   return entry;
 }
 
+/* Shrink the revealed word until it fits its container (long words on small screens) */
+function fitWord(el) {
+  const prevTransition = el.style.transition;
+  el.style.transition = 'none';
+  el.style.fontSize = '';
+  el.style.letterSpacing = '';
+  let size = parseFloat(getComputedStyle(el).fontSize);
+  while (el.scrollWidth > el.clientWidth && size > 16) {
+    size -= 2;
+    el.style.fontSize = size + 'px';
+    if (size < 34) el.style.letterSpacing = '1px';
+  }
+  el.style.transition = prevTransition;
+}
+
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -1526,6 +1543,7 @@ document.getElementById('btn-reveal').addEventListener('click', () => {
   wordEl.textContent = entry.w.toUpperCase();
   wordEl.className = '';
   wordEl.style.color = '';
+  fitWord(wordEl);
   document.getElementById('round-counter').textContent = 'Words revealed: ' + state.wordsRevealed;
 
   document.getElementById('btn-reveal').disabled = true;
